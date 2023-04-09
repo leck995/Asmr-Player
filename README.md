@@ -6,6 +6,8 @@
   该软件会在后续优化后进行开源，以供JavaFx初学者参考学习。
   
   **本项目仅供学习交流使用，请在下载后24小时内删除。。。。**
+  ![image](https://user-images.githubusercontent.com/46077555/230763067-f5318078-2f31-447d-8cc3-df40f36a1ab5.png)
+
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/22760263/1679007735453-cb508bd6-badb-4590-9ff7-e06a8e2e7639.png#averageHue=%23393837&clientId=u6fa5cb53-4cb5-4&from=paste&height=833&id=uefcf0d20&name=image.png&originHeight=833&originWidth=1307&originalType=binary&ratio=1&rotation=0&showTitle=false&size=382699&status=done&style=none&taskId=u0f310e5e-1217-41fc-8018-f3bbe919cbc&title=&width=1307)
 # 二、特点
 ## GalGame模式
