@@ -10,7 +10,7 @@
 # 二、特点
 ## GalGame模式
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/22760263/1679008085057-2462849e-d070-4865-ac24-1e13acb3110b.png#averageHue=%238c7d9f&clientId=u6fa5cb53-4cb5-4&from=paste&height=833&id=u482bbb86&name=image.png&originHeight=833&originWidth=1307&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1337776&status=done&style=none&taskId=ub6f2a1d3-b0b7-4abb-b8eb-b0861a35799&title=&width=1307)
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/22760263/1679008442119-01fe75ce-dcfe-4577-8187-620de63f17da.png#averageHue=%2393bbc2&clientId=u6fa5cb53-4cb5-4&from=paste&height=833&id=u3e8e4d9b&name=image.png&originHeight=833&originWidth=1307&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1051686&status=done&style=none&taskId=u6f4d7a41-76c0-48e7-ab1e-11281983571&title=&width=1307)
+![image](https://user-images.githubusercontent.com/46077555/230762883-2de2b6e2-c963-48c6-86b4-b8dedab3756d.png)
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/22760263/1679008199394-ca796a56-2157-4a60-bde8-652912614880.png#averageHue=%23b6b09c&clientId=u6fa5cb53-4cb5-4&from=paste&height=833&id=u01a208ef&name=image.png&originHeight=833&originWidth=1307&originalType=binary&ratio=1&rotation=0&showTitle=false&size=378580&status=done&style=none&taskId=u03f842d8-e5ba-4203-a7d0-36de96f5bed&title=&width=1307)
 ## 传统模式
 
@@ -63,7 +63,8 @@
 
 您可以按以下格式留言：[名称]:[想说的话]
 
-![1679293191414-537ad0aa-ce43-4e18-916b-8cb2ca71a744.jpeg](https://cdn.nlark.com/yuque/0/2023/jpeg/22760263/1679332454311-f19556d9-a8db-48b4-b836-cf61d63e2a75.jpeg#averageHue=%23d3dbbc&clientId=u26996c3a-cf55-4&from=drop&id=u970fecc8&name=1679293191414-537ad0aa-ce43-4e18-916b-8cb2ca71a744.jpeg&originHeight=428&originWidth=300&originalType=binary&ratio=1&rotation=0&showTitle=false&size=33124&status=done&style=none&taskId=ud29849ec-26b6-4332-8ccb-e12ff589d4d&title=)
+![image](https://user-images.githubusercontent.com/46077555/230762837-df7792a4-fe27-45b4-b3d4-60141ab85768.png)
+
 
 # 七、感谢支持
 
