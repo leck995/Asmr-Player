@@ -1,0 +1,97 @@
+/* 旧式 common-alert 弹窗的专属元素；外壳、标题区与按钮外观见 dialog-common.css */
+.common-alert > StackPane{
+    -fx-background-color: transparent;
+}
+.common-alert .alert-close-btn {
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+    -fx-background-color: transparent;
+    -fx-border-insets: 0;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+.common-alert .alert-close-btn .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 16px;
+}
+.common-alert .alert-close-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.common-alert-layout > .jfx-layout-heading .header-svg{
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-cursor: default;
+}
+.common-alert-layout > .jfx-layout-heading .header-svg .ikonli-font-icon{
+    -fx-icon-color: -color-warning-emphasis;
+    -fx-icon-size: 22px;
+}
+
+.jfx-radio-button{
+    -fx-text-fill: -color-fg-default;
+}
+
+.warning{
+
+}
+
+
+/* ===== Alerts / DialogBuilder 产出弹窗样式 ===== */
+/* 外壳、标题、正文、按钮与表单控件等通用外观见 dialog-common.css，
+   本文件只保留各类弹窗的业务专属内容样式。 */
+
+/* 作品移除确认 */
+.jfx-alter .delete-work-options {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 14px;
+}
+
+.jfx-alter .delete-work-default-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+}
+
+.jfx-alter .delete-work-storage-option {
+    -fx-border-color: -color-border-default transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 10px 0 0 0;
+}
+
+.jfx-alter .delete-work-storage-checkbox {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+.jfx-alter .delete-work-storage-checkbox > .text {
+    -fx-fill: -color-fg-default;
+}
+
+.jfx-alter .delete-work-storage-hint {
+    -fx-text-fill: -color-danger-fg;
+    -fx-font-size: 12px;
+}
+
+/* 文件删除确认 */
+.jfx-alter .delete-file-details {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 12px;
+}
+
+.jfx-alter .delete-file-details > .label:first-child {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.jfx-alter .delete-file-target {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}

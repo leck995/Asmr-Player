@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import atlantafx.base.controls.Tab?>
+<?import atlantafx.base.controls.TabLine?>
+<?import cn.tealc.asmr.ui.component.PageHeader?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane styleClass="background-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.tools.ToolView">
+   <children>
+      <BorderPane maxHeight="Infinity" maxWidth="Infinity" style="-fx-padding: 8 20 16 20;">
+         <top>
+            <VBox>
+               <children>
+                  <PageHeader fx:id="pageHeader" styleClass="tools-page-header" />
+                  <TabLine fx:id="tabPane" styleClass="tools-tabs">
+                     <tabs>
+                        <Tab fx:id="renameTab" text="批量重命名">
+                           <graphic><FontIcon iconLiteral="mdoal-edit" /></graphic>
+                        </Tab>
+                        <Tab fx:id="duplicateTab" text="重复作品检测">
+                           <graphic><FontIcon iconLiteral="mdomz-search" /></graphic>
+                        </Tab>
+                        <Tab fx:id="cleanupTab" text="数据清理">
+                           <graphic><FontIcon iconLiteral="mdoal-delete_outline" /></graphic>
+                        </Tab>
+                     </tabs>
+                  </TabLine>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <StackPane fx:id="contentPane" styleClass="tools-content-pane">
+               <children>
+                  <ScrollPane fx:id="renamePane" fitToWidth="true" styleClass="tools-scroll">
+                     <content>
+                        <VBox spacing="16.0" styleClass="tools-content">
+                           <children>
+                              <GridPane hgap="16.0" vgap="16.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="12.0" styleClass="tools-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label styleClass="tools-card-title" text="重命名范围" />
+                                          <VBox spacing="7.0">
+                                             <children>
+                                                <Label styleClass="tools-field-label" text="媒体库" />
+                                                <ComboBox fx:id="mediaLibraryComboBoxForRename" maxWidth="1.7976931348623157E308" prefHeight="32.0" />
+                                             </children>
+                                          </VBox>
+                                          <CheckBox fx:id="renameTitleCNModel" text="重命名时优先使用中文标题" />
+                                          <CheckBox fx:id="renameEncryptionModel" disable="true" managed="false" text="对重命名进行加密" visible="false" />
+                                          <HBox spacing="8.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#rename" styleClass="accent" text="开始重命名">
+                                                   <graphic><FontIcon iconLiteral="mdoal-edit" iconSize="16" /></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#previewRename" text="随机预览">
+                                                   <graphic><FontIcon iconLiteral="mdomz-visibility" iconSize="16" /></graphic>
+                                                </Button>
+                                                <Button fx:id="openMediaLibraryBtn" mnemonicParsing="false" onAction="#openMediaLibrary" text="打开目录">
+                                                   <graphic><FontIcon iconLiteral="mdoal-folder_open" iconSize="16" /></graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="12.0" styleClass="tools-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label styleClass="tools-card-title" text="命名规则" />
+                                          <VBox spacing="7.0">
+                                             <children>
+                                                <Label styleClass="tools-field-label" text="自定义格式" />
+                                                <TextField fx:id="formatSampleTextField" prefHeight="32.0" text="{【workId】}{title}{【subtitle】}" />
+                                                <Label styleClass="tools-hint" text="{workId} 作品编号　{title} 标题　{cv} CV　{circle} 社团　{subtitle} 字幕" wrapText="true" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="7.0">
+                                             <children>
+                                                <Label styleClass="tools-field-label" text="格式模板" />
+                                                <ComboBox fx:id="encryptionComboBox" maxWidth="1.7976931348623157E308" prefHeight="32.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                              <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="tools-warning">
+                                 <children>
+                                    <FontIcon iconLiteral="mdoal-info" iconSize="16" />
+                                    <Label text="实验性功能：仅重命名具有作品编号的作品。执行前请先随机预览并确认结果。" wrapText="true" />
+                                 </children>
+                              </HBox>
+                              <VBox spacing="8.0" styleClass="tools-preview-card">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label styleClass="tools-preview-title" text="重命名预览" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label styleClass="tools-hint" text="随机抽取一部作品生成" />
+                                       </children>
+                                    </HBox>
+                                    <Label fx:id="renameSampleLabel" maxWidth="1.7976931348623157E308" styleClass="tools-sample" text="点击“随机预览”查看命名结果" wrapText="true" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding><Insets bottom="20.0" left="2.0" right="2.0" top="18.0" /></padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <VBox fx:id="duplicatePane" spacing="14.0" styleClass="tools-content">
+                     <children>
+                        <GridPane hgap="14.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                           </columnConstraints>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="tools-toolbar" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <children>
+                                    <Button fx:id="checkDuplicateBtn" mnemonicParsing="false" styleClass="accent" text="开始检测">
+                                       <graphic><FontIcon iconLiteral="mdomz-search" iconSize="16" /></graphic>
+                                    </Button>
+                                    <Label fx:id="duplicateNumTip" styleClass="duplicate-tip" text="尚未检测" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="tools-toolbar" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label fx:id="duplicateSelectedTip" styleClass="duplicate-tip" text="已选 0 部" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="selectAllDuplicatesBtn" text="全选" />
+                                    <Button fx:id="clearDuplicateSelectionBtn" text="取消选择" />
+                                    <Button fx:id="removeDuplicatesBtn" styleClass="danger" text="移除所选">
+                                       <graphic><FontIcon iconLiteral="mdoal-delete_outline" iconSize="16" /></graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="duplicateTableView" prefHeight="200.0" styleClass="duplicate-table" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="workCol" prefWidth="160.0" text="作品" />
+                              <TableColumn fx:id="duplicatedWorkCol" prefWidth="680.0" text="重复项" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding><Insets bottom="18.0" left="2.0" right="2.0" top="18.0" /></padding>
+                  </VBox>
+                  <ScrollPane fx:id="cleanupPane" fitToWidth="true" styleClass="tools-scroll">
+                     <content>
+                        <VBox spacing="14.0" styleClass="tools-content">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="tools-warning">
+                                 <children>
+                                    <Label text="清理操作只处理数据库记录、媒体库配置和应用封面缓存，不会删除作品目录中的实际文件。每项操作都会先显示待处理数量并要求确认。" wrapText="true" />
+                                 </children>
+                              </HBox>
+                              <GridPane hgap="14.0" vgap="14.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="10.0" styleClass="tools-card, cleanup-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="cleanup-card-header">
+                                             <children>
+                                                <FontIcon iconLiteral="mdoal-error_outline" iconSize="18" />
+                                                <Label styleClass="tools-card-title" text="清理失效作品" />
+                                             </children>
+                                          </HBox>
+                                          <Label styleClass="tools-hint" text="检查本地与 OpenList 路径，删除找不到路径的作品记录。" wrapText="true" />
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Button mnemonicParsing="false" onAction="#cleanupMissingWorks" styleClass="danger" text="开始清理" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="10.0" styleClass="tools-card, cleanup-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="cleanup-card-header">
+                                             <children>
+                                                <FontIcon iconLiteral="mdoal-link_off" iconSize="18" />
+                                                <Label styleClass="tools-card-title" text="清理未绑定作品" />
+                                             </children>
+                                          </HBox>
+                                          <Label styleClass="tools-hint" text="删除没有媒体库归属的作品数据库记录，实际文件保留。" wrapText="true" />
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Button mnemonicParsing="false" onAction="#cleanupUnboundWorks" styleClass="danger" text="开始清理" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="10.0" styleClass="tools-card, cleanup-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="cleanup-card-header">
+                                             <children>
+                                                <FontIcon iconLiteral="mdoal-image" iconSize="18" />
+                                                <Label styleClass="tools-card-title" text="清理多余封面" />
+                                             </children>
+                                          </HBox>
+                                          <Label styleClass="tools-hint" text="清理 resource/cover 下没有作品引用的应用缓存封面。" wrapText="true" />
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Button mnemonicParsing="false" onAction="#cleanupUnusedCovers" styleClass="danger" text="开始清理" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="10.0" styleClass="tools-card, cleanup-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="cleanup-card-header">
+                                             <children>
+                                                <FontIcon iconLiteral="mdoal-folder" iconSize="18" />
+                                                <Label styleClass="tools-card-title" text="清理空媒体库" />
+                                             </children>
+                                          </HBox>
+                                          <Label styleClass="tools-hint" text="删除没有作品使用的媒体库配置，不影响文件和未绑定作品。" wrapText="true" />
+                                          <Region VBox.vgrow="ALWAYS" />
+                                          <Button mnemonicParsing="false" onAction="#cleanupEmptyLibraries" styleClass="danger" text="开始清理" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding><Insets bottom="20.0" left="2.0" right="2.0" top="18.0" /></padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../css/skin/BaseUI.css" />
+      <URL value="@../../css/skin/tools.css" />
+   </stylesheets>
+</StackPane>

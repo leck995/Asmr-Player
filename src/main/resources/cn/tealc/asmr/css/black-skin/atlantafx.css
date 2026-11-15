@@ -1,0 +1,452 @@
+.root {
+    -color-dark: #010409;
+    -color-light: #ffffff;
+    -color-base-0: #f0f6fc;
+    -color-base-1: #c9d1d9;
+    -color-base-2: #b1bac4;
+    -color-base-3: #8b949e;
+    -color-base-4: #6e7681;
+    -color-base-5: #484f58;
+    -color-base-6: #30363d;
+    -color-base-7: #21262d;
+    -color-base-8: #161b22;
+    -color-base-9: #0d1117;
+    -color-accent-0: #aff5b4;
+    -color-accent-1: #7ee787;
+    -color-accent-2: #56d364;
+    -color-accent-3: #3fb950;
+    -color-accent-4: #2ea043;
+    -color-accent-5: #238636;
+    -color-accent-6: #2ea043;
+    -color-accent-7: #0f5323;
+    -color-accent-8: #033a16;
+    -color-accent-9: #04260f;
+    -color-success-0: #aff5b4;
+    -color-success-1: #7ee787;
+    -color-success-2: #56d364;
+    -color-success-3: #3fb950;
+    -color-success-4: #2ea043;
+    -color-success-5: #238636;
+    -color-success-6: #196c2e;
+    -color-success-7: #0f5323;
+    -color-success-8: #033a16;
+    -color-success-9: #04260f;
+    -color-warning-0: #f8e3a1;
+    -color-warning-1: #f2cc60;
+    -color-warning-2: #e3b341;
+    -color-warning-3: #d29922;
+    -color-warning-4: #bb8009;
+    -color-warning-5: #9e6a03;
+    -color-warning-6: #845306;
+    -color-warning-7: #693e00;
+    -color-warning-8: #4b2900;
+    -color-warning-9: #341a00;
+    -color-danger-0: #ffdcd7;
+    -color-danger-1: #ffc1ba;
+    -color-danger-2: #ffa198;
+    -color-danger-3: #ff7b72;
+    -color-danger-4: #f85149;
+    -color-danger-5: #da3633;
+    -color-danger-6: #b62324;
+    -color-danger-7: #8e1519;
+    -color-danger-8: #67060c;
+    -color-danger-9: #490202;
+    -color-fg-default: #c9d1d9;
+    -color-fg-muted: #8b949e;
+    -color-fg-subtle: #6e7681;
+    -color-fg-emphasis: #ffffff;
+    -color-bg-default: #2b2b2b;
+    -color-bg-overlay: #363636;
+    -color-bg-subtle: #303030;
+    -color-bg-inset: #1e1e20;
+    /* 输入类控件（TextField/TextArea/ComboBox/Spinner）的填充色：
+       取页面底色与卡片之间的中间值，避免 AtlantaFX 默认跟随 -color-bg-default 时过暗 */
+    -color-input-surface: #303030;
+    /* 直接落在页面/弹窗表面（-color-bg-default）上的输入框：与表面拉开一档，避免边框悬空 */
+    -color-input-surface-base: #363636;
+    -color-border-default: #30363d;
+    -color-border-muted: #21262d;
+    -color-border-subtle: rgb(36, 40, 46);
+    -color-shadow-default: rgba(0, 0, 0, 0.55);
+    -color-neutral-emphasis-plus: #6e7681;
+    -color-neutral-emphasis: #6e7681;
+    -color-neutral-muted: rgba(110, 118, 129, 0.4);
+    -color-neutral-subtle: rgba(110, 118, 129, 0.1);
+    -color-accent-fg: #3fb950;
+    -color-accent-emphasis: #0f9d58;
+    -color-accent-muted: rgba(46, 160, 67, 0.4);
+    -color-accent-subtle: rgba(46, 160, 67, 0.15);
+    -color-warning-fg: #d29922;
+    -color-warning-emphasis: #9e6a03;
+    -color-warning-muted: rgba(187, 128, 9, 0.4);
+    -color-warning-subtle: rgba(187, 128, 9, 0.15);
+    -color-success-fg: #3fb950;
+    -color-success-emphasis: #238636;
+    -color-success-muted: rgba(46, 160, 67, 0.4);
+    -color-success-subtle: rgba(46, 160, 67, 0.15);
+    -color-danger-fg: #f85149;
+    -color-danger-emphasis: #da3633;
+    -color-danger-muted: rgba(248, 81, 73, 0.4);
+    -color-danger-subtle: rgba(248, 81, 73, 0.15);
+    -color-chart-1: #f3622d;
+    -color-chart-2: #fba71b;
+    -color-chart-3: #57b757;
+    -color-chart-4: #41a9c9;
+    -color-chart-5: #4258c9;
+    -color-chart-6: #9a42c8;
+    -color-chart-7: #c84164;
+    -color-chart-8: #888888;
+    -color-chart-1-alpha70: rgba(243, 98, 45, 0.7);
+    -color-chart-2-alpha70: rgba(251, 167, 27, 0.7);
+    -color-chart-3-alpha70: rgba(87, 183, 87, 0.7);
+    -color-chart-4-alpha70: rgba(65, 169, 201, 0.7);
+    -color-chart-5-alpha70: rgba(66, 88, 201, 0.7);
+    -color-chart-6-alpha70: rgba(154, 66, 200, 0.7);
+    -color-chart-7-alpha70: rgba(200, 65, 100, 0.7);
+    -color-chart-8-alpha70: rgba(136, 136, 136, 0.7);
+    -color-chart-1-alpha20: rgba(243, 98, 45, 0.2);
+    -color-chart-2-alpha20: rgba(251, 167, 27, 0.2);
+    -color-chart-3-alpha20: rgba(87, 183, 87, 0.2);
+    -color-chart-4-alpha20: rgba(65, 169, 201, 0.2);
+    -color-chart-5-alpha20: rgba(66, 88, 201, 0.2);
+    -color-chart-6-alpha20: rgba(154, 66, 200, 0.2);
+    -color-chart-7-alpha20: rgba(200, 65, 100, 0.2);
+    -color-chart-8-alpha20: rgba(136, 136, 136, 0.2);
+    /*半透明覆盖层，用于封面 hover 遮罩等场景*/
+    -color-overlay-1: rgba(0, 0, 0, 0.25);
+    -color-overlay-2: rgba(0, 0, 0, 0.42);
+    -color-overlay-3: rgba(0, 0, 0, 0.6);
+
+    /*作品卡片：封面浮层与分组胶囊，深色下浅色底会压掉对比度，因此统一用实色*/
+    -color-card-scrim: rgba(12, 14, 18, 0.78);
+    -color-card-scrim-hover: rgba(12, 14, 18, 0.58);
+    -color-card-scrim-strong: rgba(12, 14, 18, 0.55);
+    -color-card-on-scrim: #ffffff;
+    -color-card-favorite: #ff5c7c;
+    /*标签系：自定义标签琥珀实心，系统分类中性灰底，避免满屏紫色*/
+    -color-card-tag-fg: #ffffff;
+    -color-card-tag-bg: #9c5210;
+    -color-card-category-fg: #ccd6e2;
+    -color-card-category-bg: #404751;
+    /*作品详情页的分类胶囊单独配色，与卡片解耦；
+      深色下弹窗底色 #2b2b2b 与卡片底接近，对比已经足够，描边取同填充色即可（不额外显形）*/
+    -color-detail-category-fg: #ccd6e2;
+    -color-detail-category-bg: #404751;
+    -color-detail-category-border: #404751;
+    /*字幕用紫色，全年龄用绿色*/
+    -color-card-subtitle-fg: #dcc0ef;
+    -color-card-subtitle-bg: #3e2a4e;
+    -color-card-nsfw-fg: #7ee787;
+    -color-card-nsfw-bg: #1d3f26;
+    /*压在封面深色遮罩上的标记文字：提亮以保证对比度*/
+    -color-card-subtitle-on-scrim: #e3c8f5;
+    -color-card-nsfw-on-scrim: #93ef9c;
+    /*声优用蓝色，与标签琥珀、字幕紫区分*/
+    -color-card-vas-fg: #ffffff;
+    -color-card-vas-bg: #2f62d4;
+    /*分组小标题沿用各自内容色系的深底浅字*/
+    -color-card-section-tags-fg: #f2c992;
+    -color-card-section-tags-bg: #40311f;
+    -color-card-section-vas-fg: #c3cfff;
+    -color-card-section-vas-bg: #28304f;
+    -color-card-shadow: rgba(0, 0, 0, 0.45);
+    -color-card-shadow-hover: rgba(0, 0, 0, 0.65);
+}
+
+
+/*======================输入类控件======================*/
+/*AtlantaFX 默认用 -color-bg-default 填充输入框，本主题里该值是页面底色；
+   输入框底色改由 -color-input-surface 控制，直接落在页面/弹窗表面时用 -color-input-surface-base*/
+.text-input {
+    -color-input-bg: -color-input-surface;
+    -color-input-bg-focused: -color-input-surface;
+    -fx-background-radius: 6px, 5px;
+}
+
+/*可编辑 ComboBox 与 Spinner 的编辑框只在左侧圆角，右侧留给箭头按钮*/
+.combo-box-base > .text-field,
+.spinner > .text-field {
+    -fx-background-radius: 6px 0 0 6px, 5px 0 0 5px;
+}
+/*Spinner 由外层控件负责描边，编辑框只铺底色，避免内部再出现一圈边框*/
+.spinner > .text-field {
+    -fx-background-color: -color-input-surface;
+}
+
+.spinner {
+    -fx-background-color: -color-input-surface;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+.message {
+    -color-message-bg: -color-bg-subtle;
+    -color-message-fg-primary: -color-fg-default;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-border-muted;
+    -color-message-button-hover: -color-bg-default;
+    -color-message-border-interactive: -color-border-default;
+}
+.message.accent {
+    -color-message-bg: -color-accent-subtle;
+    -color-message-fg-primary: -color-accent-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-accent-muted;
+    -color-message-button-hover: -color-accent-muted;
+    -color-message-border-interactive: -color-accent-emphasis;
+}
+.message.success {
+    -color-message-bg: -color-success-subtle;
+    -color-message-fg-primary: -color-success-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-success-muted;
+    -color-message-button-hover: -color-success-muted;
+    -color-message-border-interactive: -color-success-emphasis;
+}
+.message.warning {
+    -color-message-bg: -color-warning-subtle;
+    -color-message-fg-primary: -color-warning-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-warning-muted;
+    -color-message-button-hover: -color-warning-muted;
+    -color-message-border-interactive: -color-warning-emphasis;
+}
+.message.danger {
+    -color-message-bg: -color-danger-subtle;
+    -color-message-fg-primary: -color-danger-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-danger-muted;
+    -color-message-button-hover: -color-danger-muted;
+    -color-message-border-interactive: -color-danger-emphasis;
+}
+.message.tile-base > .container {
+    -fx-background-color: -color-message-bg;
+    -fx-background-radius:4px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: -color-message-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+.message.tile-base > .container > .graphic:disabled {
+    -fx-opacity: 0.4;
+}
+.message.tile-base > .container > .header > .title {
+    -fx-text-fill: -color-message-fg-secondary;
+}
+.message.tile-base > .container > .header > .description Text {
+    -fx-fill: -color-message-fg-secondary;
+}
+.message.tile-base > .container > .header > .description Text:disabled {
+    -fx-opacity: 0.4;
+}
+.message.tile-base > .container .font-icon, .message.tile-base > .container .ikonli-font-icon {
+    -fx-icon-color: -color-message-fg-primary;
+    -fx-fill: -color-message-fg-primary;
+    -fx-icon-size: 24px;
+}
+.message.tile-base:hover:interactive > .container {
+    -fx-background-color: -color-message-bg;
+    -fx-border-color: -color-message-border-interactive;
+    -fx-cursor: hand;
+}
+.message.tile-base:has-title:has-description > .container > .header > .title {
+    -fx-text-fill: -color-message-fg-primary;
+}
+.message.tile-base:has-title:has-description > .container > .header > .description Text {
+    -fx-fill: -color-message-fg-secondary;
+}
+.message > .close-button {
+    -fx-background-radius: 100px;
+    -fx-padding: 0.5em;
+}
+.message > .close-button > .icon {
+    -fx-shape: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z";
+    -fx-scale-shape: true;
+    -fx-background-color: -color-message-fg-primary;
+    -fx-padding: 0.3em;
+}
+.message > .close-button:hover {
+    -fx-background-color: -color-message-border, -color-message-button-hover;
+    -fx-background-insets: 0, 1;
+}
+.message > .close-button:disabled {
+    -fx-opacity: 0.4;
+}
+.message:closeable > .container > .header > .title,
+.message:closeable > .container > .header > .description {
+    -fx-padding: 0 1.5em 0 0;
+}
+
+
+
+.combo-box-base {
+    -fx-background-color: -color-border-default, -color-input-surface;
+    -fx-background-insets: 0, 1px;
+    -fx-background-radius: 6px, 5px;
+    -fx-text-fill: -color-fg-default;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.combo-box-base:disabled {
+    -fx-opacity: 0.4;
+}
+.combo-box-base:focused {
+    -fx-background-color: -color-accent-emphasis, -color-input-surface;
+}
+.combo-box-base:success, .combo-box-base:success:focused {
+    -fx-background-color: -color-success-emphasis, -color-input-surface;
+}
+.combo-box-base:danger, .combo-box-base:danger:focused {
+    -fx-background-color: -color-danger-emphasis, -color-input-surface;
+}
+
+.combo-box-base.left-pill {
+    -fx-background-radius: 4px 0 0 4px, 3px 0 0 3px;
+    -fx-background-insets: 0, 1px 0 1px 1px;
+}
+.combo-box-base.left-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base.center-pill {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 1px 0 1px 0;
+}
+.combo-box-base.center-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base.right-pill {
+    -fx-background-radius: 0 4px 4px 0, 0 3px 3px 0;
+    -fx-background-insets: 0, 1px 1px 1px 0;
+}
+.combo-box-base.right-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base > .arrow-button {
+    -fx-padding: 8px 12px 8px 12px;
+}
+.combo-box-base > .arrow-button > .arrow {
+    -fx-shape: "M7 10l5 5 5-5z";
+    -fx-scale-shape: false;
+    -fx-background-color: -color-fg-muted;
+}
+.combo-box-base > .text-field {
+    -fx-background-insets: 0, 1px 0 1px 1px;
+    -fx-background-radius: 4px 0 0 4px, 3px 0 0 3px;
+}
+.combo-box-base:success > .arrow-button > .arrow {
+    -fx-background-color: -color-success-fg;
+}
+.combo-box-base:danger > .arrow-button > .arrow {
+    -fx-background-color: -color-danger-fg;
+}
+.combo-box-base.alt-icon > .arrow-button > .arrow {
+    -fx-shape: "M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z";
+    -fx-scale-shape: false;
+}
+
+.combo-box > .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-graphic-text-gap: 6px;
+}
+.combo-box:success > .list-cell {
+    -fx-text-fill: -color-success-fg;
+}
+.combo-box:danger > .list-cell {
+    -fx-text-fill: -color-danger-fg;
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-color: #1e1e20;
+    -fx-background-insets: 0, 1;
+    -fx-border-radius: 4px, 3px;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 6px, 0.3, 0, 2);
+    -fx-pref-height: 80px;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-cell-size: 0;
+    -fx-background-color: #1e1e20;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-graphic-text-gap: 6px;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover {
+    -fx-background-color: #363636;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background-color: #363636;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected .ikonli-font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .placeholder > .label {
+    -fx-text-fill: -color-fg-muted;
+}
+
+.check-box {
+    -fx-text-fill: -color-fg-default;
+    -fx-label-padding: 2px 2px 0 6px;
+}
+.check-box > .box {
+    -fx-background-color: -color-border-default, -color-bg-default;
+    -fx-background-insets: 0, 1.5px;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 3px 4px 3px 4px;
+    -fx-alignment: CENTER;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 4px, 3px;
+}
+.check-box > .box > .mark {
+    -fx-background-color: -color-bg-default;
+    -fx-shape: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z";
+    -fx-scale-shape: true;
+    -fx-min-height: 0.75em;
+    -fx-max-height: 0.75em;
+    -fx-min-width: 0.75em;
+    -fx-max-width: 0.75em;
+
+}
+.check-box > .box:hover {
+    -fx-background-color: -color-fg-subtle, -color-bg-subtle;
+    -fx-border-color: transparent;
+}
+.check-box:indeterminate > .box {
+    -fx-background-color: -color-border-default, -color-bg-default;
+}
+.check-box:indeterminate > .box > .mark {
+    -fx-background-color: -color-fg-subtle;
+    -fx-shape: "M 17,13 H 7 v -2 h 10 z";
+    -fx-scale-shape: false;
+}
+.check-box:disabled {
+    -fx-opacity: 0.4;
+}
+.check-box:disabled > .box {
+    -fx-opacity: 0.4;
+}
+.check-box:selected > .box {
+    -fx-background-color: -color-accent-emphasis, -color-accent-emphasis;
+    -fx-border-color: transparent;
+}
+.check-box:selected > .box > .mark {
+    -fx-background-color: -color-fg-emphasis;
+}
+.check-box:show-mnemonics > .mnemonic-underline {
+    -fx-stroke: -color-fg-muted;
+}

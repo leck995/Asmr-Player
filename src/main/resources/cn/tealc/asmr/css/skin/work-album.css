@@ -1,0 +1,61 @@
+.album-root {
+    -fx-background-color: -color-bg-default;
+}
+.page-header.album-page-header {
+    -fx-padding: 0 0 10px 0;
+}
+.page-header .album-detail-tools {
+    -fx-background-color: transparent;
+}
+.album-subtitle-separator {
+    -fx-icon-size: 7px;
+    -fx-icon-color: -color-fg-muted;
+}
+.album-muted, .album-card-time {
+    -fx-text-fill: -color-fg-muted;
+}
+.album-card-time {
+    -fx-font-size: 11px;
+}
+.album-scroll, .album-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.album-card {
+    /*背景色与大图作品卡片保持一致*/
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 6;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 6;
+    -fx-cursor: hand;
+}
+.album-card:hover, .album-card:focused {
+    -fx-border-color: -color-accent-fg;
+}
+.album-card-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+.album-count {
+    -fx-text-fill: -color-accent-fg;
+    -fx-font-size: 12px;
+}
+.album-icon-button .ikonli-font-icon {
+    -fx-icon-size: 18px;
+    -fx-icon-color: -color-fg-default;
+}
+.album-danger .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+}
+.album-dialog .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+}
+.album-dialog .accent .ikonli-font-icon {
+    -fx-icon-color: -color-accent-fg;
+}
+.album-error {
+    -fx-text-fill: -color-danger-fg;
+}

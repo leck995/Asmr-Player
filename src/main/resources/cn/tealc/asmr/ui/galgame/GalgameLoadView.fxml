@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" prefHeight="540.0" spacing="10.0" styleClass="galgame-load-page" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.galgame.GalgameLoadView">
+   <children>
+      <StackPane fx:id="gridHolder" VBox.vgrow="ALWAYS">
+         <children>
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="galgame-load-scroll">
+               <content>
+                  <FlowPane fx:id="saveDataPane" styleClass="galgame-load-grid" />
+               </content>
+            </ScrollPane>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="galgame-load-footer">
+         <children>
+            <Label fx:id="previewIcon" styleClass="galgame-load-preview-icon" />
+            <VBox HBox.hgrow="ALWAYS" spacing="2.0">
+               <children>
+                  <Label fx:id="titleLabel" maxWidth="1.7976931348623157E308" styleClass="galgame-load-preview-title" />
+                  <Label fx:id="messageLabel" maxWidth="1.7976931348623157E308" styleClass="galgame-load-preview-text" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="prevPageBtn" styleClass="galgame-load-page-btn" />
+                  <Label fx:id="pageLabel" styleClass="galgame-load-page-label" />
+                  <Button fx:id="nextPageBtn" styleClass="galgame-load-page-btn" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

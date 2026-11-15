@@ -1,0 +1,136 @@
+
+/*------------歌曲列表-------------*/
+.song-list-view-background{
+    -fx-background-color:-color-bg-subtle;
+    -fx-background-radius: 20;
+}
+.songs-list-view{
+    -fx-background-color: transparent;
+    -fx-spacing: 5;
+}
+
+.songs-list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-pref-width: 300;
+    -fx-wrap-text: true;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.songs-list-view .list-cell:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.songs-list-view .list-cell:selected,
+.songs-list-view .list-cell:focused{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill:-color-accent-emphasis ;
+}
+
+.songs-list-view .list-cell:selected .label{
+    -fx-text-fill:-color-fg-emphasis;
+}
+
+
+
+.songs-title{
+-fx-text-fill: -color-fg-default;
+    -fx-font-size: 20;
+}
+
+.songs-size{
+    -fx-text-fill: -color-fg-muted;
+}
+
+
+.clear-songs-btn,
+.to-folder-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-muted;
+}
+.clear-songs-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: SVG-CLEAR;
+    -fx-background-color: -color-fg-muted;
+}
+.to-folder-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: SVG-FOLDER;
+    -fx-background-color: -color-fg-muted;
+}
+.clear-songs-btn:hover,
+.to-folder-btn:hover{
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.clear-songs-btn:hover Region,
+.to-folder-btn:hover Region{
+    -fx-background-color: -color-fg-muted;
+}
+
+
+
+
+
+
+/*===================Galgame模式时================*/
+.galgame-list-dialog{
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 20;
+}
+
+.galgame-list-list-view{
+    -fx-background-color: transparent;
+}
+
+.galgame-list-list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-font-size: 17;
+    -fx-text-fill: -color-fg-default;
+    -fx-pref-width: 300;
+}
+
+.galgame-list-list-view .list-cell:hover{
+    -fx-background-color: transparent;
+}
+.galgame-list-list-view .list-cell:selected{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.galgame-list-songs-title{
+    -fx-text-fill:-color-fg-default;
+}
+.galgame-list-songs-size{
+    -fx-text-fill: -color-fg-muted;
+}
+
+.galgame-list-clear-songs-btn,
+.galgame-list-to-folder-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+}
+.galgame-list-clear-songs-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: SVG-CLEAR;
+    -fx-background-color: -color-fg-muted;
+}
+.galgame-list-to-folder-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: SVG-FOLDER;
+    -fx-background-color: -color-fg-muted;
+}
+
+.galgame-list-clear-songs-btn:hover,
+.galgame-list-to-folder-btn:hover{
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.galgame-list-clear-songs-btn:hover Region,
+.galgame-list-to-folder-btn:hover Region{
+    -fx-background-color: -color-bg-subtle;
+}

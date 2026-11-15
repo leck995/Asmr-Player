@@ -1,0 +1,69 @@
+.update-tag {
+    -fx-background-color: transparent;
+}
+
+.update-tag-section-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+}
+
+.update-tag-body {
+    -fx-padding: 0;
+}
+
+.update-tag-section-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.update-tag-scroll {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+    -fx-min-height: 220px;
+}
+
+.update-tag-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.update-tag-scroll .flow-pane {
+    -fx-padding: 16px;
+}
+
+.update-tag-scroll .toggle-button {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 16px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 16px;
+    -fx-padding: 6px 11px;
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+    -fx-cursor: hand;
+}
+
+.update-tag-scroll .toggle-button:hover {
+    -fx-background-color: -color-accent-subtle;
+    -fx-border-color: -color-accent-muted;
+}
+
+.update-tag-scroll .toggle-button:selected {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-border-color: -color-accent-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+}
+
+.update-tag-add-card {
+    -fx-padding: 12px;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+}
+
+.update-tag-add-card .text-field {
+    -fx-background-color: -color-input-surface;
+}

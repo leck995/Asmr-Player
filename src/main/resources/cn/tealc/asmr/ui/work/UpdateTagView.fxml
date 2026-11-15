@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<BorderPane fx:id="root" prefHeight="370.0" prefWidth="720.0" styleClass="update-tag" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.work.UpdateTagView">
+   <center>
+      <VBox spacing="12.0" styleClass="update-tag-body">
+         <children>
+            <HBox alignment="CENTER_LEFT" styleClass="update-tag-section-header">
+               <children>
+                  <Label styleClass="update-tag-section-title" text="可用标签" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label styleClass="update-tag-section-hint" text="点击标签以选择或取消选择" />
+               </children>
+            </HBox>
+            <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="update-tag-scroll" VBox.vgrow="ALWAYS">
+               <content>
+                  <FlowPane fx:id="tagFlowPane" hgap="8.0" vgap="8.0">
+                     <padding><Insets bottom="16.0" left="16.0" right="16.0" top="16.0" /></padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+            <VBox spacing="8.0" styleClass="update-tag-add-card">
+               <children>
+                  <Label styleClass="update-tag-section-title" text="新建标签" />
+                  <HBox spacing="8.0">
+                     <children>
+                        <TextField fx:id="textfield" onAction="#addTag" promptText="输入标签名称后按回车或点击添加" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#addTag" styleClass="accent" text="添加">
+                           <graphic>
+                              <FontIcon iconLiteral="mdoal-add" iconSize="16" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+   <stylesheets>
+      <URL value="@../../css/skin/BaseUI.css" />
+      <URL value="@../../css/skin/item/update-tag.css" />
+   </stylesheets>
+   <padding>
+      <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+   </padding>
+</BorderPane>

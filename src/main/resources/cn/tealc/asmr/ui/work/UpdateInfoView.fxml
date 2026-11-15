@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" prefHeight="560.0" prefWidth="720.0" styleClass="update-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.work.UpdateInfoView">
+   <children>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="update-scroll" vbarPolicy="AS_NEEDED">
+               <content>
+                  <VBox spacing="14.0" styleClass="update-content">
+                     <children>
+                        <VBox spacing="12.0" styleClass="update-section">
+                           <children>
+                              <Label styleClass="update-section-title" text="识别与状态" />
+                              <HBox spacing="12.0">
+                                 <children>
+                                    <VBox HBox.hgrow="ALWAYS" spacing="6.0" styleClass="update-field">
+                                       <children><Label styleClass="update-field-label" text="作品编号" /><TextField fx:id="workIdField" prefHeight="36.0" promptText="例如 RJ01234567、BJ123456、VJ123456" /></children>
+                                    </VBox>
+                                    <VBox alignment="BOTTOM_LEFT" prefWidth="248.0" spacing="6.0" styleClass="update-field">
+                                       <children>
+                                          <Label styleClass="update-field-label" text="作品属性" />
+                                          <HBox alignment="CENTER_LEFT" spacing="16.0" styleClass="update-toggle-bar"><children><CheckBox fx:id="subtitleCheckBox" mnemonicParsing="false" text="包含字幕" /><CheckBox fx:id="nsfwCheckBox" mnemonicParsing="false" text="NSFW" /></children></HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding>
+                        </VBox>
+                        <VBox spacing="12.0" styleClass="update-section">
+                           <children>
+                              <Label styleClass="update-section-title" text="作品信息" />
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <VBox spacing="6.0" styleClass="update-field"><children><Label styleClass="update-field-label" text="原始标题" /><TextField fx:id="titleField" prefHeight="36.0" promptText="作品原始名称" /></children></VBox>
+                                    <VBox spacing="6.0" styleClass="update-field"><children><Label styleClass="update-field-label" text="中文标题" /><TextField fx:id="titleCNField" prefHeight="36.0" promptText="用于优先显示与中文检索" /></children></VBox>
+                                    <HBox spacing="12.0">
+                                       <children>
+                                          <VBox HBox.hgrow="ALWAYS" spacing="6.0" styleClass="update-field"><children><Label styleClass="update-field-label" text="社团" /><TextField fx:id="circleField" prefHeight="36.0" promptText="社团或作者" /></children></VBox>
+                                          <VBox HBox.hgrow="ALWAYS" spacing="6.0" styleClass="update-field"><children><Label styleClass="update-field-label" text="发布时间" /><TextField fx:id="releaseField" prefHeight="36.0" promptText="例如 2026-10-17" /></children></VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding>
+                        </VBox>
+                        <VBox spacing="12.0" styleClass="update-section">
+                           <children>
+                              <Label styleClass="update-section-title" text="本地来源" />
+                              <VBox spacing="6.0" styleClass="update-field">
+                                 <children>
+                                    <Label styleClass="update-field-label" text="作品目录" />
+                                    <HBox spacing="8.0"><children><TextField fx:id="filepathField" HBox.hgrow="ALWAYS" prefHeight="36.0" promptText="选择本地作品目录" styleClass="update-path-field" /><Button fx:id="importDirBtn" mnemonicParsing="false" prefHeight="36.0" text="选择目录" styleClass="import-btn"><graphic><Region prefHeight="16.0" prefWidth="16.0" /></graphic></Button></children></HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding>
+                        </VBox>
+                        <HBox spacing="14.0">
+                           <children>
+                              <VBox HBox.hgrow="ALWAYS" spacing="8.0" styleClass="update-section"><children><Label styleClass="update-section-title" text="类别" /><TextArea fx:id="categoryArea" prefHeight="88.0" promptText="英文逗号分隔，例如 ASMR, Healing" wrapText="true" /><Label styleClass="tip" text="用于筛选与分类检索，使用英文逗号分隔" /></children><padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding></VBox>
+                              <VBox HBox.hgrow="ALWAYS" spacing="8.0" styleClass="update-section"><children><Label styleClass="update-section-title" text="声优" /><TextArea fx:id="vaArea" prefHeight="88.0" promptText="英文逗号分隔，例如 A, B" wrapText="true" /><Label styleClass="tip" text="用于检索声优信息，使用英文逗号分隔" /></children><padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding></VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding><Insets bottom="16.0" left="0.0" right="0.0" top="0.0" /></padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+   </children>
+</StackPane>

@@ -1,0 +1,62 @@
+.subtitle-sync-content {
+    -fx-spacing: 14px;
+}
+
+.subtitle-sync-value {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-sync-slider {
+    -fx-padding: 2px 2px 2px 2px;
+}
+
+.subtitle-sync-steps {
+    -fx-spacing: 6px;
+}
+
+.subtitle-sync-step-button {
+    -fx-min-height: 28px;
+    -fx-pref-height: 28px;
+    -fx-padding: 0 8px 0 8px;
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.subtitle-sync-step-button:hover {
+    -fx-background-color: -color-neutral-muted;
+}
+
+.subtitle-sync-step-button:pressed {
+    -fx-background-color: derive(-color-neutral-muted, -8%);
+}
+
+.subtitle-sync-reset-button {
+    -fx-text-fill: -color-accent-fg;
+}
+
+.subtitle-sync-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.subtitle-sync-section {
+    -fx-spacing: 10px;
+}
+
+.subtitle-sync-section-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-sync-script-mode {
+    -fx-pref-width: 180px;
+}

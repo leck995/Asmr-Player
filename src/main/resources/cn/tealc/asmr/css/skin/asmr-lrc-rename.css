@@ -1,0 +1,262 @@
+.subtitle-rename-root {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.subtitle-rename-content {
+    -fx-background-color: transparent;
+}
+
+.subtitle-rename-file-lists {
+    -fx-alignment: top-left;
+}
+
+/*==================== 列表卡片 ====================*/
+.subtitle-rename-list-pane,
+.subtitle-rename-sidebar-card {
+    -fx-padding: 14px;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 12px;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 12px;
+}
+
+.subtitle-rename-list-pane {
+    -fx-min-width: 320px;
+}
+
+.subtitle-rename-list-header {
+    -fx-padding: 0 2px;
+}
+
+.subtitle-rename-list-icon-box {
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+    -fx-background-color: -color-accent-subtle;
+    -fx-background-radius: 9px;
+}
+
+.subtitle-rename-list-icon {
+    -fx-icon-color: -color-accent-fg;
+    -fx-icon-size: 17px;
+}
+
+.subtitle-rename-list-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.subtitle-rename-list-caption {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11.5px;
+}
+
+.subtitle-rename-count {
+    -fx-text-fill: -color-accent-fg;
+    -fx-background-color: -color-accent-subtle;
+    -fx-background-radius: 20px;
+    -fx-padding: 3px 9px;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+/*==================== 文件列表 ====================*/
+.subtitle-rename-list {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 9px;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 9px;
+    -fx-padding: 4px;
+    -fx-min-height: 300px;
+}
+
+/*滚动条与圆角留出间距，滑块和箭头不会压到列表背景的圆角外*/
+.subtitle-rename-list .virtual-flow .scroll-bar:vertical {
+    -fx-padding: 6px 2px 6px 0;
+}
+
+.subtitle-rename-list .virtual-flow .scroll-bar .increment-button,
+.subtitle-rename-list .virtual-flow .scroll-bar .decrement-button {
+    -fx-padding: 0;
+}
+
+.subtitle-rename-list .virtual-flow,
+.subtitle-rename-list .virtual-flow .clipped-container,
+.subtitle-rename-list .virtual-flow .clipped-container .sheet {
+    -fx-background-color: transparent;
+}
+
+.subtitle-rename-list .list-cell {
+    -fx-padding: 0 10px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 2px 2px;
+    -fx-background-radius: 7px;
+    -fx-text-fill: -color-fg-default;
+}
+
+.subtitle-rename-list .list-cell:filled:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.subtitle-rename-list .list-cell:filled:selected {
+    -fx-background-color: -color-bg-inset;
+}
+
+.subtitle-rename-list .list-cell .subtitle-rename-cell-index {
+    -fx-min-width: 22px;
+    -fx-alignment: center-right;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11px;
+}
+
+.subtitle-rename-list .list-cell .subtitle-rename-cell-name {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 12.5px;
+}
+
+/*==================== 列表操作 ====================*/
+.subtitle-rename-list-actions {
+    -fx-alignment: center-right;
+}
+
+.subtitle-rename-list-action {
+    -fx-padding: 5px 10px;
+    -fx-font-size: 12px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 7px;
+    -fx-text-fill: -color-fg-default;
+}
+
+.subtitle-rename-list-action:hover {
+    -fx-background-color: -color-bg-default;
+}
+
+.subtitle-rename-list-action .ikonli-font-icon {
+    -fx-icon-size: 14px;
+    -fx-icon-color: -color-fg-muted;
+}
+
+.subtitle-rename-list-action.danger {
+    -fx-text-fill: -color-danger-fg;
+    -fx-border-color: -color-danger-muted;
+}
+
+.subtitle-rename-list-action.danger .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+}
+
+.subtitle-rename-list-action.danger:hover {
+    -fx-background-color: -color-danger-subtle;
+}
+
+/*==================== 侧栏 ====================*/
+.subtitle-rename-sidebar {
+    -fx-pref-width: 280px;
+    -fx-min-width: 260px;
+}
+
+.subtitle-rename-section-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.subtitle-rename-section-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.subtitle-rename-option {
+    -fx-padding: 8px 10px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.subtitle-rename-option:hover {
+    -fx-background-color: -color-bg-default;
+}
+
+.subtitle-rename-option .radio-button {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 12.5px;
+    -fx-padding: 0;
+}
+
+.subtitle-rename-option .radio-button .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: -color-fg-muted;
+    -fx-border-radius: 1em;
+}
+
+.subtitle-rename-option .radio-button:selected .radio {
+    -fx-border-color: -color-accent-fg;
+}
+
+.subtitle-rename-option .radio-button:selected .dot {
+    -fx-background-color: -color-accent-fg;
+}
+
+.subtitle-rename-option-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11.5px;
+}
+
+.subtitle-rename-status {
+    -fx-padding: 10px 12px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-alignment: center-left;
+    -fx-spacing: 8px;
+}
+
+.subtitle-rename-status .label {
+    -fx-font-size: 12.5px;
+}
+
+.subtitle-rename-status .ikonli-font-icon {
+    -fx-icon-size: 16px;
+}
+
+.subtitle-rename-status.success {
+    -fx-background-color: -color-success-subtle;
+    -fx-border-color: -color-success-muted;
+}
+
+.subtitle-rename-status.success .label {
+    -fx-text-fill: -color-success-fg;
+}
+
+.subtitle-rename-status.success .ikonli-font-icon {
+    -fx-icon-color: -color-success-fg;
+}
+
+.subtitle-rename-status.danger {
+    -fx-background-color: -color-danger-subtle;
+    -fx-border-color: -color-danger-muted;
+}
+
+.subtitle-rename-status.danger .label {
+    -fx-text-fill: -color-danger-fg;
+}
+
+.subtitle-rename-status.danger .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+}
+
+.subtitle-rename-action {
+    -fx-padding: 10px 16px;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.subtitle-rename-help-line {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}

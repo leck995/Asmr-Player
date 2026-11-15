@@ -1,0 +1,246 @@
+/*------------底部播放栏-------------*/
+
+.dashboard-title-default{
+    -fx-text-fill: -color-fg-default;
+}
+.dashboard-title-secondary{
+    -fx-text-fill: -color-fg-muted;
+}
+
+.dashboard-album-pane{
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+    -fx-background-insets: 12;
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.32);
+    -fx-border-insets: 12;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    /* 默认隐藏，悬停封面时显示 */
+    -fx-opacity: 0;
+    -fx-cursor: hand;
+}
+.dashboard-album-pane:hover{
+    -fx-opacity: 1;
+}
+.dashboard-album-pane > .ikonli-font-icon{
+    -fx-icon-color: #ffffff;
+    -fx-icon-size: 18px;
+}
+
+/*按钮通用图标样式*/
+.loop-btn .ikonli-font-icon,
+.disorder-btn .ikonli-font-icon,
+.play-btn .ikonli-font-icon,
+.star-btn .ikonli-font-icon,
+.volume-btn .ikonli-font-icon,
+.pre-btn .ikonli-font-icon,
+.next-btn .ikonli-font-icon,
+.lrc-btn .ikonli-font-icon,
+.audio-btn .ikonli-font-icon,
+.list-btn .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 24px;
+}
+
+/*所有按钮统一尺寸，消除间距差异*/
+.lc-svg-btn,
+.star-btn,
+.lrc-btn,
+.loop-btn,
+.disorder-btn,
+.play-btn,
+.volume-btn{
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+    -fx-min-width: 35;
+    -fx-min-height: 35;
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 35;
+    -fx-content-display: graphic-only;
+    -fx-background-insets: 0;
+}
+.lc-svg-btn:hover{
+    -fx-background-color: transparent;
+}
+
+/*歌词按钮：subtitles → subtitles_off*/
+.lrc-btn .ikonli-font-icon{
+    -fx-icon-code: mdomz-subtitles;
+}
+.lrc-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+.lrc-btn:selected .ikonli-font-icon,
+.lrc-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-code: mdomz-subtitles_off;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*收藏按钮：favorite_border → favorite*/
+.star-btn .ikonli-font-icon{
+    -fx-icon-code: mdoal-favorite_border;
+}
+.star-btn:hover .ikonli-font-icon,
+.star-btn:selected .ikonli-font-icon,
+.star-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-color: -color-danger-emphasis;
+}
+.star-btn:selected .ikonli-font-icon,
+.star-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-code: mdoal-favorite;
+}
+
+/*循环按钮：repeat → repeat-once*/
+.loop-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2r-repeat;
+}
+.loop-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+.loop-btn:selected .ikonli-font-icon,
+.loop-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-code: mdi2r-repeat-once;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*播放按钮：play_circle_filled → pause_circle_filled（Java 侧绑定）
+  比切歌按钮大一级，形成“大播放按钮 + 次级切歌按钮”的层级*/
+.play-btn{
+    -fx-pref-width: 48;
+    -fx-pref-height: 48;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-max-width: 48;
+    -fx-max-height: 48;
+    -fx-background-radius: 48;
+}
+.play-btn .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 44px;
+}
+
+/*上/下一曲：MDI 的 skip 字形在 em 框内留白较大，按字形比例放大到 32px，
+  视觉大小才与 24px 的工具图标、44px 的播放按钮协调*/
+.pre-btn .ikonli-font-icon,
+.next-btn .ikonli-font-icon{
+    -fx-icon-size: 32px;
+}
+
+/*乱序按钮：shuffle-disabled → shuffle*/
+.disorder-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2s-shuffle-disabled;
+}
+.disorder-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+.disorder-btn:selected .ikonli-font-icon,
+.disorder-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-code: mdi2s-shuffle;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*音量按钮：volume_up → volume_off*/
+.volume-btn .ikonli-font-icon{
+    -fx-icon-code: mdomz-volume_up;
+}
+.volume-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+.volume-btn:selected .ikonli-font-icon,
+.volume-btn:selected:hover .ikonli-font-icon{
+    -fx-icon-code: mdomz-volume_off;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*列表/声道/上/下曲按钮 hover 变色*/
+.list-btn:hover .ikonli-font-icon,
+.audio-btn:hover .ikonli-font-icon,
+.pre-btn:hover .ikonli-font-icon,
+.next-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+
+/*------------底部播放栏-播放进度条设置-------------*/
+/* 高度压缩到 6px：JFXSlider 默认 20px 高（滑块 20px 居中所需余量），
+   而轨道只有 5px，多出的 7.5px 上下留白会在播放栏顶部形成一条空白带。
+   滑块放大后仍沿用 6px 高度，圆点允许纵向溢出，避免重新撑出空白。 */
+.song-slider {
+    -jfx-default-thumb: -color-accent-emphasis;
+    -jfx-default-track: -color-border-default;
+    -fx-min-height: 6;
+    -fx-pref-height: 6;
+    -fx-max-height: 6;
+    -fx-padding: 0;
+}
+/*未到达轨迹*/
+.song-slider .track,
+.song-slider:vertical .track {
+    -fx-background-color: -color-border-default;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-pref-width: 5px;
+    -fx-pref-height: 5px;
+}
+/*移动的点：默认即为此前悬停时的大小，悬停/拖拽不再放大*/
+.song-slider .thumb,
+.song-slider:focused .thumb {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+    -fx-pref-width: 13;
+    -fx-pref-height: 13;
+}
+/*已抵达轨迹*/
+.song-slider .colored-track {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+/*弹出的提示字体*/
+.song-slider .slider-value {
+    -fx-fill: #ffffff;
+    -fx-font-size: 10;
+}
+/*弹出的提示字体背景*/
+.song-slider .animated-thumb {
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-color: -jfx-default-thumb;
+    -fx-background-radius: 50% 50% 50% 0%;
+    -fx-background-insets: 0;
+}
+/*最小值时移动点的颜色*/
+.song-slider:min .thumb,
+.song-slider:min:focused .thumb {
+    -fx-background-color: -jfx-default-track;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+}
+/*最小值时弹出的背景颜色*/
+.song-slider:min .animated-thumb {
+    -fx-background-color: -jfx-default-track;
+    -fx-background-radius: 50% 50% 50% 0%;
+    -fx-background-insets: 0;
+}
+
+
+/*----------------------歌词悬浮窗-----------------------------*/
+.dashboard-lrc-dialog {
+    -fx-background-color: transparent;
+}
+
+.dashboard-split-pane {
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+}
+
+.dashboard-split-pane .split-pane-divider {
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: transparent;
+}

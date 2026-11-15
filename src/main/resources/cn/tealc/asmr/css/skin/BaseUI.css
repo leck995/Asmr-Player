@@ -1,0 +1,740 @@
+/* galgame 场景固定色板（不随主题切换） */
+.root{
+    -default-theme-color:#1ECE9A;
+    -default-theme-svg-common-color:white;
+    -default-theme-svg-hover-color:#1ECE9A;
+    -default-theme-svg-select-color:#1ECE9A;
+    -default-theme-background:#2b2b2b;
+    -default-theme-background-2:#333333;
+    -default-theme-background-3:#363636;
+    -default-theme-background-4:#5c5c5c;
+    -default-theme-select:#595959;
+    -default-theme-select-2:-default-theme-svg-select-color;
+    -default-theme-text-common-color:white;
+    -default-theme-text-common-color-2:#BEBEBE;
+    -default-theme-text-select-color:-default-theme-svg-select-color;
+}
+
+/*=========全局Button样式===============*/
+.lc-label-btn {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-background-radius: 5px 5px 5px 5px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-text-fill: -color-fg-emphasis;
+    -fx-font-size: 15px;
+    -fx-padding: 5px 10px 5px 10px;
+    -fx-cursor: HAND;
+    -fx-background-insets: 0;
+}
+
+.lc-label-btn:focused {
+    -fx-background-insets: 0;
+
+}
+
+.lc-label-btn:hover {
+    -fx-opacity: 0.9;
+}
+
+.lc-label-btn:pressed {
+    -fx-opacity: 0.8;
+}
+
+/*带图标文字按钮 小圆角*/
+.lc-svg-label-btn {
+    -fx-max-height: 32px;
+    -fx-max-width: 120px;
+    -fx-pre-height: 32px;
+    -fx-pref-width: 120px;
+    -fx-min-height: 32px;
+    -fx-min-width: 120px;
+    -fx-spacing: 10px;
+    -fx-background-color: #00D6C4;
+    -fx-background-radius: 4px;
+}
+
+.lc-svg-label-btn:hover {
+    -fx-opacity: 0.9;
+
+}
+
+.lc-svg-label-btn:pressed {
+    -fx-opacity: 0.8;
+}
+
+.lc-svg-label-btn Region {
+    -fx-max-height: 16px;
+    -fx-max-width: 16px;
+    -fx-background-color: white;
+}
+
+.lc-svg-label-btn .label {
+    -fx-text-fill: white;
+}
+
+/*带图标文字按钮 大圆角*/
+.lc-svg-label-round-btn {
+    -fx-max-height: 32px;
+    -fx-max-width: 120px;
+    -fx-pre-height: 32px;
+    -fx-pref-width: 120px;
+    -fx-min-height: 32px;
+    -fx-min-width: 120px;
+    -fx-spacing: 10px;
+    -fx-background-color: #00D6C4;
+    -fx-background-radius: 40px;
+}
+
+.lc-svg-label-round-btn:hover {
+    -fx-opacity: 0.9;
+}
+
+.lc-svg-label-round-btn:pressed {
+    -fx-opacity: 0.8;
+}
+
+.lc-svg-label-round-btn Region {
+    -fx-max-height: 16px;
+    -fx-max-width: 16px;
+    -fx-pref-width: 16px;
+    -fx-pref-height: 16px;
+    -fx-background-color: white;
+}
+
+.lc-svg-label-round-btn .label {
+    -fx-text-fill: white;
+}
+
+/*图标按钮*/
+.lc-svg-btn {
+    -fx-pre-height: 16px;
+    -fx-pref-width: 16px;
+    -fx-min-height: 16px;
+    -fx-min-width: 16px;
+    -fx-background-color: transparent;
+    -fx-border-insets: 0;
+    -fx-padding: 0;
+}
+
+.lc-svg-btn:hover {
+    -fx-background-color: -color-accent-emphasis;
+}
+
+
+.lc-svg-toggle-btn {
+    -fx-pre-height: 16px;
+    -fx-pref-width: 16px;
+    -fx-min-height: 16px;
+    -fx-min-width: 16px;
+    -fx-background-color: transparent;
+    -fx-border-insets: 0;
+    -fx-padding: 0;
+}
+
+.lc-svg-toggle-btn:hover > Region {
+    -fx-background-color: -color-accent-emphasis;
+}
+
+
+.lc-btn-default {
+    -fx-background-color: rgb(249, 250, 251);
+}
+
+.lc-btn-success {
+    -fx-background-color: rgb(22, 209, 127);
+}
+
+.lc-btn-warning {
+    -fx-background-color: rgb(251, 178, 100);
+}
+
+.lc-btn-secondary {
+    -fx-background-color: rgb(237, 239, 241);
+}
+
+.lc-btn-purple {
+    -fx-background-color: rgb(162, 130, 227);
+}
+
+.lc-btn-cyan {
+    -fx-background-color: rgb(119, 210, 220);
+}
+
+.lc-btn-brown {
+    -fx-background-color: rgb(119, 210, 220);
+}
+
+.lc-btn-primary {
+    -fx-background-color: rgb(82, 211, 199);
+}
+
+.lc-btn-info {
+    -fx-background-color: rgb(101, 189, 248);
+}
+
+.lc-btn-danger {
+    -fx-background-color: -color-danger-emphasis;
+}
+
+.lc-btn-dark {
+    -fx-background-color: -color-neutral-emphasis;
+}
+
+.lc-btn-pink {
+    -fx-background-color: -color-accent-emphasis;
+}
+
+.lc-btn-yellow {
+    -fx-background-color: rgb(253, 208, 77);
+}
+
+.lc-btn-link {
+    -fx-background-color: transparent;
+}
+
+
+.lc-search-pane {
+    -fx-padding: 0 10 0 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-pref-height: 30;
+}
+
+.lc-search-pane:hover {
+    -fx-border-color: -color-bg-default;
+}
+
+.lc-search-pane > .text-field {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.lc-search-pane > .button {
+    -fx-min-width: 25;
+    -fx-min-height: 25;
+}
+
+.lc-search-pane > .button Region {
+    -fx-shape: SVG-SEARCH;
+}
+
+
+/*=======================TextField样式美化===========================*/
+
+.lc-text-field {
+    -fx-border-radius: 5px 5px 5px 5px;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1.3px;
+    -fx-accent: -color-accent-emphasis;
+    -fx-background-color: -color-bg-default;
+    -fx-padding: 5px 3px 5px 3px;
+    -fx-font-size: 14px;
+}
+
+.lc-text-field:focused {
+    -fx-border-color: -color-accent-emphasis;
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+    -fx-prompt-text-fill: transparent;
+
+}
+
+.bg-deep {
+    -fx-background-color: -color-bg-default;
+}
+
+.bg-normal {
+    -fx-background-color: -color-bg-default;
+}
+
+.bg-light {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.bg-radius {
+    -fx-background-radius: 15;
+}
+
+.title-1 {
+    -fx-font-size: 2em;
+    -fx-font-weight: bolder;
+}
+
+.title-2 {
+    -fx-font-size: 1.75em;
+    -fx-font-weight: bolder;
+}
+
+.title-3 {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bolder;
+}
+
+.title-4 {
+    -fx-font-size: 1.25em;
+    -fx-font-weight: normal;
+}
+
+.label {
+    -fx-text-fill: -color-fg-muted;
+}
+
+.button .font-icon, .button .ikonli-font-icon {
+    -fx-icon-color: -fx-text-fill;
+}
+
+
+.jfx-dialog > StackPane {
+    -fx-background-color: transparent;
+}
+
+.jfx-dialog .jfx-layout-heading .label {
+    -fx-font-size: 20px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-weight: bold;
+}
+
+.jfx-dialog .text-field {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 30;
+}
+
+
+.jfx-dialog-layout {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10;
+}
+
+.jfx-dialog-layout.confirm {
+
+}
+
+.jfx-dialog-layout.confirm > .jfx-layout-heading {
+    -fx-background-color: transparent;
+    -fx-font-weight: BOLD;
+    -fx-padding: 5 15 5 15;
+}
+
+.jfx-dialog-layout.confirm > .jfx-layout-heading .label {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 18;
+    -fx-font-weight: null;
+}
+
+.jfx-dialog-layout.confirm > .jfx-layout-heading Region {
+    -fx-pref-height: 16;
+    -fx-pref-width: 16;
+    -fx-min-height: 16;
+    -fx-min-width: 16;
+    -fx-max-height: 16;
+    -fx-max-width: 16;
+    -fx-shape: "M512 64c126.677333 3.328 232.192 47.146667 316.501333 131.498667C912.853333 279.808 956.672 385.28 960 512c-3.328 126.677333-47.146667 232.192-131.498667 316.501333C744.192 912.853333 638.72 956.672 512 960c-126.677333-3.328-232.192-47.146667-316.501333-131.498667C111.146667 744.192 67.328 638.72 64 512c3.328-126.677333 47.146667-232.192 131.498667-316.501333C279.808 111.146667 385.28 67.328 512 64zM512 256c-17.322667 0-31.658667 6.357333-43.008 19.029333A58.197333 58.197333 0 0 0 453.973333 320l23.04 256a35.925333 35.925333 0 0 0 11.477334 22.485333 34.048 34.048 0 0 0 23.466666 8.533334 33.621333 33.621333 0 0 0 23.466667-8.533334 36.138667 36.138667 0 0 0 11.52-22.485333l23.04-256a57.984 57.984 0 0 0-15.018667-44.970667A55.381333 55.381333 0 0 0 511.914667 256H512z m0 512c14.677333-0.64 26.88-5.674667 36.522667-15.018667 9.642667-9.344 14.506667-21.333333 14.506666-35.968A49.578667 49.578667 0 0 0 512 665.984a49.493333 49.493333 0 0 0-50.986667 51.029333c0 14.677333 4.821333 26.666667 14.506667 35.968 9.642667 9.301333 21.802667 14.293333 36.48 15.018667z";
+    -fx-background-color: linear-gradient(from 0.0% 100.0% to 100.0% 0.0%, #F8C75D 0.0%, #FFB300 100.0%);
+}
+
+.jfx-dialog-layout.confirm > .jfx-layout-body {
+    -fx-padding: 10 15 10 15;
+}
+
+.jfx-dialog-layout.confirm > .jfx-layout-body .label {
+
+}
+
+
+.choice-box {
+    -fx-background-color: -color-bg-subtle;
+    -fx-padding: 3;
+    -fx-background-radius: 3;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 3;
+}
+
+/*=====================全局ContextMenu设置======================================*/
+.context-menu {
+    -fx-background-color: -color-border-default, -color-bg-default;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-background-radius: 4px, 3px;
+    -fx-effect: dropshadow(three-pass-box, -color-border-default, 6, 0.3, 0, 2);
+}
+
+.context-menu > .scroll-arrow {
+    -fx-padding: 0.5em;
+    -fx-background-color: transparent;
+}
+
+.context-menu > .scroll-arrow:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-default;
+}
+
+.context-menu .separator:horizontal {
+    -fx-padding: 0.25em 0 0.25em 0;
+}
+
+.context-menu .separator:horizontal .line {
+    -fx-border-color: -color-border-default transparent transparent transparent;
+    -fx-border-insets: 1px 0.5em 0 0.5em;
+}
+
+
+.menu-item {
+    -fx-background-color: -color-bg-default;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-background-radius: 5px;
+}
+
+.menu-item > .graphic-container {
+    -fx-padding: 0 6px 0 0;
+}
+
+.menu-item > .label {
+    -fx-padding: 0 1em 0 0.5em;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14;
+}
+
+.menu-item > .left-container {
+    -fx-padding: 0 1em 0 0;
+}
+
+.menu-item > .right-container {
+    -fx-padding: 0 0 0 0.5em;
+}
+
+.menu-item .ikonli-font-icon {
+    -fx-icon-size: 16;
+    -fx-icon-color: -color-fg-default;
+}
+
+.menu-item:focused {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.menu-item:focused > .label {
+    -fx-text-fill: -color-fg-default;
+}
+
+.menu-item:focused > .right-container > .arrow {
+    -fx-background-color: -color-fg-default;
+}
+
+.menu-item:focused .font-icon, .menu-item:focused .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+
+.menu-item.work-delete-menu-item > .label {
+    -fx-text-fill: -color-danger-fg;
+}
+
+.menu-item.work-delete-menu-item .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+    -fx-fill: -color-danger-fg;
+}
+
+.menu-item.work-delete-menu-item:focused {
+    -fx-background-color: -color-danger-subtle;
+}
+
+.menu-item.work-delete-menu-item:focused > .label {
+    -fx-text-fill: -color-danger-fg;
+}
+
+.menu-item.work-delete-menu-item:focused .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+    -fx-fill: -color-danger-fg;
+}
+
+.menu-item:disabled {
+    -fx-opacity: 0.4;
+}
+
+
+/*========================滚动条===============================*/
+/*改变垂直方向下拉条的宽度，以及下拉条的颜色*/
+.scroll-bar:vertical {
+    -fx-pref-width: 8px;
+    -fx-background-color: transparent;
+}
+
+/*水平方向下拉条*/
+.scroll-bar:horizontal {
+    -fx-pref-height: 8px;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-background-insets: 10, 0, 0;
+    -fx-border-radius: 2em;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button,
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+/* 滑条设置*/
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -color-fg-muted;
+    -fx-background-radius: 2em;
+}
+
+.scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+}
+
+
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/*=====================全局ListView设置=====================================*/
+.list-view {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-bg-default;
+    -fx-border-width: 0px;
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-pref-height: 600;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: -color-fg-default;
+    -fx-padding: 10px 0px 10px 10px;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:focused {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.list-view .corner {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/*
+!*=====================全局CheckBox设置=====================================*!
+.check-box {
+    -fx-font-size: 14px;
+    -fx-cursor: HAND;
+    -fx-text-fill: rgba(117, 117, 117, 1);
+}
+.check-box .box {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-border-color: rgba(193, 197, 205, 1) rgba(193, 197, 205, 1) rgba(193, 197, 205, 1) rgba(193, 197, 205, 1);
+    -fx-border-radius: 3px 3px 3px 3px;
+}
+.check-box:selected .box {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-border-color: rgba(50, 150, 255, 1) rgba(50, 150, 255, 1) rgba(50, 150, 255, 1) rgba(50, 150, 255, 1);
+}
+.check-box:selected .mark {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-shape: "M299,396l2-2,3,3,6-6,2,2-8,8Z";
+}
+*/
+
+.pagination {
+    -fx-page-information-visible: false;
+}
+
+.pagination .left-arrow-button {
+    -fx-background-color: rgba(240, 242, 245, 1);
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+.pagination .left-arrow-button:hover .left-arrow {
+    -fx-background-color: rgba(64, 158, 255, 1);
+}
+
+.pagination .left-arrow-button .left-arrow {
+    -fx-shape: "M401.066667 512l302.933333 302.933333-59.733333 59.733334L341.333333 571.733333 281.6 512 341.333333 452.266667l302.933334-302.933334 59.733333 59.733334L401.066667 512z";
+}
+
+.pagination .right-arrow-button {
+    -fx-background-color: rgba(240, 242, 245, 1);
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+.pagination .right-arrow-button:hover {
+    -fx-padding: 0px 0px 0px 0px;
+}
+
+.pagination .right-arrow-button:hover .right-arrow {
+    -fx-background-color: rgba(64, 158, 255, 1);
+}
+
+.pagination .right-arrow-button .right-arrow {
+    -fx-shape: "M584.533333 512l-302.933333 302.933333L341.333333 874.666667l302.933334-302.933334 59.733333-59.733333-59.733333-59.733333L341.333333 145.066667 281.6 209.066667l302.933333 302.933333z";
+}
+
+.pagination .number-button {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-border-color: transparent;
+    -fx-cursor: HAND;
+    -fx-text-fill: -color-fg-default;
+}
+
+.pagination .number-button:hover {
+    -fx-text-fill: rgba(64, 158, 255, 1);
+}
+
+.pagination .number-button:selected {
+    -fx-background-color: rgba(64, 158, 255, 1);
+    -fx-text-fill: rgba(255, 255, 255, 1);
+}
+
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 2; /* 0 3 0 3 */
+    -fx-background-color: -default-theme-background-3;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * ProgressBar                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.progress-bar {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 5;
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+    -fx-background-radius: 20;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #02ae9d;
+    -fx-background-insets: 0;
+    -fx-padding: 0.416667em; /* 5 */
+    -fx-background-radius: 20;
+}
+
+.progress-bar:indeterminate > .bar {
+    -fx-background-color: linear-gradient(to left, transparent, -fx-accent);
+}
+
+.progress-bar > .track {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 20;
+}
+
+
+.separator {
+    -fx-background-color: transparent;
+}
+
+.separator .line {
+    -fx-border-style: null;
+    -fx-border-width: 0; /* 1 */
+    -fx-background-color: -color-border-muted;
+}
+
+.tab-pane {
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+}
+
+/*header全部*/
+.tab-pane .tab-header-area {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0; /*设置标题居中*/
+}
+
+/*header有tab的地方*/
+.tab-pane .tab-header-area .headers-region {
+    -fx-background-color: -color-bg-default;
+}
+
+/*header有tab的地方的背景*/
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: -color-bg-default;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab .control-buttons-tab {
+    -fx-max-width: 0;
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab .tab-down-button {
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab .arrow {
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: transparent;
+    -fx-pref-height: 38;
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 36 15 0 15;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-padding: 0 5 0 5;
+    -fx-pref-height: 38;
+    -fx-text-fill: -color-fg-muted;
+}

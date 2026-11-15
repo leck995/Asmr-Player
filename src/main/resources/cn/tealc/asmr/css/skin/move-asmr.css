@@ -1,0 +1,74 @@
+.move-tree-hint {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.move-target-card {
+    -fx-padding: 12px;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+}
+
+.move-target-label,
+.move-tree-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-fg-default;
+}
+
+.move-target {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.move-tree-header {
+    -fx-alignment: center-left;
+}
+
+.move-tree-view {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+    -fx-padding: 8px;
+}
+
+.move-tree-view .virtual-flow,
+.move-tree-view .virtual-flow .clipped-container {
+    -fx-background-color: transparent;
+}
+
+.move-tree-view .tree-cell {
+    -fx-padding: 8px 8px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+    -fx-background-radius: 7px;
+}
+
+.move-tree-view .tree-cell:hover {
+    -fx-background-color: -color-neutral-muted;
+}
+
+.move-tree-view .tree-cell:selected {
+    -fx-background-color: -color-accent-subtle;
+    -fx-text-fill: -color-fg-default;
+}
+
+.move-tree-view .tree-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.move-tree-icon {
+    -fx-icon-color: -color-accent-fg;
+    -fx-icon-size: 18px;
+}
+
+.move-tree-view .tree-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: -color-fg-muted;
+}
+
+.move-tree-view .tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-rotate: 90;
+}

@@ -1,0 +1,476 @@
+
+.galgame-btn{
+    -fx-background-color:#383c5f;
+    -fx-background-radius: 35;
+    -fx-border-width: 2;
+    -fx-padding: 10;
+    -fx-cursor: HAND;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+}
+
+.galgame-btn Region{
+    -fx-max-height: 20;
+    -fx-max-width: 20;
+}
+
+.galgame-btn:hover{
+    -fx-background-color: #565890;
+
+}
+
+
+.title-bar{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.title-bar > .title-header{
+    -fx-background-color: transparent;
+}
+
+/*==========================对话框部分==============================*/
+
+.text-pane{
+    -fx-background-image: url("message-2.png");
+    -fx-background-repeat: repeat no-repeat;
+}
+.name-pane{
+    -fx-background-image: url("message-1.png");
+    -fx-background-repeat: no-repeat no-repeat;
+}
+
+
+.galgame-text{
+    -fx-text-fill: rgb(255, 229, 194);
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+
+}
+.galgame-text .text{
+    -fx-stroke: rgb(191, 152, 114);
+    -fx-stroke-width: 1px;
+}
+
+.galgame-slider {
+    -jfx-default-thumb:#1ecc94;
+    -jfx-default-track: rgb(52, 52, 54);
+}
+/*未到达轨迹*/
+.galgame-slider .track,
+.galgame-slider:horizontal .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-pref-width: 4px;
+    -fx-pref-height: 4px;
+}
+/*移动的点*/
+.galgame-slider .thumb,
+.galgame-slider:focused .thumb {
+    -fx-background-color:-default-theme-color;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+    -fx-pref-width: 18;
+    -fx-pref-height: 18;
+}
+/*已抵达轨迹*/
+.galgame-slider .colored-track {
+    -fx-background-color:-default-theme-color;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+/*弹出的提示字体*/
+.galgame-slider .slider-value {
+    -fx-stroke: WHITE;
+    -fx-font-size: 10;
+}
+/*弹出的提示字体背景*/
+.galgame-slider .animated-thumb {
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-color: -jfx-default-thumb;
+    -fx-background-radius: 50% 50% 50% 0%;
+    -fx-background-insets: 0;
+}
+/*最小值时移动点的颜色*/
+.galgame-slider:min .thumb,
+.galgame-slider:min:focused .thumb {
+    -fx-background-color: -jfx-default-track;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+}
+/*最小值时弹出的背景颜色*/
+.galgame-slider:min .animated-thumb {
+    -fx-background-color: -jfx-default-track;
+    -fx-background-radius: 50% 50% 50% 0%;
+    -fx-background-insets: 0;
+}
+
+
+.galgame-time{
+    -fx-text-fill:#383c5f ;
+}
+
+
+
+
+/*=========================标题=========================*/
+.galgame-title-pane{
+    -fx-background-color: rgb(235, 202, 166);
+    -fx-padding: 5 20 5 10;
+    -fx-background-radius: 20;
+}
+.galgame-title-pane .toggle-button{
+    -fx-background-color:rgb(235, 202, 166);
+    -fx-background-radius: 30;
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+    -fx-padding: 5;
+}
+.galgame-title-pane .toggle-button Region{
+    -fx-shape: SVG-MUSIC;
+    -fx-background-color: rgb(209,105,152,1.0);
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+
+
+
+
+
+.galgame-title{
+    -fx-font-family: "Arial";
+    -fx-font-size: 30;
+    -fx-text-fill: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c85ed 0.0%, #ad0ded 100.0%);
+    -fx-fill: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c85ed 0.0%, #ad0ded 100.0%);
+}
+
+
+/*保存*/
+
+.galgame-save-btn Region{
+    -fx-shape: SVG-SAVE;
+    -fx-background-color:white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+
+
+
+/*加载*/
+.galgame-load-btn Region{
+    -fx-shape: SVG-LOAD;
+    -fx-background-color:white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+
+
+/*收藏按钮*/
+.galgame-star-btn{
+    -fx-background-color: transparent;
+}
+
+.galgame-star-btn Region {
+    -fx-shape: "M512 896c-6.4 0-16-3.2-22.4-6.4-28.8-22.4-275.2-214.4-326.4-288-57.6-76.8-67.2-118.4-67.2-192C96 256 208 128 348.8 128c60.8 0 118.4 22.4 163.2 64 44.8-41.6 102.4-64 163.2-64 140.8 0 252.8 128 252.8 281.6 0 70.4-9.6 112-67.2 192-51.2 70.4-300.8 265.6-326.4 288-6.4 3.2-16 6.4-22.4 6.4zM358.4 192C256 192 160 300.8 160 422.4c0 38.4 0 83.2 48 150.4 38.4 51.2 214.4 185.6 304 259.2 89.6-73.6 265.6-208 304-259.2 48-67.2 48-115.2 48-150.4C864 300.8 768 192 665.6 192c-54.4 0-89.6 25.6-134.4 64-12.8 9.6-19.2 9.6-19.2 9.6s-6.4 0-16-6.4C448 220.8 412.8 192 358.4 192z";
+    -fx-background-color:-default-theme-svg-common-color;
+    -fx-pref-width:24;
+    -fx-pref-height: 24;
+}
+
+.galgame-star-btn:selected  Region{
+    -fx-shape: "M512 896c-6.4 0-16-3.2-22.4-6.4-28.8-22.4-275.2-214.4-326.4-288-57.6-76.8-67.2-118.4-67.2-192C96 256 208 128 348.8 128c60.8 0 118.4 22.4 163.2 64 44.8-41.6 102.4-64 163.2-64 140.8 0 252.8 128 252.8 281.6 0 70.4-9.6 112-67.2 192-51.2 70.4-300.8 265.6-326.4 288-6.4 3.2-16 6.4-22.4 6.4z";
+    -fx-background-color:#eb5c68 ;
+}
+
+/*循环按钮*/
+.galgame-loop-btn Region {
+    -fx-shape: "M694.4 854.4H195.2l48 44.8c9.6 6.4 16 16 16 28.8-3.2 19.2-19.2 32-38.4 32-9.6 0-22.4-6.4-28.8-12.8l-108.8-96c-12.8-12.8-16-35.2 0-48L192 704c6.4-6.4 19.2-9.6 28.8-9.6 19.2 0 35.2 16 35.2 35.2 0 9.6-6.4 19.2-12.8 25.6l-41.6 38.4h496c112 0 198.4-89.6 198.4-198.4v-86.4c0-19.2 12.8-32 32-32s32 12.8 32 32v86.4c0 140.8-118.4 259.2-265.6 259.2zM329.6 169.6h496l-48-44.8c-9.6-6.4-16-16-16-28.8 3.2-19.2 19.2-32 38.4-32 9.6 0 22.4 6.4 28.8 12.8l108.8 96c12.8 12.8 16 35.2 0 48L832 320c-6.4 6.4-19.2 9.6-28.8 9.6-19.2 0-35.2-16-35.2-35.2 0-9.6 6.4-19.2 12.8-25.6l41.6-38.4H326.4C217.6 233.6 128 323.2 128 435.2v89.6c0 19.2-12.8 32-32 32s-32-12.8-32-32v-86.4C64 288 182.4 169.6 329.6 169.6z";
+    -fx-background-color:white;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+
+.galgame-loop-btn:selected  Region{
+    -fx-shape: "M928 476.8c-19.2 0-32 12.8-32 32v86.4c0 108.8-86.4 198.4-198.4 198.4H201.6l41.6-38.4c6.4-6.4 12.8-16 12.8-25.6 0-19.2-16-35.2-35.2-35.2-9.6 0-22.4 3.2-28.8 9.6l-108.8 99.2c-16 12.8-12.8 35.2 0 48l108.8 96c6.4 6.4 19.2 12.8 28.8 12.8 19.2 0 35.2-12.8 38.4-32 0-12.8-6.4-22.4-16-28.8l-48-44.8h499.2c147.2 0 265.6-118.4 265.6-259.2v-86.4c0-19.2-12.8-32-32-32zM96 556.8c19.2 0 32-12.8 32-32v-89.6c0-112 89.6-201.6 198.4-204.8h496l-41.6 38.4c-6.4 6.4-12.8 16-12.8 25.6 0 19.2 16 35.2 35.2 35.2 9.6 0 22.4-3.2 28.8-9.6l105.6-99.2c16-12.8 12.8-35.2 0-48l-108.8-96c-6.4-6.4-19.2-12.8-28.8-12.8-19.2 0-35.2 12.8-38.4 32 0 12.8 6.4 22.4 16 28.8l48 44.8H329.6C182.4 169.6 64 288 64 438.4v86.4c0 19.2 12.8 32 32 32zM544 672V352h-48L416 409.6l16 41.6 60.8-41.6V672z";
+}
+
+.galgame-audio-btn Region {
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+    -fx-background-color:white;
+    -fx-shape: "M512 0c281.6 0 512 230.4 512 512s-230.4 512-512 512S0 793.6 0 512 230.4 0 512 0z m0 102.4c-225.28 0-409.6 184.32-409.6 409.6s184.32 409.6 409.6 409.6 409.6-184.32 409.6-409.6-184.32-409.6-409.6-409.6z m0 153.6c25.6 0 46.08 20.48 51.2 46.08V716.8c0 30.72-20.48 51.2-51.2 51.2-25.6 0-46.08-20.48-51.2-46.08V307.2c0-30.72 20.48-51.2 51.2-51.2zM307.2 358.4c25.6 0 46.08 20.48 51.2 46.08V614.4c0 30.72-20.48 51.2-51.2 51.2-25.6 0-46.08-20.48-51.2-46.08V409.6c0-30.72 20.48-51.2 51.2-51.2z m409.6 0c25.6 0 46.08 20.48 51.2 46.08V614.4c0 30.72-20.48 51.2-51.2 51.2-25.6 0-46.08-20.48-51.2-46.08V409.6c0-30.72 20.48-51.2 51.2-51.2z";
+}
+
+/*上一曲*/
+.galgame-pre-btn Region{
+    -fx-shape: "M381.44 577.28l346.88 240.64c34.56 24.32 83.2-1.28 83.2-43.52V293.12c0-42.24-47.36-67.84-83.2-43.52L381.44 490.24c-30.72 20.48-30.72 65.28 0 87.04zM320 828.16c-21.76 0-38.4-16.64-38.4-38.4v-512c0-21.76 16.64-38.4 38.4-38.4s38.4 16.64 38.4 38.4v512c0 20.48-16.64 38.4-38.4 38.4z";
+    -fx-background-color:white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+
+/*播放按钮*/
+.galgame-play-btn Region {
+
+    -fx-shape: "M512 0a512 512 0 1 0 512 512A512 512 0 0 0 512 0z m216.992 541.128L404.96 728.208a33.6 33.6 0 0 1-50.456-29.128V324.928a33.6 33.6 0 0 1 50.456-29.136l324 187.08a33.6 33.6 0 0 1 0 58.256z m0 0";
+    -fx-background-color: white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+.galgame-play-btn:selected  Region{
+    -fx-shape: "M512 1024A512 512 0 1 1 512 0a512 512 0 0 1 0 1024zM320 320v384h128V320H320z m256 0v384h128V320H576z";
+    -fx-background-color: #38B8AE;
+}
+/*下一曲*/
+.galgame-next-btn Region{
+    -fx-shape: "M686.08 448L339.2 207.36c-34.56-24.32-83.2 1.28-83.2 43.52v481.28c0 42.24 47.36 67.84 83.2 43.52l346.88-240.64c29.44-21.76 29.44-66.56 0-87.04zM746.24 785.92c-21.76 0-38.4-16.64-38.4-38.4v-512c0-21.76 16.64-38.4 38.4-38.4s38.4 16.64 38.4 38.4v512c0 20.48-16.64 38.4-38.4 38.4z";
+    -fx-background-color:white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+
+/*乱序按钮*/
+.galgame-disorder-btn Region {
+    -fx-shape: "M170.666667 365.985185h663.703703c24.651852 0 37.925926-30.340741 20.85926-49.303704l-109.985186-109.985185c-11.377778-11.377778-28.444444-11.377778-39.822222 0-11.377778 11.377778-11.377778 28.444444 0 39.822223l60.681482 60.681481H170.666667c-15.17037 0-28.444444 13.274074-28.444445 28.444444s13.274074 30.340741 28.444445 30.340741zM834.37037 654.222222H170.666667c-15.17037 0-28.444444 13.274074-28.444445 28.444445s13.274074 28.444444 28.444445 28.444444h595.437037l-60.681482 60.681482c-11.377778 11.377778-11.377778 28.444444 0 39.822222 11.377778 11.377778 28.444444 11.377778 39.822222 0l109.985186-109.985185c17.066667-17.066667 3.792593-47.407407-20.85926-47.407408z";
+    -fx-background-color:white;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+.galgame-disorder-btn:selected  Region{
+    -fx-shape: "M862.260652 315.793165l-64.094263 64.094263c-10.918693 10.918693-10.918693 28.608511 0 39.527204a27.863439 27.863439 0 0 0 19.764731 8.189019 27.861181 27.861181 0 0 0 19.762473-8.189019l111.796939-111.808229a28.073414 28.073414 0 0 0 3.508613-4.271747c0.435754-0.65476 0.736041-1.379512 1.117608-2.074913 0.492199-0.90086 1.038585-1.788173 1.449504-2.729673 0.36802-0.914407 0.571222-1.855907 0.857961-2.797407 0.234811-0.806033 0.546386-1.582714 0.724752-2.41584a28.520457 28.520457 0 0 0 0-10.945786c-0.178366-0.833126-0.492199-1.609807-0.724752-2.41584-0.28674-0.9415-0.489941-1.883-0.857961-2.797407-0.410919-0.968594-0.957305-1.828813-1.449504-2.74322-0.381567-0.681854-0.681854-1.406606-1.117608-2.061366a28.723658 28.723658 0 0 0-3.508613-4.285294l-111.796939-111.796939c-10.918693-10.918693-28.608511-10.918693-39.527204 0-10.918693 10.918693-10.918693 28.608511 0 39.527203l64.094263 64.094263h-139.759722L275.2635 707.125352H91.169731c-15.436539 0-27.951493 12.517211-27.951492 27.95375s12.514953 27.951493 27.951492 27.951493h207.240676l447.235172-447.23743h116.615073zM956.421961 727.190369c-0.270935-0.9415-0.505746-1.885258-0.857962-2.797407-0.410919-0.957305-0.957305-1.831071-1.449504-2.729673-0.381567-0.697658-0.681854-1.420153-1.117608-2.074913a27.883759 27.883759 0 0 0-3.522159-4.285294l-111.783393-111.796939c-10.918693-10.918693-28.608511-10.918693-39.527204 0s-10.918693 28.608511 0 39.527204l64.094263 64.094262h-116.612815L614.074878 575.556908c-10.918693-10.918693-28.608511-10.918693-39.527204 0s-10.918693 28.606253 0 39.527204l147.950999 147.948741h139.759721l-64.094263 64.094263c-10.918693 10.918693-10.918693 28.608511 0 39.527203a27.863439 27.863439 0 0 0 19.764731 8.18902 27.861181 27.861181 0 0 0 19.762473-8.18902l111.783393-111.796939c1.309521-1.295974 2.483574-2.74322 3.522159-4.283036 0.435754-0.657018 0.736041-1.379512 1.117608-2.074913 0.492199-0.90086 1.038585-1.774626 1.449504-2.729673 0.352216-0.914407 0.587027-1.855907 0.857962-2.797407 0.234811-0.806033 0.546386-1.582714 0.724752-2.41584a28.534004 28.534004 0 0 0 0-10.948044c-0.176108-0.835384-0.489941-1.612065-0.724752-2.418098zM91.169731 315.793165h184.093769l131.570702 131.572959c5.459346 5.459346 12.612039 8.18902 19.762473 8.18902s14.303127-2.729673 19.762473-8.18902c10.918693-10.918693 10.918693-28.606253 0-39.527204l-147.950999-147.950998H91.169731c-15.422992 0-27.951493 12.5285-27.951492 27.951492s12.5285 27.95375 27.951492 27.953751z";
+}
+
+.galgame-image-btn Region{
+    -fx-background-color:white;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: "M743.424 149.276444H280.689778c-73.045333 0-132.551111 59.505778-132.551111 132.551112v462.734222c0 73.045333 59.505778 132.551111 132.551111 132.551111h462.734222c73.045333 0 132.551111-59.505778 132.551111-132.551111V281.827556c0-73.045333-59.505778-132.551111-132.551111-132.551112z m64.284444 595.285334c0 35.384889-28.785778 64.284444-64.284444 64.284444H280.689778c-35.384889 0-64.284444-28.785778-64.284445-64.284444V281.827556c0-35.384889 28.785778-64.284444 64.284445-64.284445h462.734222c35.384889 0 64.284444 28.785778 64.284444 64.284445v462.734222zM669.923556 506.766222c-7.736889-12.401778-21.390222-19.683556-35.726223-18.887111-13.994667 0.796444-26.624 9.329778-32.995555 22.186667l-41.528889 76.003555-96.483556-155.079111c-8.647111-13.994667-23.893333-22.072889-39.822222-21.162666-15.701333 0.910222-29.809778 10.467556-36.977778 25.031111L263.623111 659.683556c-7.509333 13.767111-2.503111 31.061333 11.264 38.570666 4.323556 2.389333 8.988444 3.527111 13.653333 3.527111 10.012444 0 19.797333-5.347556 25.031112-14.791111L426.666667 480.028444l110.592 177.834667c0 0.113778 0.113778 0.113778 0.113777 0.227556l18.887112 30.378666c8.305778 13.312 25.827556 17.408 39.139555 9.102223 13.312-8.305778 17.408-25.827556 9.102222-39.139556l-10.353777-16.725333 43.349333-79.303111L721.351111 697.002667c5.347556 8.647111 14.677333 13.425778 24.234667 13.425777 5.12 0 10.353778-1.365333 15.018666-4.323555 13.312-8.305778 17.408-25.827556 9.102223-39.139556l-99.783111-160.199111zM585.159111 453.632c46.990222 0 85.105778-38.229333 85.105778-85.105778S632.149333 283.306667 585.159111 283.306667s-85.105778 38.229333-85.105778 85.105777 38.229333 85.219556 85.105778 85.219556z m0-124.814222c21.845333 0 39.594667 17.749333 39.594667 39.594666 0 21.845333-17.749333 39.594667-39.594667 39.594667s-39.594667-17.749333-39.594667-39.594667c0-21.731556 17.749333-39.594667 39.594667-39.594666z";
+}
+.galgame-image-btn:selected Region{
+    -fx-background-color: #38B8AE;
+}
+
+
+
+
+/*音量按钮*/
+.galgame-mute-btn Region {
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+    -fx-shape: "M599.104 243.434667V789.546667c0 43.626667-53.866667 64.789333-84.053333 33.024l-140.309334-128.085334H203.392a64 64 0 0 1-64-64V416.981333a64 64 0 0 1 60.224-63.893333l4.309333-0.106667 172.970667 2.88 138.176-145.450666c30.165333-31.786667 84.053333-10.602667 84.053333 33.024z m127.68 12.309333c92.544 47.082667 158.229333 139.392 167.957333 247.829333v56.021334c-9.450667 105.472-71.850667 195.690667-160.426666 243.882666L704.789333 746.666667A245.269333 245.269333 0 0 0 832 531.584a245.333333 245.333333 0 0 0-134.698667-219.029333l29.482667-56.810667z m-191.68 26.496l-131.157333 138.090667-200.554667-3.349334v213.482667h196.16l135.552 123.733333V282.24z m137.770667 77.418667a191.466667 191.466667 0 0 1 94.442666 165.418666 191.466667 191.466667 0 0 1-92.416 164.202667l-29.653333-56.96a127.488 127.488 0 0 0 58.069333-107.242667 127.488 127.488 0 0 0-60.010666-108.501333l29.568-56.917333z";
+    -fx-background-color: white;
+}
+.galgame-mute-btn:selected  Region{
+    -fx-background-color: #38B8AE;
+    -fx-shape: "M599.104 476.053333v313.472c0 43.626667-53.866667 64.789333-84.053333 33.024l-137.194667-125.269333 45.290667-45.290667 111.957333 102.186667V540.074667l64-64z m183.68-183.701333a308.885333 308.885333 0 0 1 111.957333 211.2v56.042667c-9.450667 105.472-71.850667 195.690667-160.426666 243.882666l-29.546667-56.789333A245.269333 245.269333 0 0 0 832 531.584a244.906667 244.906667 0 0 0-94.72-193.685333l45.525333-45.546667z m-94.933333-55.893333l45.269333 45.248-482.730667 482.709333-45.248-45.226667 482.709334-482.730666z m10.090666 140.757333a191.466667 191.466667 0 0 1 69.376 147.84 191.466667 191.466667 0 0 1-92.416 164.224l-29.653333-56.96a127.488 127.488 0 0 0 58.069333-107.242667c0-41.962667-20.053333-79.146667-50.944-102.293333l45.568-45.568z m-98.837333-133.76v21.418667l-64 64V282.24l-131.157333 138.090667-200.554667-3.349334v213.482667l30.122667-0.021333-57.749334 57.770666a64 64 0 0 1-36.373333-57.749333V416.981333a64 64 0 0 1 60.224-63.893333l4.309333-0.106667 172.970667 2.88 138.176-145.450666c30.165333-31.786667 84.053333-10.602667 84.053333 33.024z";
+}
+
+/*列表按钮*/
+.galgame-list-btn Region{
+    -fx-shape: SVG-LIST-MUSIC;
+    -fx-background-color:white;
+    -fx-pref-width: 22;
+    -fx-pref-height: 22;
+}
+
+
+.galgame-lrc-btn{
+    -fx-text-fill: white;
+    -fx-font-size: 19;
+}
+.galgame-lrc-btn:selected{
+    -fx-text-fill: -default-theme-svg-hover-color;
+}
+
+
+.galgame-back-btn Region{
+    -fx-shape:SVG-ARROW-DOWN;
+    -fx-background-color:white;
+    -fx-max-width: 28;
+    -fx-max-height: 13;
+}
+
+.galgame-close-btn Region{
+    -fx-shape:SVG-CLOSE;
+    -fx-background-color:white;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+}
+
+.galgame-change-model-btn Region{
+    -fx-shape: SVG-CHANGE-MODEL;
+    -fx-background-color:white;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+}
+
+/*==========================频谱=================================*/
+.rx-audio-spectrum {
+    -rx-crest-pos: middle;
+    -fx-border-color: transparent;
+
+    -rx-bar-effect:dropshadow(three-pass-box,rgb(235, 202, 166),2,1,0,0);
+}
+
+.rx-audio-spectrum  .bar-box {
+    -fx-spacing: 2px;
+
+    -fx-alignment: top_center;
+}
+
+.rx-audio-spectrum  .bar-box .bar {
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-min-height: 1px;
+}
+
+
+/*============================歌词弹窗===============================*/
+.galgame-goto-btn{
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+}
+.galgame-goto-btn Region{
+    -fx-shape:SVG-ARROW-RIGHT-SPECIAL;
+    -fx-background-color: rgb(102,102,102);
+}
+
+
+.galgame-lrc-dialog{
+    -fx-background-color: rgb(247,247,247,0.6);
+    -fx-background-radius: 20;
+}
+
+.galgame-lrc-list-view{
+    -fx-background-color: transparent;
+}
+
+.galgame-lrc-list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-font-size: 20;
+    -fx-text-fill: rgb(51,51,51);
+    -fx-pref-width: 440;
+}
+
+.galgame-lrc-list-view .list-cell:hover{
+    -fx-background-color: rgb(218,211,211,0.8);
+}
+.galgame-lrc-list-view .list-cell:selected{
+    -fx-background-color: rgb(218,211,211,0.8);
+    -fx-text-fill:#38B8AE ;
+}
+
+/*跳转按钮*/
+.galgame-skip-btn{
+    -fx-background-color: rgb(235, 202, 166);
+    -fx-background-radius: 5px 5px 5px 5px;
+    -fx-border-color: rgb(89, 70, 66) rgb(89, 70, 66) rgb(89, 70, 66) rgb(89, 70, 66);
+    -fx-border-radius: 5px 5px 5px 5px;
+    -fx-border-width: 2;
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-cursor: HAND;
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+}
+.galgame-skip-btn Region{
+    -fx-max-height: 22;
+    -fx-max-width: 22;
+}
+.galgame-skip-btn:hover{
+    -fx-background-color: rgb(149, 74, 21);
+}
+
+
+
+/*======================背景Thumb框===========================*/
+.galgame-bg-thumb{
+    -fx-background-color: rgb(247,247,247,0.6);
+    -fx-background-radius: 0 20 20 0;
+    -fx-pref-width: 280;
+    -fx-min-height: 350;
+    -fx-alignment: top-center;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+.galgame-bg-thumb > .label{
+    -fx-font-size: 20;
+    -fx-text-fill: #d5d2d2;
+
+}
+
+
+/*======================Load界面===========================*/
+/* 存档页样式统一由 /skin/galgame.css 提供，皮肤不再单独定义。 */
+
+.pagination{
+    -fx-page-information-visible:false;
+    -fx-padding: 0;
+    -fx-arrows-visible: true;
+    -fx-tooltip-visible: true;
+    -fx-page-information-alignment: bottom;
+
+}
+
+.pagination > .pagination-control {
+    -fx-padding: 0;
+}
+
+.pagination > .pagination-control > .control-box {
+    -fx-spacing: 4;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+}
+
+
+.pagination .left-arrow-button,
+.pagination .right-arrow-button{
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-background-color: #383c5f;
+    -fx-background-insets: 0px 0px 0px 0px;
+}
+.pagination .left-arrow-button:hover .left-arrow,
+.pagination .right-arrow-button:hover .right-arrow{
+    -fx-background-color: rgba(64, 158, 255, 1);
+}
+.pagination .left-arrow-button .left-arrow {
+    -fx-background-color: #f4f4f4;
+    -fx-min-width: 12;
+    -fx-min-height: 15;
+    -fx-shape: "M401.066667 512l302.933333 302.933333-59.733333 59.733334L341.333333 571.733333 281.6 512 341.333333 452.266667l302.933334-302.933334 59.733333 59.733334L401.066667 512z";
+}
+.pagination .right-arrow-button .right-arrow {
+    -fx-background-color: #f4f4f4;
+    -fx-min-width: 12;
+    -fx-min-height: 15;
+    -fx-shape: "M584.533333 512l-302.933333 302.933333L341.333333 874.666667l302.933334-302.933334 59.733333-59.733333-59.733333-59.733333L341.333333 145.066667 281.6 209.066667l302.933333 302.933333z";
+}
+.pagination .number-button {
+    -fx-background-color: #383c5f;
+    -fx-background-insets: 0px 0px 0px 0px;
+    -fx-background-radius: 3px 3px 3px 3px;
+    -fx-cursor: HAND;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f4f4f4;
+
+}
+.pagination .number-button:hover {
+    -fx-background-color: #565890;
+}
+.pagination .number-button:selected {
+    -fx-background-color: #565890;
+    -fx-text-fill: rgba(64, 158, 255, 1);
+}
+

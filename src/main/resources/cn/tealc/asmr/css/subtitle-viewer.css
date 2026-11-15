@@ -1,0 +1,214 @@
+/*
+ * 字幕查看器样式表
+ * 使用 AtlantaFX -color-* 语义变量，自动跟随主题。
+ */
+
+.subtitle-viewer-root {
+    -fx-background-color: -color-bg-subtle;
+}
+
+/* ===== 分栏与面板 ===== */
+.subtitle-viewer-split {
+    -fx-background-color: -color-bg-subtle;
+    -fx-padding: 14px;
+}
+
+.subtitle-viewer-split > .split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5px 0 5px;
+}
+
+.subtitle-viewer-left-pane,
+.subtitle-viewer-right-pane {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 12px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1px;
+}
+
+.subtitle-viewer-pane-header {
+    -fx-padding: 18px 18px 14px 18px;
+    -fx-border-color: transparent transparent -color-border-default transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.subtitle-viewer-pane-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-viewer-pane-description {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.subtitle-viewer-count {
+    -fx-background-color: -color-accent-muted;
+    -fx-background-radius: 10px;
+    -fx-padding: 3px 8px;
+    -fx-text-fill: -color-accent-emphasis;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ===== 右侧浏览工具栏 ===== */
+.subtitle-viewer-filter-bar {
+    -fx-padding: 12px 18px 8px 18px;
+}
+
+.subtitle-viewer-search {
+    -fx-pref-height: 32px;
+    -fx-font-size: 12px;
+}
+
+.subtitle-viewer-script-mode {
+    -fx-pref-width: 120px;
+    -fx-pref-height: 32px;
+    -fx-font-size: 12px;
+}
+
+.subtitle-viewer-filter-count {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-viewer-column-header {
+    -fx-padding: 0 24px 8px 24px;
+    -fx-border-color: transparent transparent -color-border-default transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.subtitle-viewer-column-title {
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-viewer-column-number {
+    -fx-min-width: 32px;
+    -fx-pref-width: 32px;
+    -fx-alignment: center-right;
+}
+
+.subtitle-viewer-column-time {
+    -fx-min-width: 82px;
+    -fx-pref-width: 82px;
+}
+
+.subtitle-viewer-column-text {
+    -fx-padding: 0 0 0 2px;
+}
+
+/* ===== 左侧字幕文件 ===== */
+.subtitle-viewer-file-list,
+.subtitle-viewer-list {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 8px 12px 8px;
+}
+
+.subtitle-viewer-file-list .list-cell,
+.subtitle-viewer-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 2px 0;
+    -fx-background-radius: 8px;
+}
+
+.subtitle-viewer-file-list .list-cell {
+    -fx-padding: 8px 10px;
+}
+
+.subtitle-viewer-file-list .list-cell:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.subtitle-viewer-file-list .list-cell:selected {
+    -fx-background-color: -color-accent-muted;
+}
+
+.subtitle-viewer-file-name {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-viewer-file-type {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8px;
+    -fx-padding: 2px 6px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-viewer-file-list .list-cell:selected .subtitle-viewer-file-type {
+    -fx-background-color: -color-bg-default;
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+/* ===== 右侧字幕内容 ===== */
+.subtitle-viewer-list .list-cell {
+    -fx-padding: 8px 14px;
+    -fx-border-color: transparent;
+    -fx-border-insets: 2px 0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 0 0 0 3px;
+}
+
+.subtitle-viewer-list .list-cell:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.subtitle-viewer-list .list-cell:selected {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-accent-emphasis;
+}
+
+.subtitle-viewer-cell {
+    -fx-alignment: center-left;
+}
+
+.subtitle-viewer-cell-text {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+}
+
+.subtitle-viewer-cell-translation {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.subtitle-viewer-cell-index {
+    -fx-min-width: 32px;
+    -fx-pref-width: 32px;
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-family: monospace;
+    -fx-font-size: 10px;
+    -fx-alignment: center-right;
+}
+
+.subtitle-viewer-cell-time {
+    -fx-background-color: transparent;
+    -fx-min-width: 82px;
+    -fx-pref-width: 82px;
+    -fx-padding: 1px 0;
+    -fx-text-alignment: left;
+    -fx-alignment: center-left;
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-family: monospace;
+    -fx-font-size: 11px;
+}
+
+/* ===== 加载状态 ===== */
+.subtitle-viewer-loading-overlay {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10px;
+    -fx-opacity: 0.94;
+}
+
+.subtitle-viewer-loading-text {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}

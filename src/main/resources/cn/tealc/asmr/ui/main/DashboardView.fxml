@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="root" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.main.DashboardView">
+   <children>
+      <BorderPane>
+         <top>
+            <JFXSlider fx:id="songSlider" cache="true" majorTickUnit="100.0" minorTickCount="2" nodeOrientation="LEFT_TO_RIGHT" styleClass="song-slider" value="0.1" />
+         </top>
+         <center>
+            <GridPane alignment="CENTER_LEFT" hgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane fx:id="rightPane">
+                     <children>
+                        <VBox alignment="CENTER" fillWidth="false" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                           <children>
+                              <StackPane fx:id="coverPane" VBox.vgrow="NEVER">
+                                 <children>
+                                    <ImageView fx:id="album" fitHeight="52.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../image/album.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <StackPane fx:id="gotoDetailBtn" styleClass="dashboard-album-pane">
+                                       <children>
+                                          <FontIcon iconLiteral="mdi2c-chevron-up" iconSize="18" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="songName" styleClass="dashboard-title-default" text="音乐随心">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singer" styleClass="dashboard-title-secondary" text="Pure" />
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="currentTime" styleClass="dashboard-title-secondary" text="00:00" />
+                                    <Label styleClass="dashboard-title-secondary" text="/" />
+                                    <Label fx:id="totalTime" styleClass="dashboard-title-secondary" text="00:00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <HBox fx:id="centerPane" alignment="CENTER" spacing="15.0" GridPane.columnIndex="1">
+                     <children>
+                        <ToggleButton fx:id="loopBtn" layoutX="387.0" layoutY="11.0" mnemonicParsing="false" styleClass="loop-btn">
+                           <graphic>
+                              <FontIcon iconLiteral="mdi2r-repeat" iconSize="18" />
+                           </graphic>
+                        </ToggleButton>
+                        <Button fx:id="preBtn" mnemonicParsing="false">
+                           <styleClass>
+                              <String fx:value="lc-svg-btn" />
+                              <String fx:value="pre-btn" />
+                           </styleClass>
+                           <graphic>
+                              <FontIcon iconLiteral="mdi2s-skip-previous" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <ToggleButton fx:id="playBtn" mnemonicParsing="false" styleClass="play-btn">
+                           <graphic>
+                              <FontIcon />
+                           </graphic>
+                        </ToggleButton>
+                        <Button fx:id="nextBtn" layoutX="57.0" layoutY="22.0" mnemonicParsing="false">
+                           <styleClass>
+                              <String fx:value="lc-svg-btn" />
+                              <String fx:value="next-btn" />
+                           </styleClass>
+                           <graphic>
+                              <FontIcon iconLiteral="mdi2s-skip-next" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <ToggleButton fx:id="disorderBtn" layoutX="317.0" layoutY="18.0" mnemonicParsing="false" styleClass="disorder-btn">
+                           <graphic>
+                              <FontIcon iconLiteral="mdi2s-shuffle-disabled" iconSize="18" />
+                           </graphic>
+                        </ToggleButton>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="leftPane" alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="2">
+                     <children>
+                        <ToggleButton fx:id="starBtn" mnemonicParsing="false" styleClass="star-btn" visible="false" managed="false">
+                           <graphic>
+                              <FontIcon iconLiteral="mdoal-favorite_border" iconSize="18" />
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="lrcBtn" layoutX="70.0" layoutY="23.0" mnemonicParsing="false" styleClass="lrc-btn">
+                           <graphic>
+                              <FontIcon iconLiteral="mdomz-subtitles" iconSize="18" />
+                           </graphic>
+                        </ToggleButton>
+                        <Button fx:id="audioChannelBtn" layoutX="234.0" layoutY="34.0" mnemonicParsing="false">
+                           <styleClass>
+                              <String fx:value="lc-svg-btn" />
+                              <String fx:value="audio-btn" />
+                           </styleClass>
+                           <graphic>
+                              <FontIcon iconLiteral="mdoal-equalizer" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <ToggleButton fx:id="volumeBtn" mnemonicParsing="false" styleClass="volume-btn">
+                           <graphic>
+                              <FontIcon iconLiteral="mdomz-volume_up" iconSize="18" />
+                           </graphic>
+                        </ToggleButton>
+                        <Button fx:id="showSongListViewBtn" mnemonicParsing="false">
+                           <styleClass>
+                              <String fx:value="lc-svg-btn" />
+                              <String fx:value="list-btn" />
+                           </styleClass>
+                           <graphic>
+                              <FontIcon iconLiteral="mdomz-playlist_play" iconSize="18" />
+                           </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

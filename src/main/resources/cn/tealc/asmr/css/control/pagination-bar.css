@@ -1,0 +1,70 @@
+/*分页导航条 PaginationBar*/
+.pagination-bar {
+    -fx-spacing: 4;
+    -fx-alignment: center;
+}
+
+/*页码按钮（含上一页/下一页箭头）*/
+.pagination-bar .page-nav-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-cursor: hand;
+    -fx-padding: 4 8;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-pref-height: 28;
+    -fx-max-height: 28;
+    -fx-background-insets: 0;
+}
+
+.pagination-bar .page-nav-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.pagination-bar .page-nav-btn:selected {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+    -fx-font-weight: bold;
+}
+
+.pagination-bar .page-nav-btn:disabled {
+    -fx-opacity: 0.4;
+}
+
+/*上一页/下一页箭头图标*/
+.pagination-bar .page-nav-prev .ikonli-font-icon,
+.pagination-bar .page-nav-next .ikonli-font-icon {
+    -fx-icon-size: 16px;
+    -fx-icon-color: -color-fg-muted;
+}
+
+.pagination-bar .page-nav-btn:hover .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.pagination-bar .page-nav-btn:selected .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*省略号*/
+.pagination-bar .page-ellipsis {
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 13;
+}
+
+/*跳转输入框*/
+.pagination-bar .page-jump-field {
+    -fx-pref-width: 50;
+    -fx-min-height: 26;
+    -fx-pref-height: 26;
+    -fx-max-height: 26;
+    -fx-padding: 2 6;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 4;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-alignment: center;
+}

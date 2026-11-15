@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import cn.tealc.asmr.ui.component.EmptyState?>
+<?import cn.tealc.asmr.ui.component.PageHeader?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" styleClass="collection-root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.collection.CollectionView">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <top>
+            <PageHeader fx:id="pageHeader" />
+         </top>
+         <center>
+            <StackPane BorderPane.alignment="CENTER">
+               <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="collection-scroll-pane">
+                  <content>
+                     <TilePane fx:id="sheetTilePane" hgap="18.0" prefColumns="4" prefTileHeight="272.0" prefTileWidth="228.0" vgap="18.0" styleClass="collection-tile-pane" />
+                  </content>
+               </ScrollPane>
+               <EmptyState fx:id="emptyState" />
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

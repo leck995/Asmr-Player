@@ -1,0 +1,445 @@
+.root {
+    -color-dark: #1b1f24;
+    -color-light: #ffffff;
+    -color-base-0: #E1E8F0;
+    -color-base-1: #E1E8F0;
+    -color-base-2: #C9D4E0;
+    -color-base-3: #afb8c1;
+    -color-base-4: #8c959f;
+    -color-base-5: #6e7781;
+    -color-base-6: #57606a;
+    -color-base-7: #424a53;
+    -color-base-8: #32383f;
+    -color-base-9: #24292f;
+    -color-accent-0: #dafbe1;
+    -color-accent-1: #aceebb;
+    -color-accent-2: #6fdd8b;
+    -color-accent-3: #4ac26b;
+    -color-accent-4: #2da44e;
+    -color-accent-5: #1a7f37;
+    -color-accent-6: #2da44e;
+    -color-accent-7: #044f1e;
+    -color-accent-8: #003d16;
+    -color-accent-9: #002d11;
+    -color-success-0: #dafbe1;
+    -color-success-1: #aceebb;
+    -color-success-2: #6fdd8b;
+    -color-success-3: #4ac26b;
+    -color-success-4: #2da44e;
+    -color-success-5: #1a7f37;
+    -color-success-6: #116329;
+    -color-success-7: #044f1e;
+    -color-success-8: #003d16;
+    -color-success-9: #002d11;
+    -color-warning-0: #fff8c5;
+    -color-warning-1: #fae17d;
+    -color-warning-2: #eac54f;
+    -color-warning-3: #d4a72c;
+    -color-warning-4: #bf8700;
+    -color-warning-5: #9a6700;
+    -color-warning-6: #7d4e00;
+    -color-warning-7: #633c01;
+    -color-warning-8: #4d2d00;
+    -color-warning-9: #3b2300;
+    -color-danger-0: #ffebe9;
+    -color-danger-1: #ffcecb;
+    -color-danger-2: #ffaba8;
+    -color-danger-3: #ff8182;
+    -color-danger-4: #fa4549;
+    -color-danger-5: #cf222e;
+    -color-danger-6: #a40e26;
+    -color-danger-7: #82071e;
+    -color-danger-8: #660018;
+    -color-danger-9: #4c0014;
+    -color-fg-default: #24292f;
+    -color-fg-muted: #57606a;
+    -color-fg-subtle: #6e7781;
+    -color-fg-emphasis: #ffffff;
+    -color-bg-default: #EDF2F8;
+    -color-bg-overlay: #ffffff;
+    -color-bg-subtle: #E1E8F0;
+    -color-bg-inset: #E1E8F0;
+    /* 输入类控件（TextField/TextArea/ComboBox/Spinner）的填充色：
+       取页面底色与卡片白之间的中间值，AtlantaFX 默认跟随 -color-bg-default 会在卡片上显得过重 */
+    -color-input-surface: #F4F6F8;
+    /* 直接落在页面/弹窗表面（-color-bg-default）上的输入框：与表面拉开一档，避免边框悬空 */
+    -color-input-surface-base: #E1E8F0;
+    -color-border-default: #C9D4E0;
+    -color-border-muted: #C9D4E0;
+    -color-border-subtle: #D6DEE8;
+    -color-shadow-default: #C9D4E0;
+    -color-neutral-emphasis-plus: #24292f;
+    -color-neutral-emphasis: #6e7781;
+    -color-neutral-muted: rgba(175, 184, 193, 0.2);
+    -color-neutral-subtle: rgba(225, 232, 240, 0.5);
+    -color-accent-fg: #3fb950;
+    -color-accent-emphasis: #0f9d58;
+    -color-accent-muted: rgba(46, 160, 67, 0.4);
+    -color-accent-subtle: #dafbe1;
+    -color-warning-fg: #9a6700;
+    -color-warning-emphasis: #bf8700;
+    -color-warning-muted: rgba(212, 167, 44, 0.4);
+    -color-warning-subtle: #fff8c5;
+    -color-success-fg: #1a7f37;
+    -color-success-emphasis: #2da44e;
+    -color-success-muted: rgba(74, 194, 107, 0.4);
+    -color-success-subtle: #dafbe1;
+    -color-danger-fg: #cf222e;
+    -color-danger-emphasis: #cf222e;
+    -color-danger-muted: rgba(255, 129, 130, 0.4);
+    -color-danger-subtle: #ffebe9;
+    -color-chart-1: #f3622d;
+    -color-chart-2: #fba71b;
+    -color-chart-3: #57b757;
+    -color-chart-4: #41a9c9;
+    -color-chart-5: #4258c9;
+    -color-chart-6: #9a42c8;
+    -color-chart-7: #c84164;
+    -color-chart-8: #888888;
+    -color-chart-1-alpha70: rgba(243, 98, 45, 0.7);
+    -color-chart-2-alpha70: rgba(251, 167, 27, 0.7);
+    -color-chart-3-alpha70: rgba(87, 183, 87, 0.7);
+    -color-chart-4-alpha70: rgba(65, 169, 201, 0.7);
+    -color-chart-5-alpha70: rgba(66, 88, 201, 0.7);
+    -color-chart-6-alpha70: rgba(154, 66, 200, 0.7);
+    -color-chart-7-alpha70: rgba(200, 65, 100, 0.7);
+    -color-chart-8-alpha70: rgba(136, 136, 136, 0.7);
+    -color-chart-1-alpha20: rgba(243, 98, 45, 0.2);
+    -color-chart-2-alpha20: rgba(251, 167, 27, 0.2);
+    -color-chart-3-alpha20: rgba(87, 183, 87, 0.2);
+    -color-chart-4-alpha20: rgba(65, 169, 201, 0.2);
+    -color-chart-5-alpha20: rgba(66, 88, 201, 0.2);
+    -color-chart-6-alpha20: rgba(154, 66, 200, 0.2);
+    -color-chart-7-alpha20: rgba(200, 65, 100, 0.2);
+    -color-chart-8-alpha20: rgba(136, 136, 136, 0.2);
+    /*半透明覆盖层，用于封面 hover 遮罩等场景*/
+    -color-overlay-1: rgba(0, 0, 0, 0.15);
+    -color-overlay-2: rgba(0, 0, 0, 0.3);
+    -color-overlay-3: rgba(0, 0, 0, 0.45);
+
+    /*作品卡片：封面浮层与分组胶囊*/
+    -color-card-scrim: rgba(28, 30, 34, 0.82);
+    -color-card-scrim-hover: rgba(28, 30, 34, 0.60);
+    -color-card-scrim-strong: rgba(28, 30, 34, 0.55);
+    -color-card-on-scrim: #ffffff;
+    -color-card-favorite: #ff5c7c;
+    /*标签系：自定义标签琥珀实心，系统分类中性灰底，避免满屏紫色*/
+    -color-card-tag-fg: #ffffff;
+    -color-card-tag-bg: #9a4a12;
+    -color-card-category-fg: #3f4c5a;
+    -color-card-category-bg: #e9eef3;
+    /*作品详情页的分类胶囊单独配色：弹窗底色是 #EDF2F8，若沿用卡片的近白灰会糊在一起。
+      这里用很淡的填充 + 一道描边勾勒轮廓，比加深填充更轻，且只影响详情页*/
+    -color-detail-category-fg: #3f4c5a;
+    -color-detail-category-bg: #e3eaf2;
+    -color-detail-category-border: #c9d4e0;
+    /*字幕用紫色，全年龄用绿色*/
+    -color-card-subtitle-fg: #5b2a86;
+    -color-card-subtitle-bg: #eee0f7;
+    -color-card-nsfw-fg: #166b2c;
+    -color-card-nsfw-bg: rgba(45, 164, 78, 0.16);
+    /*压在封面深色遮罩上的标记文字：需用浅色，与深色主题取值一致*/
+    -color-card-subtitle-on-scrim: #e3c8f5;
+    -color-card-nsfw-on-scrim: #93ef9c;
+    /*声优用蓝色，与标签琥珀、字幕紫区分*/
+    -color-card-vas-fg: #ffffff;
+    -color-card-vas-bg: #1f6feb;
+    /*分组小标题沿用各自内容色系的浅底*/
+    -color-card-section-tags-fg: #7c4008;
+    -color-card-section-tags-bg: rgba(180, 83, 9, 0.12);
+    -color-card-section-vas-fg: #1a5fc9;
+    -color-card-section-vas-bg: rgba(66, 88, 201, 0.12);
+    -color-card-shadow: rgba(16, 24, 40, 0.10);
+    -color-card-shadow-hover: rgba(16, 24, 40, 0.20);
+}
+
+
+/*======================输入类控件======================*/
+/*AtlantaFX 默认用 -color-bg-default 填充输入框，本主题里该值是页面底色；
+   输入框底色改由 -color-input-surface 控制，直接落在页面/弹窗表面时用 -color-input-surface-base*/
+.text-input {
+    -color-input-bg: -color-input-surface;
+    -color-input-bg-focused: -color-input-surface;
+    -fx-background-radius: 6px, 5px;
+}
+
+/*可编辑 ComboBox 与 Spinner 的编辑框只在左侧圆角，右侧留给箭头按钮*/
+.combo-box-base > .text-field,
+.spinner > .text-field {
+    -fx-background-radius: 6px 0 0 6px, 5px 0 0 5px;
+}
+/*Spinner 由外层控件负责描边，编辑框只铺底色，避免内部再出现一圈边框*/
+.spinner > .text-field {
+    -fx-background-color: -color-input-surface;
+}
+
+.spinner {
+    -fx-background-color: -color-input-surface;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+.message {
+    -color-message-bg: -color-bg-subtle;
+    -color-message-fg-primary: -color-fg-default;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-border-muted;
+    -color-message-button-hover: -color-bg-default;
+    -color-message-border-interactive: -color-border-default;
+}
+.message.accent {
+    -color-message-bg: -color-accent-subtle;
+    -color-message-fg-primary: -color-accent-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-accent-muted;
+    -color-message-button-hover: -color-accent-muted;
+    -color-message-border-interactive: -color-accent-emphasis;
+}
+.message.success {
+    -color-message-bg: -color-success-subtle;
+    -color-message-fg-primary: -color-success-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-success-muted;
+    -color-message-button-hover: -color-success-muted;
+    -color-message-border-interactive: -color-success-emphasis;
+}
+.message.warning {
+    -color-message-bg: -color-warning-subtle;
+    -color-message-fg-primary: -color-warning-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-warning-muted;
+    -color-message-button-hover: -color-warning-muted;
+    -color-message-border-interactive: -color-warning-emphasis;
+}
+.message.danger {
+    -color-message-bg: -color-danger-subtle;
+    -color-message-fg-primary: -color-danger-fg;
+    -color-message-fg-secondary: -color-fg-default;
+    -color-message-border: -color-danger-muted;
+    -color-message-button-hover: -color-danger-muted;
+    -color-message-border-interactive: -color-danger-emphasis;
+}
+.message.tile-base > .container {
+    -fx-background-color: -color-message-bg;
+    -fx-background-radius:4px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: -color-message-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+.message.tile-base > .container > .graphic:disabled {
+    -fx-opacity: 0.4;
+}
+.message.tile-base > .container > .header > .title {
+    -fx-text-fill: -color-message-fg-secondary;
+}
+.message.tile-base > .container > .header > .description Text {
+    -fx-fill: -color-message-fg-secondary;
+}
+.message.tile-base > .container > .header > .description Text:disabled {
+    -fx-opacity: 0.4;
+}
+.message.tile-base > .container .font-icon, .message.tile-base > .container .ikonli-font-icon {
+    -fx-icon-color: -color-message-fg-primary;
+    -fx-fill: -color-message-fg-primary;
+    -fx-icon-size: 24px;
+}
+.message.tile-base:hover:interactive > .container {
+    -fx-background-color: -color-message-bg;
+    -fx-border-color: -color-message-border-interactive;
+    -fx-cursor: hand;
+}
+.message.tile-base:has-title:has-description > .container > .header > .title {
+    -fx-text-fill: -color-message-fg-primary;
+}
+.message.tile-base:has-title:has-description > .container > .header > .description Text {
+    -fx-fill: -color-message-fg-secondary;
+}
+.message > .close-button {
+    -fx-background-radius: 100px;
+    -fx-padding: 0.5em;
+}
+.message > .close-button > .icon {
+    -fx-shape: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z";
+    -fx-scale-shape: true;
+    -fx-background-color: -color-message-fg-primary;
+    -fx-padding: 0.3em;
+}
+.message > .close-button:hover {
+    -fx-background-color: -color-message-border, -color-message-button-hover;
+    -fx-background-insets: 0, 1;
+}
+.message > .close-button:disabled {
+    -fx-opacity: 0.4;
+}
+.message:closeable > .container > .header > .title,
+.message:closeable > .container > .header > .description {
+    -fx-padding: 0 1.5em 0 0;
+}
+
+
+.combo-box-base {
+    -fx-background-color: -color-border-default, -color-input-surface;
+    -fx-background-insets: 0, 1px;
+    -fx-background-radius: 6px, 5px;
+    -fx-text-fill: -color-fg-default;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.combo-box-base:disabled {
+    -fx-opacity: 0.4;
+}
+.combo-box-base:focused {
+    -fx-background-color: -color-accent-emphasis, -color-input-surface;
+}
+.combo-box-base:success, .combo-box-base:success:focused {
+    -fx-background-color: -color-success-emphasis, -color-input-surface;
+}
+.combo-box-base:danger, .combo-box-base:danger:focused {
+    -fx-background-color: -color-danger-emphasis, -color-input-surface;
+}
+
+.combo-box-base.left-pill {
+    -fx-background-radius: 4px 0 0 4px, 3px 0 0 3px;
+    -fx-background-insets: 0, 1px 0 1px 1px;
+}
+.combo-box-base.left-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base.center-pill {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 1px 0 1px 0;
+}
+.combo-box-base.center-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base.right-pill {
+    -fx-background-radius: 0 4px 4px 0, 0 3px 3px 0;
+    -fx-background-insets: 0, 1px 1px 1px 0;
+}
+.combo-box-base.right-pill:focused {
+    -fx-background-insets: 0, 1px;
+}
+.combo-box-base > .arrow-button {
+    -fx-padding: 8px 12px 8px 12px;
+}
+.combo-box-base > .arrow-button > .arrow {
+    -fx-shape: "M7 10l5 5 5-5z";
+    -fx-scale-shape: false;
+    -fx-background-color: -color-fg-muted;
+}
+.combo-box-base > .text-field {
+    -fx-background-insets: 0, 1px 0 1px 1px;
+    -fx-background-radius: 4px 0 0 4px, 3px 0 0 3px;
+}
+.combo-box-base:success > .arrow-button > .arrow {
+    -fx-background-color: -color-success-fg;
+}
+.combo-box-base:danger > .arrow-button > .arrow {
+    -fx-background-color: -color-danger-fg;
+}
+.combo-box-base.alt-icon > .arrow-button > .arrow {
+    -fx-shape: "M12 5.83L15.17 9l1.41-1.41L12 3 7.41 7.59 8.83 9 12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15 12 18.17z";
+    -fx-scale-shape: false;
+}
+
+.combo-box > .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-graphic-text-gap: 6px;
+}
+.combo-box:success > .list-cell {
+    -fx-text-fill: -color-success-fg;
+}
+.combo-box:danger > .list-cell {
+    -fx-text-fill: -color-danger-fg;
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-color: -color-border-default, -color-bg-default;
+    -fx-background-insets: 0, 1;
+    -fx-border-radius: 4px, 3px;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 6px, 0.3, 0, 2);
+    -fx-pref-height: 80px;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-cell-size: 0;
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-graphic-text-gap: 6px;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover {
+    -fx-background-color: -color-base-1;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background-color: -color-base-2;
+    -fx-text-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected .ikonli-font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover .font-icon, .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+    -fx-fill: -color-fg-default;
+}
+.combo-box-popup > .list-view > .placeholder > .label {
+    -fx-text-fill: -color-fg-muted;
+}
+
+.check-box {
+    -fx-text-fill: -color-fg-default;
+    -fx-label-padding: 2px 2px 0 6px;
+}
+.check-box > .box {
+    -fx-background-color: -color-border-default, -color-bg-default;
+    -fx-background-insets: 0, 1.5px;
+    -fx-background-radius: 4px, 3px;
+    -fx-padding: 3px 4px 3px 4px;
+    -fx-alignment: CENTER;
+}
+.check-box > .box > .mark {
+    -fx-background-color: -color-bg-default;
+    -fx-shape: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z";
+    -fx-scale-shape: true;
+    -fx-min-height: 0.75em;
+    -fx-max-height: 0.75em;
+    -fx-min-width: 0.75em;
+    -fx-max-width: 0.75em;
+}
+.check-box > .box:hover {
+    -fx-background-color: -color-fg-subtle, -color-bg-subtle;
+}
+.check-box:indeterminate > .box {
+    -fx-background-color: -color-border-default, -color-bg-default;
+}
+.check-box:indeterminate > .box > .mark {
+    -fx-background-color: -color-fg-subtle;
+    -fx-shape: "M 17,13 H 7 v -2 h 10 z";
+    -fx-scale-shape: false;
+}
+.check-box:disabled {
+    -fx-opacity: 0.4;
+}
+.check-box:disabled > .box {
+    -fx-opacity: 0.4;
+}
+.check-box:selected > .box {
+    -fx-background-color: -color-accent-emphasis, -color-accent-emphasis;
+}
+.check-box:selected > .box > .mark {
+    -fx-background-color: -color-fg-emphasis;
+}
+.check-box:show-mnemonics > .mnemonic-underline {
+    -fx-stroke: -color-fg-muted;
+}

@@ -1,0 +1,115 @@
+.update-pane {
+    -fx-background-color: transparent;
+}
+
+.update-pane .update-scroll,
+.update-pane .update-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.update-pane .update-scroll {
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.update-pane .update-section {
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 10;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.update-pane .update-section-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.update-pane .update-field-label {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.update-pane .text-field,
+.update-pane .text-area {
+    -fx-background-color: -color-input-surface;
+    -fx-background-radius: 7;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 7;
+    -fx-text-fill: -color-fg-default;
+}
+
+.update-pane .text-field {
+    -fx-padding: 0 10;
+}
+
+.update-pane .text-field:hover,
+.update-pane .text-area:hover {
+    -fx-border-color: -color-fg-subtle;
+}
+
+.update-pane .text-field:focused,
+.update-pane .text-area:focused {
+    -fx-border-color: -color-accent-emphasis;
+    -fx-effect: dropshadow(three-pass-box, -color-accent-muted, 4, 0.35, 0, 0);
+}
+
+.update-pane .text-area {
+    -fx-padding: 1;
+}
+
+.update-pane .text-area .content,
+.update-pane .text-area .scroll-pane,
+.update-pane .text-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.update-pane .text-area .content {
+    -fx-padding: 7 9;
+}
+
+.update-pane .text-input {
+    -fx-prompt-text-fill: -color-fg-subtle;
+}
+
+.update-pane .update-toggle-bar {
+    -fx-pref-height: 36;
+    -fx-padding: 0 2;
+}
+
+.update-pane .check-box {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+
+.update-pane .tip {
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 11px;
+}
+
+.update-pane .import-btn {
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.update-pane .import-btn {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-default;
+    -fx-text-fill: -color-fg-default;
+    -fx-padding: 0 12;
+}
+
+.update-pane .import-btn:hover {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-fg-subtle;
+}
+
+.update-pane .import-btn Region {
+    -fx-shape: SVG-FOLDER;
+    -fx-background-color: -color-fg-muted;
+}

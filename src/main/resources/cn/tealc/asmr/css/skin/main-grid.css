@@ -1,0 +1,725 @@
+
+.toggle-button{
+    -fx-text-fill: -color-fg-default;
+}
+
+/*文本的通用样式*/
+.default-label{
+    -fx-text-fill: -color-fg-muted;
+}
+
+/*===========================中间部分=======================================*/
+.center{
+    -fx-background-radius: 10px 0px 0px 10px;
+    -fx-background-color: -color-bg-subtle;
+}
+
+.content-pane > .tab-header-area{
+    -fx-pref-width: 0;
+    -fx-background-color: transparent;
+    -fx-padding: -2em;
+    visibility: hidden;
+}
+
+/*===================顶部工具栏=====================*/
+.grid-top-container {
+    -fx-background-color: -color-bg-default;
+}
+
+.grid-toolbar {
+    -fx-background-color: -color-bg-default;
+}
+
+.grid-toolbar .tool-source-label {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-padding: 0 8 0 0;
+}
+
+.grid-toolbar .tool-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-cursor: hand;
+    -fx-padding: 4 8 4 8;
+    -fx-background-radius: 4;
+}
+
+.grid-toolbar .tool-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.grid-toolbar .tool-btn .ikonli-font-icon {
+    -fx-icon-size: 18px;
+    -fx-icon-color: -color-fg-muted;
+}
+
+.grid-toolbar .tool-btn:hover .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.grid-toolbar .tool-sort-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+}
+
+.grid-toolbar .tool-sort-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+/*每行数量按钮：与排序按钮同一套工具栏按钮外观*/
+.grid-toolbar .tool-columns-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+}
+
+.grid-toolbar .tool-columns-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+/*工具栏按钮图标（通过 CSS -fx-icon-code 指定）*/
+.grid-toolbar .tool-sort-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2s-sort;
+}
+.grid-toolbar .tool-sync-btn  .ikonli-font-icon{
+    -fx-icon-code: mdi2c-cloud-sync;
+}
+.grid-toolbar .text-field {
+    -fx-pref-width: 50;
+    -fx-max-height: 22;
+    -fx-background-color: -color-input-surface-base;
+    -fx-background-radius: 4;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-alignment: center;
+}
+
+.grid-toolbar .separator {
+    -fx-background-color: transparent;
+}
+
+.grid-toolbar .separator > .line {
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1;
+}
+
+/*排序下拉弹出菜单*/
+.menu-button .context-menu,
+.grid-toolbar .context-menu {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 4;
+}
+
+.context-menu .custom-menu-item {
+    -fx-background-color: transparent;
+}
+.context-menu .custom-menu-item .radio-button {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.context-menu .custom-menu-item .check-box {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.context-menu .custom-menu-item:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+/*分隔线菜单项：禁用 hover 高亮和点击*/
+.context-menu .custom-menu-item:disabled {
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+}
+.context-menu .custom-menu-item:disabled:hover {
+    -fx-background-color: transparent;
+}
+
+/*=============================中间部分=======================*/
+.scroll-pane,
+.scroll-pane FlowPane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+.scroll-pane FlowPane {
+    -fx-padding: 10;
+}
+.scroll-pane .work-list-grid {
+    -fx-padding: 10 10 72 10;
+}
+.scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+/*==============cell================*/
+.work-cell{
+    -fx-padding: 5;
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow( three-pass-box , -color-shadow-default, 5, 0 , 1 , 1 );
+}
+
+/*==============大图模式卡片================*/
+.work-cell.big-work-cell{
+    -fx-padding: 0;
+    -fx-background-radius: 12;
+    -fx-background-color: -color-bg-overlay;
+    -fx-effect: dropshadow(gaussian, -color-card-shadow, 12, 0.08, 0, 3);
+    -fx-cursor: hand;
+}
+
+.work-cell.big-work-cell:hover{
+    -fx-effect: dropshadow(gaussian, -color-card-shadow-hover, 18, 0.10, 0, 6);
+    -fx-translate-y: -1;
+}
+
+/*封面浮层：编号与日期使用同款半透明深色胶囊，任何封面下都可读*/
+.work-cell.big-work-cell > .head > .cell-work-id,
+.work-cell.big-work-cell > .head > .cell-date{
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8 2 8;
+    -fx-background-color: -color-card-scrim;
+    -fx-background-radius: 6;
+    -fx-text-fill: -color-card-on-scrim;
+}
+
+.work-cell.big-work-cell > .head > .cell-work-id{
+    -fx-translate-x: 8px;
+    -fx-translate-y: -8px;
+    -fx-graphic-text-gap: 4;
+}
+
+.work-cell.big-work-cell > .head > .cell-date{
+    -fx-translate-x: -8px;
+    -fx-translate-y: -8px;
+}
+
+.work-cell.big-work-cell > .head > .cell-work-id .web.ikonli-font-icon,
+.work-cell.big-work-cell > .head > .cell-work-id .local.ikonli-font-icon{
+    -fx-icon-size: 13px;
+    -fx-icon-color: -color-card-on-scrim;
+}
+
+/*收藏按钮：浮在封面右上角，圆形半透明底*/
+.work-cell.big-work-cell > .head > .star-btn{
+    -fx-pref-width: 28;
+    -fx-pref-height: 28;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-padding: 5;
+    -fx-background-radius: 14;
+    -fx-translate-x: -8px;
+    -fx-translate-y: 8px;
+}
+.work-cell.big-work-cell > .head > .star-btn:hover,
+.work-cell.big-work-cell > .head > .star-btn:selected{
+    -fx-background-color: -color-card-scrim-hover;
+}
+.work-cell.big-work-cell > .head > .star-btn .ikonli-font-icon{
+    -fx-icon-size: 17px;
+    -fx-icon-color: -color-card-on-scrim;
+}
+.work-cell.big-work-cell > .head > .star-btn:hover .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart;
+    -fx-icon-color: -color-card-on-scrim;
+}
+.work-cell.big-work-cell > .head > .star-btn:selected .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart;
+    -fx-icon-color: -color-card-favorite;
+}
+
+/*播放按钮：悬停封面时浮现的圆形按钮*/
+.work-cell.big-work-cell > .head > .play-btn{
+    -fx-pref-width: 46;
+    -fx-pref-height: 46;
+    -fx-min-width: 46;
+    -fx-min-height: 46;
+    -fx-max-width: 46;
+    -fx-max-height: 46;
+    -fx-padding: 0;
+    -fx-background-color: -color-card-scrim;
+    -fx-background-radius: 23;
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+    visibility: false;
+}
+.work-cell.big-work-cell > .head > .play-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2p-play;
+    -fx-icon-color: -color-card-on-scrim;
+    -fx-icon-size: 26px;
+}
+.work-cell.big-work-cell > .head:hover > .play-btn{
+    visibility: true;
+}
+.work-cell.big-work-cell > .head > .play-btn:hover{
+    -fx-background-color: -color-accent-emphasis;
+}
+
+/*标题*/
+.work-cell.big-work-cell > .cell-content > .cell-title{
+    -fx-line-spacing: 1;
+}
+.work-cell.big-work-cell > .cell-content > .cell-title .cell-title-text{
+    -fx-fill: -color-fg-default;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/*社团：悬停加深并加下划线，提示可点击进入社团页*/
+.work-cell.big-work-cell > .cell-content > .cell-circle{
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-graphic-text-gap: 5;
+    -fx-cursor: hand;
+    -fx-underline: false;
+}
+.work-cell.big-work-cell > .cell-content > .cell-circle:hover{
+    -fx-text-fill: -color-fg-default;
+    -fx-underline: true;
+}
+.work-cell.big-work-cell > .cell-content > .cell-circle .ikonli-font-icon{
+    -fx-icon-code: mdoal-local_fire_department;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 15px;
+}
+.work-cell.big-work-cell > .cell-content > .cell-circle:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+
+/*评分与标记行：评分在左，字幕/全年龄标记靠右*/
+.work-cell.big-work-cell > .cell-content > .cell-rating-row{
+    -fx-alignment: center-left;
+}
+
+/*评分：星标 + 数值，未评分时星为空心*/
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .cell-rating{
+    -fx-padding: 2 7 2 2;
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-graphic-text-gap: 5;
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+}
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .cell-rating:hover{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-default;
+}
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .cell-rating .ikonli-font-icon{
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 16px;
+}
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .cell-rating:rated{
+    -fx-text-fill: -color-fg-default;
+}
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .cell-rating:rated .ikonli-font-icon{
+    -fx-icon-color: -color-warning-2;
+}
+
+/*标记（字幕 / 全年龄）：靠行尾右对齐，实色底保证深浅主题下都清晰*/
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .tag{
+    -fx-alignment: center-right;
+}
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .tag > .label{
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 9 2 9;
+    -fx-background-radius: 5;
+    -fx-border-width: 0;
+    -fx-alignment: center;
+}
+/*字幕：紫色，与琥珀色标签区分*/
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .tag > .subtitle{
+    -fx-background-color: -color-card-subtitle-bg;
+    -fx-text-fill: -color-card-subtitle-fg;
+}
+/*全年龄：绿色，与字幕、标签都不撞色*/
+.work-cell.big-work-cell > .cell-content > .cell-rating-row > .tag > .nsfw{
+    -fx-background-color: -color-card-nsfw-bg;
+    -fx-text-fill: -color-card-nsfw-fg;
+}
+
+/*分组标题：标签 / 声优。说明性文字，字号小于胶囊内容，不抢视觉重心*/
+.work-cell.big-work-cell .cell-section-label{
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 8 1 8;
+    -fx-background-radius: 6;
+}
+.work-cell.big-work-cell .cell-section-tags{
+    -fx-background-color: -color-card-section-tags-bg;
+    -fx-text-fill: -color-card-section-tags-fg;
+}
+.work-cell.big-work-cell .cell-section-vas{
+    -fx-background-color: -color-card-section-vas-bg;
+    -fx-text-fill: -color-card-section-vas-fg;
+}
+
+/*标签胶囊：自定义标签琥珀实心，系统分类中性灰底*/
+.work-cell.big-work-cell #grid-item-categories > .custom-tag,
+.work-cell.big-work-cell #grid-item-categories > .category{
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 11 3 11;
+    -fx-background-radius: 13;
+    -fx-cursor: hand;
+}
+.work-cell.big-work-cell #grid-item-categories > .custom-tag{
+    -fx-background-color: -color-card-tag-bg;
+    -fx-text-fill: -color-card-tag-fg;
+}
+.work-cell.big-work-cell #grid-item-categories > .category{
+    -fx-background-color: -color-card-category-bg;
+    -fx-text-fill: -color-card-category-fg;
+}
+.work-cell.big-work-cell #grid-item-categories > .custom-tag:hover,
+.work-cell.big-work-cell #grid-item-categories > .category:hover{
+    -fx-opacity: 0.88;
+}
+
+/*声优胶囊：实心蓝色，与标签琥珀、字幕紫区分*/
+.work-cell.big-work-cell #grid-item-vas > .actor{
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 11 3 11;
+    -fx-background-color: -color-card-vas-bg;
+    -fx-background-radius: 13;
+    -fx-text-fill: -color-card-vas-fg;
+    -fx-cursor: hand;
+}
+.work-cell.big-work-cell #grid-item-vas > .actor:hover{
+    -fx-opacity: 0.88;
+}
+
+/*卡片宽度由 Java 按列数与容器宽度动态分配，这里不能写死宽度，
+  否则会压过代码里的绑定，导致封面无法铺满卡片*/
+.work-cell.small-work-cell{
+    -fx-padding: 0;
+    /*背景、圆角与阴影均与大图卡片保持一致*/
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, -color-card-shadow, 12, 0.08, 0, 3);
+    -fx-cursor: hand;
+}
+
+.small-work-cell > .head{
+    -fx-padding: 0;
+}
+
+.work-cell > .cell-title{
+    -fx-padding: 0 0 0 0;
+}
+.work-cell > .cell-title .cell-title-text{
+    -fx-fill: -color-fg-default;
+}
+.ai-title-translate-button{
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 5px;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+    -fx-cursor: hand;
+}
+.ai-title-translate-button .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 15px;
+}
+.ai-title-translate-button:hover .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.work-cell > .work-metadata > .cell-circle{
+    -fx-font-size: 15px;
+    -fx-text-fill: -color-fg-subtle;
+    -fx-cursor: hand;
+}
+
+.work-cell > .work-metadata > .cell-circle:hover{
+    -fx-text-fill: -color-fg-muted;
+}
+.work-cell > .work-metadata > .cell-circle .ikonli-font-icon{
+    -fx-icon-code: mdoal-local_fire_department;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 16px;
+}
+.work-cell > .work-metadata > .cell-circle:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+
+.work-cell > .head{
+
+}
+
+.work-cell > .head > .cell-work-id .web.ikonli-font-icon{
+    -fx-icon-code: mdi2c-cloud-outline;
+    -fx-icon-size: 18px;
+}
+.work-cell > .head > .cell-work-id .local.ikonli-font-icon{
+    -fx-icon-code: mdi2f-folder-outline;
+    -fx-icon-size: 18px;
+}
+
+.work-cell > .head > .cell-work-id,
+.work-cell > .head > .cell-date {
+    -fx-font-size: 15px;
+    -fx-padding: 3;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.work-cell > .head > .cell-work-id {
+    -fx-background-color: #795548;
+    -fx-background-radius: 4;
+}
+.work-cell > .head > .cell-date {
+    -fx-background-color: -color-overlay-3;
+    -fx-background-radius: 2;
+}
+
+.work-cell.big-work-cell > .head > .cell-work-id,
+.work-cell.big-work-cell > .head > .cell-date {
+    -fx-font-size: 11px;
+}
+
+.small-work-cell > .head > .cell-work-id,
+.small-work-cell > .head > .cell-date,
+.small-work-cell > .head > .rating-text-button {
+    -fx-font-size: 13px;
+}
+.small-work-cell > .head > .cell-work-id {
+    -fx-translate-x: 5px;
+    -fx-translate-y: 5px;
+}
+.small-work-cell > .head > .cell-work-id .web.ikonli-font-icon,
+.small-work-cell > .head > .cell-work-id .local.ikonli-font-icon {
+    -fx-icon-size: 16px;
+}
+
+.work-cell.big-work-cell #grid-item-categories,
+.work-cell.big-work-cell #grid-item-vas {
+    -fx-padding: 0;
+}
+
+.work-cell.small-work-cell > #list-item-tag-pane {
+    -fx-padding: 0;
+}
+
+.work-cell > .head > .play-btn{
+    visibility: false;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-radius: 40;
+    -fx-cursor: hand;
+}
+.work-cell > .head > .play-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2m-motion-play-outline;
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 40px;
+}
+.work-cell > .head > .play-btn:pressed,
+.work-cell > .head > .play-btn:focused{
+    -fx-background-insets:0;
+}
+.work-cell > .head:hover > .play-btn{
+    visibility: true;
+}
+
+.work-cell > .head > .star-btn{
+    -fx-background-color: transparent;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-padding: 7 5 5 5;
+    -fx-background-radius: 40;
+    -fx-cursor: hand;
+}
+
+.work-cell > .head > .star-btn:selected,
+.work-cell > .head > .star-btn:hover{
+    -fx-background-color: -color-overlay-2;
+}
+.work-cell > .head > .star-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart-outline;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 22px;
+}
+.work-cell > .head > .star-btn:selected .ikonli-font-icon,
+.work-cell > .head > .star-btn:hover .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart;
+    -fx-icon-color: -color-danger-emphasis;
+}
+
+.work-cell > BorderPane > .tag > .label,
+.work-cell > .tag > .label{
+    -fx-padding: 3 8 3 8;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+    -fx-alignment: center;
+}
+
+.work-cell > BorderPane > .tag > .nsfw,
+.work-cell > .tag > .nsfw{
+    -fx-border-color: -color-accent-5;
+    -fx-text-fill: -color-accent-5;
+}
+
+.work-cell > BorderPane > .tag > .subtitle,
+.work-cell > .tag > .subtitle{
+    -fx-border-color: -color-chart-6;
+    -fx-text-fill: -color-chart-6;
+}
+
+.work-cell > .head > .rating-text-button {
+    -fx-padding: 3;
+    -fx-background-color: -color-overlay-3;
+    -fx-background-radius: 2;
+    -fx-text-fill: -color-fg-emphasis;
+    -fx-font-size: 15px;
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+}
+.small-work-cell > .head > .rating-text-button {
+    -fx-font-size: 13px;
+}
+.work-cell > .head > .rating-text-button:hover {
+    -fx-background-color: -color-overlay-3;
+}
+.rating-dialog-body {
+    -fx-padding: 4 0 0 0;
+}
+.rating-dialog-hint {
+    -fx-text-fill: -color-fg-muted;
+}
+.rating-dialog-rating {
+    -fx-pref-width: 180;
+    -fx-max-width: 180;
+}
+.rating-dialog-rating > .container {
+    -fx-spacing: 8;
+}
+.rating-dialog-rating > .container > .button {
+    -fx-background-color: -color-fg-subtle;
+    -fx-background-image: null;
+    -fx-shape: SVG-STAR;
+    -fx-padding: 10;
+}
+.rating-dialog-rating > .container > .button.strong {
+    -fx-background-color: -color-warning-emphasis;
+}
+.rating-dialog-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-min-width: 42px;
+}
+.work-cell > FlowPane > .category{
+    -fx-background-color: -color-bg-subtle;
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 15;
+    -fx-text-fill: -color-fg-muted;
+    -fx-cursor: hand;
+}
+.small-work-cell > FlowPane > .subtitle,
+.small-work-cell > FlowPane > .nsfw{
+    -fx-background-color: -color-bg-subtle;
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 15;
+}
+.small-work-cell > FlowPane > .subtitle{
+    -fx-text-fill: -color-chart-6;
+}
+.small-work-cell > FlowPane > .nsfw{
+    -fx-text-fill: -color-accent-5;
+}
+.small-work-cell > FlowPane > .subtitle,
+.small-work-cell > FlowPane > .nsfw,
+.small-work-cell > FlowPane > .custom-tag,
+.small-work-cell > FlowPane > .category{
+    -fx-padding: 4 10 4 10;
+    -fx-font-size: 12px;
+}
+.work-cell FlowPane > .category:hover{
+    -fx-opacity: 0.9;
+}
+.work-cell > FlowPane > .custom-tag{
+    -fx-background-color: -color-bg-subtle;
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 15;
+    -fx-text-fill: -color-accent-fg;
+    -fx-cursor: hand;
+}
+.work-cell FlowPane > .custom-tag:hover{
+    -fx-opacity: 0.9;
+}
+.work-cell FlowPane > .actor{
+    -fx-background-color: -color-chart-4;
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 4;
+    -fx-text-fill: -color-fg-emphasis;
+    -fx-cursor: hand;
+}
+.work-cell FlowPane > .actor:hover{
+    -fx-opacity: 0.9;
+}
+
+/*===================作品列表页=====================*/
+.work-page-root {
+    -fx-background-color: -color-bg-default;
+}
+
+/*页头与卡片网格同处滚动内容，左右内边距与卡片保持一致*/
+.page-header.work-page-header {
+    -fx-padding: 20px 10px 10px 10px;
+}
+
+.work-page-header.grid-toolbar .tool-btn {
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-padding: 5 7;
+}
+
+.work-page-header.grid-toolbar .tool-btn .ikonli-font-icon {
+    -fx-icon-size: 20px;
+}
+
+.work-page-list {
+    -fx-padding: 0px 24px 0px 24px;
+}
+
+.work-list-pager {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+    -fx-padding: 4px 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.16), 12, 0, 0, 2);
+}
+
+.work-page-list .scroll-pane,
+.work-page-list .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.work-page-list .scroll-pane {
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+/*===================通用作品列表=====================*/
+.work-list-status-box {
+    -fx-padding: 24px;
+}
+
+.work-list-status {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+}

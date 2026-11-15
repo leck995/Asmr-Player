@@ -1,0 +1,139 @@
+.category-bg {
+    -fx-background-color: -color-bg-default;
+    -fx-padding: 0;
+}
+
+.category-count-description {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+}
+
+.category-type-selector {
+    -fx-spacing: 4px;
+    -fx-padding: 2px;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+}
+
+.category-head-toggle-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 14px;
+    -fx-content-display: left;
+    -fx-graphic-text-gap: 6;
+    -fx-padding: 5px 10px;
+    -fx-cursor: hand;
+}
+
+.category-head-toggle-btn .ikonli-font-icon {
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 17px;
+}
+
+.category-head-toggle-btn:hover {
+    -fx-background-color: -color-neutral-muted;
+}
+
+.category-head-toggle-btn:selected {
+    -fx-background-color: rgba(15, 157, 88, 0.14);
+    -fx-text-fill: -color-accent-emphasis;
+}
+
+.category-head-toggle-btn:selected .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.category-content-header {
+    -fx-alignment: center-left;
+    -fx-padding: 0 2px;
+}
+
+.category-content-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+}
+
+.category-count {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.category-add-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px;
+    -fx-padding: 4px 6px;
+    -fx-cursor: hand;
+}
+
+.category-add-button .ikonli-font-icon {
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 18px;
+}
+
+.category-add-button:hover {
+    -fx-background-color: rgba(15, 157, 88, 0.10);
+}
+
+.category-add-button:hover .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.category-scroll,
+.category-scroll .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.category-flow {
+    -fx-background-color: transparent;
+}
+
+.category-item {
+    -fx-pref-height: 38px;
+    /*背景色与大图作品卡片保持一致*/
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 8px;
+    -fx-padding: 6px 10px;
+    -fx-cursor: hand;
+}
+
+/*悬停：与集册、歌单卡片一致，只提亮边框，不覆盖卡片底色。
+  原先的半透明绿会与卡片底色叠加成灰绿，在亮色主题下尤其发脏*/
+.category-item:hover {
+    -fx-border-color: -color-accent-fg;
+}
+
+.category-item .name-label {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+
+.category-item .size-label {
+    -fx-text-fill: -color-fg-muted;
+    -fx-background-color: -color-neutral-muted;
+    -fx-background-radius: 9px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-padding: 2px 7px;
+}
+
+.category-loading {
+    -fx-background-color: -color-bg-default;
+}
+
+.category-dialog-meta {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.category-dialog-error {
+    -fx-text-fill: -color-danger-fg;
+    -fx-font-size: 12px;
+}

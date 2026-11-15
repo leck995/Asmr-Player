@@ -1,0 +1,425 @@
+/*
+ * 通用弹窗样式。
+ *
+ * 供两套弹窗体系共用：
+ *   - Dialogs/Alerts 产出的 JFXDialogLayout（styleClass: app-dialog / jfx-alter）
+ *   - 旧式 EventBus.dialog 产出、但加了 dialog-surface 的 JFXDialogLayout
+ *
+ * 约定：新弹窗只需给 JFXDialogLayout 加上 dialog-surface 即可获得统一外观，
+ * 具体业务样式（如删除确认里的卡片）仍写在各业务用样式表中。
+ */
+
+/*==================== 弹窗外壳 ====================*/
+/*统一背景、圆角、留白与投影，避免各弹窗各写一套*/
+.app-dialog,
+.jfx-alter,
+.common-alert-layout,
+.dialog-surface {
+    -fx-background-color: -color-bg-default;
+    -fx-background-insets: 0;
+    -fx-background-radius: 12px;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, -color-shadow-default, 24, 0.16, 0, 8);
+}
+
+/*标题区：统一内边距，非 Alert 弹窗保留下分隔线*/
+.app-dialog > .jfx-layout-heading,
+.jfx-alter > .jfx-layout-heading,
+.common-alert-layout > .jfx-layout-heading,
+.dialog-surface > .jfx-layout-heading {
+    -fx-padding: 18px 20px 14px 20px;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -color-border-muted transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-alignment: center-left;
+}
+
+/* Alert 标题区不显示分隔线 */
+.jfx-alter > .jfx-layout-heading {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+/*正文区*/
+.app-dialog > .jfx-layout-body,
+.jfx-alter > .jfx-layout-body,
+.common-alert-layout > .jfx-layout-body,
+.dialog-surface > .jfx-layout-body {
+    -fx-padding: 16px 20px 4px 20px;
+    -fx-background-color: transparent;
+    -fx-alignment: top-left;
+}
+
+/*按钮区*/
+.app-dialog > .jfx-layout-actions,
+.jfx-alter > .jfx-layout-actions,
+.common-alert-layout > .jfx-layout-actions,
+.dialog-surface > .jfx-layout-actions {
+    -fx-padding: 14px 20px 18px 20px;
+    -fx-background-color: transparent;
+    -fx-alignment: center-right;
+    -fx-spacing: 8px;
+}
+
+/*==================== 标题文字 ====================*/
+.app-dialog .dialog-title,
+.jfx-alter .title,
+.common-alert-layout .header-title,
+.dialog-surface .dialog-title,
+.dialog-surface .header-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+/*==================== 弹窗页头 ====================*/
+/*标题统一使用 PageHeader；进入弹窗后去掉页面级留白与自带分隔线，由标题槽统一绘制*/
+.app-dialog .dialog-page-header,
+.jfx-alter .dialog-page-header,
+.common-alert-layout .dialog-page-header,
+.dialog-surface .dialog-page-header {
+    -fx-padding: 0;
+    -fx-spacing: 2;
+    -fx-background-color: transparent;
+}
+
+.app-dialog .dialog-page-header .page-header-title,
+.jfx-alter .dialog-page-header .page-header-title,
+.common-alert-layout .dialog-page-header .page-header-title,
+.dialog-surface .dialog-page-header .page-header-title {
+    -fx-font-size: 17px;
+}
+
+.app-dialog .dialog-page-header .page-header-subtitle,
+.jfx-alter .dialog-page-header .page-header-subtitle,
+.common-alert-layout .dialog-page-header .page-header-subtitle,
+.dialog-surface .dialog-page-header .page-header-subtitle {
+    -fx-font-size: 12px;
+}
+
+.app-dialog .dialog-page-header .page-header-icon-box .ikonli-font-icon,
+.jfx-alter .dialog-page-header .page-header-icon-box .ikonli-font-icon,
+.common-alert-layout .dialog-page-header .page-header-icon-box .ikonli-font-icon,
+.dialog-surface .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-size: 20px;
+    -fx-icon-color: -color-fg-default;
+}
+
+/*提示类型沿用原有的图标着色规则*/
+.jfx-alter .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-color: -color-fg-muted;
+}
+.jfx-alter.info .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-color: -color-accent-fg;
+}
+.jfx-alter.warning .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-color: -color-warning-fg;
+}
+.jfx-alter.danger .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+}
+.jfx-alter.success .dialog-page-header .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-color: -color-success-fg;
+}
+
+/*==================== 正文文字 ====================*/
+.app-dialog .dialog-message,
+.jfx-alter .alter-message,
+.dialog-surface .dialog-message {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.jfx-alter .alter-body,
+.dialog-surface .alter-body {
+    -fx-spacing: 12px;
+    -fx-padding: 0;
+}
+
+/*==================== 按钮 ====================*/
+/*基础规格：统一高度、内边距与圆角*/
+.app-dialog > .jfx-layout-actions .button,
+.jfx-alter > .jfx-layout-actions .button,
+.common-alert-layout > .jfx-layout-actions .button,
+.dialog-surface > .jfx-layout-actions .button {
+    -fx-min-height: 32px;
+    -fx-pref-height: 32px;
+    -fx-max-height: 32px;
+    -fx-min-width: 72px;
+    -fx-padding: 0 16px 0 16px;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+/*次要按钮：描边 + 中性底，悬停略加深*/
+.app-dialog > .jfx-layout-actions .button.cancel-button,
+.app-dialog > .jfx-layout-actions .button.plain-action-button,
+.jfx-alter > .jfx-layout-actions .button.cancel-button,
+.jfx-alter > .jfx-layout-actions .button.plain-action-button,
+.common-alert-layout > .jfx-layout-actions .button.cancel-button,
+.common-alert-layout > .jfx-layout-actions .button.plain-action-button,
+.dialog-surface > .jfx-layout-actions .button.cancel-button,
+.dialog-surface > .jfx-layout-actions .button.plain-action-button {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1px;
+    -fx-text-fill: -color-fg-default;
+}
+.app-dialog > .jfx-layout-actions .button.cancel-button:hover,
+.app-dialog > .jfx-layout-actions .button.plain-action-button:hover,
+.jfx-alter > .jfx-layout-actions .button.cancel-button:hover,
+.jfx-alter > .jfx-layout-actions .button.plain-action-button:hover,
+.common-alert-layout > .jfx-layout-actions .button.cancel-button:hover,
+.common-alert-layout > .jfx-layout-actions .button.plain-action-button:hover,
+.dialog-surface > .jfx-layout-actions .button.cancel-button:hover,
+.dialog-surface > .jfx-layout-actions .button.plain-action-button:hover {
+    /*底色在前、半透明中性色在后（JavaFX 后一层绘制在上层）；底色只用 bg-subtle，
+      悬停比边框色方案更柔和，不透明避免主题 hover 的半透明把颜色洗淡*/
+    -fx-background-color: -color-bg-subtle, -color-neutral-muted;
+    -fx-opacity: 1;
+}
+
+/*主按钮：实心强调色，按弹窗类型着色*/
+.app-dialog > .jfx-layout-actions .button.default-button,
+.jfx-alter > .jfx-layout-actions .button.default-button,
+.common-alert-layout > .jfx-layout-actions .button.default-button,
+.dialog-surface > .jfx-layout-actions .button.default-button {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-border-color: -color-accent-emphasis;
+    -fx-border-width: 1px;
+    -fx-text-fill: -color-fg-emphasis;
+}
+/*悬停轻微提亮、按下轻微加深，避免直接跳到 color-6 造成整块颜色明显变深*/
+.app-dialog > .jfx-layout-actions .button.default-button:hover,
+.jfx-alter > .jfx-layout-actions .button.default-button:hover,
+.common-alert-layout > .jfx-layout-actions .button.default-button:hover,
+.dialog-surface > .jfx-layout-actions .button.default-button:hover {
+    -fx-background-color: derive(-color-accent-emphasis, 8%);
+    -fx-border-color: derive(-color-accent-emphasis, 8%);
+    -fx-opacity: 1;
+}
+.app-dialog > .jfx-layout-actions .button.default-button:armed,
+.jfx-alter > .jfx-layout-actions .button.default-button:armed,
+.common-alert-layout > .jfx-layout-actions .button.default-button:armed,
+.dialog-surface > .jfx-layout-actions .button.default-button:armed {
+    -fx-background-color: derive(-color-accent-emphasis, -8%);
+    -fx-border-color: derive(-color-accent-emphasis, -8%);
+    -fx-opacity: 1;
+}
+
+/*按弹窗类型覆盖主按钮配色（info 与鼠标通用强调色一致，无需单独覆盖）*/
+.jfx-alter.warning > .jfx-layout-actions .button.default-button {
+    -fx-background-color: -color-warning-emphasis;
+    -fx-border-color: -color-warning-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.jfx-alter.warning > .jfx-layout-actions .button.default-button:hover {
+    -fx-background-color: derive(-color-warning-emphasis, 8%);
+    -fx-border-color: derive(-color-warning-emphasis, 8%);
+}
+.jfx-alter.warning > .jfx-layout-actions .button.default-button:armed {
+    -fx-background-color: derive(-color-warning-emphasis, -8%);
+    -fx-border-color: derive(-color-warning-emphasis, -8%);
+}
+.jfx-alter.danger > .jfx-layout-actions .button.default-button {
+    -fx-background-color: -color-danger-emphasis;
+    -fx-border-color: -color-danger-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.jfx-alter.danger > .jfx-layout-actions .button.default-button:hover {
+    -fx-background-color: derive(-color-danger-emphasis, 8%);
+    -fx-border-color: derive(-color-danger-emphasis, 8%);
+}
+.jfx-alter.danger > .jfx-layout-actions .button.default-button:armed {
+    -fx-background-color: derive(-color-danger-emphasis, -8%);
+    -fx-border-color: derive(-color-danger-emphasis, -8%);
+}
+.jfx-alter.success > .jfx-layout-actions .button.default-button {
+    -fx-background-color: -color-success-emphasis;
+    -fx-border-color: -color-success-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.jfx-alter.success > .jfx-layout-actions .button.default-button:hover {
+    -fx-background-color: derive(-color-success-emphasis, 8%);
+    -fx-border-color: derive(-color-success-emphasis, 8%);
+}
+.jfx-alter.success > .jfx-layout-actions .button.default-button:armed {
+    -fx-background-color: derive(-color-success-emphasis, -8%);
+    -fx-border-color: derive(-color-success-emphasis, -8%);
+}
+
+/*==================== 表单控件 ====================*/
+/*弹窗内的输入类控件统一高度、圆角与边框，避免主题默认样式与自写样式混杂*/
+.app-dialog .text-field,
+.jfx-alter .text-field,
+.common-alert-layout .text-field,
+.dialog-surface .text-field,
+.app-dialog .password-field,
+.jfx-alter .password-field,
+.common-alert-layout .password-field,
+.dialog-surface .password-field,
+.app-dialog .combo-box,
+.jfx-alter .combo-box,
+.common-alert-layout .combo-box,
+.dialog-surface .combo-box,
+.app-dialog .choice-box,
+.jfx-alter .choice-box,
+.common-alert-layout .choice-box,
+.dialog-surface .choice-box {
+    -fx-min-height: 34px;
+    -fx-pref-height: 34px;
+    -fx-background-color: -color-border-default, -color-input-surface-base;
+    -fx-background-insets: 0, 1px;
+    -fx-background-radius: 7px, 6px;
+    -fx-text-fill: -color-fg-default;
+    -fx-prompt-text-fill: -color-fg-subtle;
+    -fx-font-size: 13px;
+    -fx-padding: 0 10px 0 10px;
+}
+
+/*获得焦点时用主题色描边*/
+.app-dialog .text-field:focused,
+.jfx-alter .text-field:focused,
+.common-alert-layout .text-field:focused,
+.dialog-surface .text-field:focused,
+.app-dialog .password-field:focused,
+.jfx-alter .password-field:focused,
+.common-alert-layout .password-field:focused,
+.dialog-surface .password-field:focused,
+.app-dialog .combo-box:focused,
+.jfx-alter .combo-box:focused,
+.common-alert-layout .combo-box:focused,
+.dialog-surface .combo-box:focused,
+.app-dialog .choice-box:focused,
+.jfx-alter .choice-box:focused,
+.common-alert-layout .choice-box:focused,
+.dialog-surface .choice-box:focused {
+    -fx-background-color: -color-accent-emphasis, -color-input-surface-base;
+}
+
+/*下拉框内部结构与内边距*/
+.app-dialog .combo-box > .list-cell,
+.jfx-alter .combo-box > .list-cell,
+.common-alert-layout .combo-box > .list-cell,
+.dialog-surface .combo-box > .list-cell {
+    -fx-padding: 0 10px 0 4px;
+    -fx-text-fill: -color-fg-default;
+    -fx-background-color: transparent;
+}
+
+/*ChoiceBox 的箭头也需要留出内边距，避免顶到圆角背景边缘*/
+.app-dialog .choice-box > .label,
+.jfx-alter .choice-box > .label,
+.common-alert-layout .choice-box > .label,
+.dialog-surface .choice-box > .label {
+    -fx-padding: 0 6px 0 2px;
+    -fx-text-fill: -color-fg-default;
+    -fx-background-color: transparent;
+}
+
+.app-dialog .choice-box > .open-button,
+.jfx-alter .choice-box > .open-button,
+.common-alert-layout .choice-box > .open-button,
+.dialog-surface .choice-box > .open-button {
+    -fx-padding: 0 2px 0 6px;
+    -fx-background-color: transparent;
+}
+
+.app-dialog .choice-box > .open-button > .arrow,
+.jfx-alter .choice-box > .open-button > .arrow,
+.common-alert-layout .choice-box > .open-button > .arrow,
+.dialog-surface .choice-box > .open-button > .arrow {
+    -fx-background-color: -color-fg-muted;
+}
+
+/*多行文本域*/
+.app-dialog .text-area,
+.jfx-alter .text-area,
+.common-alert-layout .text-area,
+.dialog-surface .text-area {
+    -fx-background-color: -color-border-default, -color-input-surface-base;
+    -fx-background-insets: 0, 1px;
+    -fx-background-radius: 7px, 6px;
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+}
+.app-dialog .text-area .content,
+.jfx-alter .text-area .content,
+.common-alert-layout .text-area .content,
+.dialog-surface .text-area .content {
+    -fx-background-color: transparent;
+    -fx-padding: 6px 8px 6px 8px;
+}
+
+/*复选框与单选框文字统一前景色*/
+.app-dialog .check-box,
+.jfx-alter .check-box,
+.common-alert-layout .check-box,
+.dialog-surface .check-box,
+.app-dialog .radio-button,
+.jfx-alter .radio-button,
+.common-alert-layout .radio-button,
+.dialog-surface .radio-button {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+
+/*==================== 表单分组与标签 ====================*/
+/*字段标签：弱于标题、强于正文，形成稳定层级*/
+.app-dialog .form-field-label,
+.jfx-alter .form-field-label,
+.common-alert-layout .form-field-label,
+.dialog-surface .form-field-label {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/*字段容器：字段之间保持统一间距*/
+.app-dialog .form-field,
+.jfx-alter .form-field,
+.common-alert-layout .form-field,
+.dialog-surface .form-field {
+    -fx-spacing: 6px;
+}
+
+/*表单主体：字段组之间留出明显间隔*/
+.app-dialog .form-body,
+.jfx-alter .form-body,
+.common-alert-layout .form-body,
+.dialog-surface .form-body {
+    -fx-spacing: 14px;
+}
+
+/*表单内滚动区透明，避免出现第二层背景*/
+.app-dialog .form-scroll,
+.jfx-alter .form-scroll,
+.common-alert-layout .form-scroll,
+.dialog-surface .form-scroll,
+.app-dialog .form-scroll > .viewport,
+.jfx-alter .form-scroll > .viewport,
+.common-alert-layout .form-scroll > .viewport,
+.dialog-surface .form-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+/*表单错误提示*/
+.app-dialog .form-message,
+.jfx-alter .form-message,
+.common-alert-layout .form-message,
+.dialog-surface .form-message {
+    -fx-text-fill: -color-danger-fg;
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+}

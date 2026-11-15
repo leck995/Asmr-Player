@@ -1,0 +1,241 @@
+/*------------歌曲列表-------------*/
+.playlist{
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 20;
+    -fx-pref-height: 600;
+    -fx-min-width: 390;
+    -fx-pref-width: 390;
+}
+
+.playlist > .jfx-layout-heading {
+    /*左右边距与列表区对齐，避免标题与条目错位；底部分隔线与列表拉开层次*/
+    -fx-padding: 14 10 10 10;
+    -fx-border-color: transparent transparent -color-border-muted transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.playlist > .jfx-layout-body {
+    -fx-padding: 8 10 6 10;
+}
+
+.playlist > .jfx-layout-actions {
+    -fx-padding: 8 10 12 10;
+}
+
+.playlist .songs-list-view {
+    -fx-background-color: transparent;
+    -fx-spacing: 2;
+    -fx-border-color: transparent;
+    -fx-min-width: 300;
+}
+
+/*列表单元：留出足够行高，圆角与背景让每条成为独立条目*/
+.playlist  .songs-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-pref-width: 280;
+    -fx-padding: 8 10 8 10;
+    -fx-wrap-text: true;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 14px;
+}
+
+.playlist .songs-list-view .list-cell:hover {
+    -fx-background-color: -color-bg-inset;
+}
+
+/*选中态：中性底色 + 左侧主题色细条，避免整块浅绿过重*/
+.playlist .songs-list-view .list-cell:selected,
+.playlist .songs-list-view .list-cell:focused {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: transparent transparent transparent -color-accent-emphasis;
+    -fx-border-width: 0 0 0 2;
+    -fx-border-radius: 8 0 0 8;
+}
+
+/*悬停到已选中的条目时保持选中底色，不因 hover 盖掉选中态*/
+.playlist .songs-list-view .list-cell:selected:hover,
+.playlist .songs-list-view .list-cell:focused:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.playlist .songs-list-view .list-cell:selected .name {
+    -fx-text-fill: -color-fg-default;
+}
+
+/*条目内容区：图标与文字间距收紧，避免左侧出现大块空白*/
+.playlist .songs-list-view .list-cell .cell-content {
+    -fx-spacing: 8;
+}
+
+.playlist .songs-list-view .list-cell .name{
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-weight: normal;
+}
+.playlist .songs-list-view .list-cell .artist{
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 11px;
+    -fx-wrap-text: false;
+}
+
+/*后缀标签：去掉描边，改为低对比底色，弱化到不抢标题*/
+.playlist .songs-list-view .list-cell .type{
+    -fx-font-size: 10px;
+    -fx-text-fill: -color-fg-subtle;
+    -fx-background-color: -color-bg-inset;
+    -fx-background-radius: 4;
+    -fx-border-width: 0;
+    -fx-min-width: 34;
+    -fx-alignment: center;
+    -fx-padding: 1 6 1 6;
+    -fx-wrap-text: false;
+}
+.playlist .songs-list-view .list-cell .playing-icon{
+    -fx-icon-size: 14px;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*正在播放的行：标题用主题色，与选中态区分*/
+.playlist .songs-list-view .list-cell:playing .name{
+    -fx-text-fill: -color-accent-emphasis;
+}
+.playlist .songs-list-view .list-cell:playing .artist{
+    -fx-text-fill: -color-accent-muted;
+}
+.playlist .songs-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.jfx-dialog .playlist > .jfx-layout-heading .songs-size {
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-padding: 0;
+}
+
+/*标题图标跟随主题前景色，深色主题下同样可读*/
+.playlist .playlist-title-icon {
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 17px;
+}
+
+.playlist .clear-songs-btn,
+.playlist .to-folder-btn,
+.playlist .subtitle-mode-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+    -fx-background-radius: 8px;
+    -fx-min-height: 32px;
+    -fx-pref-height: 32px;
+    -fx-max-height: 32px;
+    -fx-font-size: 12px;
+    -fx-padding: 0 8 0 8;
+}
+
+.playlist .clear-songs-btn:hover,
+.playlist .to-folder-btn:hover,
+.playlist .subtitle-mode-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.playlist .playlist-action-icon {
+    -fx-icon-color: #1F2328;
+    -fx-icon-size: 16px;
+}
+
+.playlist .clear-songs-btn Region {
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: "M928 256h-64v576c0 70.692-57.308 128-128 128H288c-70.692 0-128-57.308-128-128V256H96c-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32h832c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32z m-496 96c0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32v448c0 17.673 14.327 32 32 32 17.673 0 32-14.327 32-32V352z m224 0c0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32v448c0 17.673 14.327 32 32 32 17.673 0 32-14.327 32-32V352z m16-224H352c-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32h320c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32z";
+    -fx-background-color: -color-fg-muted;
+}
+
+.playlist .to-folder-btn Region {
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: "M853.333333 298.666667h-298.666666l-59.733334-89.6c-17.066667-25.6-42.666667-38.4-72.533333-38.4H170.666667c-46.933333 0-85.333333 38.4-85.333334 85.333333v512c0 46.933333 38.4 85.333333 85.333334 85.333333h682.666666c46.933333 0 85.333333-38.4 85.333334-85.333333V384c0-46.933333-38.4-85.333333-85.333334-85.333333z m-85.333333 213.333333H256c-21.333333 0-42.666667-21.333333-42.666667-42.666667s21.333333-42.666667 42.666667-42.666666h512c21.333333 0 42.666667 21.333333 42.666667 42.666666s-21.333333 42.666667-42.666667 42.666667z";
+    -fx-background-color: -color-fg-muted;
+}
+
+
+
+/*------------Galgame模式-------------*/
+
+.playlist.galgame{
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 20;
+    -fx-pref-height: 600;
+}
+
+.playlist.galgame .songs-list-view{
+    -fx-background-color: transparent;
+    -fx-spacing: 5;
+    -fx-border-color: transparent;
+    -fx-min-width: 300;
+}
+
+.playlist.galgame .songs-list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-text-fill: -color-fg-default;
+    -fx-pref-width: 280;
+    -fx-wrap-text: true;
+    -fx-font-size: 14px;
+}
+
+.playlist.galgame .songs-list-view .list-cell:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.playlist.galgame .songs-list-view .list-cell:selected,
+.playlist.galgame .songs-list-view .list-cell:focused{
+    -fx-background-color: -color-bg-subtle;
+}
+
+.playlist.galgame .songs-list-view .list-cell:selected{
+    -fx-text-fill:-color-accent-emphasis;
+}
+.playlist.galgame .songs-list-view .list-cell .name{
+    -fx-text-fill: -color-fg-default;
+}
+.playlist.galgame .songs-list-view .list-cell .artist{
+    -fx-text-fill: -color-fg-subtle;
+}
+
+.playlist.galgame .songs-title{
+    -fx-text-fill: -color-fg-default;
+}
+
+.playlist.galgame .songs-size{
+    -fx-text-fill: -color-fg-muted;
+}
+
+
+.playlist.galgame .clear-songs-btn,
+.playlist.galgame .to-folder-btn,
+.playlist.galgame .subtitle-mode-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+}
+.playlist.galgame .clear-songs-btn:hover,
+.playlist.galgame .to-folder-btn:hover,
+.playlist.galgame .subtitle-mode-btn:hover{
+    -fx-background-color: -color-fg-muted;
+}
+
+.playlist.galgame .clear-songs-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-background-color: -color-fg-muted;
+    -fx-shape: "M928 256h-64v576c0 70.692-57.308 128-128 128H288c-70.692 0-128-57.308-128-128V256H96c-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32h832c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32z m-496 96c0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32v448c0 17.673 14.327 32 32 32 17.673 0 32-14.327 32-32V352z m224 0c0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32v448c0 17.673 14.327 32 32 32 17.673 0 32-14.327 32-32V352z m16-224H352c-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32h320c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32z";
+
+}
+
+.playlist.galgame .to-folder-btn Region{
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+    -fx-shape: "M853.333333 298.666667h-298.666666l-59.733334-89.6c-17.066667-25.6-42.666667-38.4-72.533333-38.4H170.666667c-46.933333 0-85.333333 38.4-85.333334 85.333333v512c0 46.933333 38.4 85.333333 85.333334 85.333333h682.666666c46.933333 0 85.333333-38.4 85.333334-85.333333V384c0-46.933333-38.4-85.333333-85.333334-85.333333z m-85.333333 213.333333H256c-21.333333 0-42.666667-21.333333-42.666667-42.666667s21.333333-42.666667 42.666667-42.666666h512c21.333333 0 42.666667 21.333333 42.666667 42.666666s-21.333333 42.666667-42.666667 42.666667z";
+    -fx-background-color: -color-fg-muted;
+}

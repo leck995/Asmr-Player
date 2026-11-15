@@ -1,0 +1,260 @@
+.collection-root {
+    -fx-background-color: -color-bg-default;
+}
+
+.collection-table-hint {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+}
+
+.collection-content {
+    -fx-padding: 18px 0 0 0;
+    -fx-spacing: 18px;
+}
+
+.collection-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 12px 0 0 0;
+    -fx-border-color: transparent;
+}
+
+.collection-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.collection-tile-pane {
+    -fx-padding: 2px 2px 20px 2px;
+}
+
+.collection-sheet-card-wrapper {
+    -fx-cursor: hand;
+}
+
+.collection-sheet-card {
+    -fx-pref-width: 228px;
+    -fx-padding: 0 0 14px 0;
+    /*背景色与大图作品卡片保持一致*/
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 12px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 12px;
+}
+
+.collection-sheet-card-wrapper:hover .collection-sheet-card {
+    -fx-border-color: -color-accent-fg;
+}
+
+.collection-cover {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 11px 11px 0 0;
+}
+
+.collection-cover .image-view {
+    -fx-background-radius: 11px 11px 0 0;
+}
+
+/*卡片底部快捷操作：透明底图标按钮，悬停保持中性色*/
+.collection-card-action {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6px;
+    -fx-min-width: 24px;
+    -fx-pref-width: 24px;
+    -fx-max-width: 24px;
+    -fx-min-height: 24px;
+    -fx-pref-height: 24px;
+    -fx-max-height: 24px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.collection-card-action:hover {
+    -fx-background-color: -color-neutral-muted;
+    -fx-opacity: 1;
+}
+
+.collection-card-action .ikonli-font-icon {
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 15px;
+}
+
+.collection-card-action-danger:hover .ikonli-font-icon {
+    -fx-icon-color: -color-danger-fg;
+}
+
+.collection-sheet-card .label,
+.collection-sheet-card .hbox {
+    -fx-padding: 0 14px;
+}
+
+.collection-sheet-card .collection-sheet-name {
+    -fx-padding: 2px 14px 0 14px;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-overrun: ellipsis;
+}
+
+.collection-sheet-description {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.collection-sheet-count {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.collection-dialog-meta {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+}
+
+.collection-dialog-error {
+    -fx-text-fill: -color-danger-fg;
+    -fx-font-size: 12px;
+}
+
+.collection-manage-button .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+}
+
+.collection-card {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 12px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 12px;
+    -fx-padding: 18px;
+}
+
+.collection-card-title {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+}
+
+.collection-selected-sheet {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 19px;
+    -fx-font-weight: 700;
+}
+
+.collection-play-button .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+}
+
+.collection-play-button:disabled .ikonli-font-icon {
+    -fx-icon-color: -color-fg-muted;
+}
+
+.sheet-list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.sheet-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 2px 0;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.sheet-list-view .list-cell:filled:hover .collection-sheet-cell-content {
+    -fx-background-color: -color-neutral-muted;
+}
+
+.sheet-list-view .list-cell:selected .collection-sheet-cell-content {
+    -fx-background-color: -color-accent-subtle;
+}
+
+.collection-sheet-cell-content {
+    -fx-alignment: center-left;
+    -fx-padding: 9px 10px;
+    -fx-background-radius: 8px;
+}
+
+.collection-sheet-icon {
+    -fx-icon-color: -color-accent-fg;
+    -fx-icon-size: 18px;
+}
+
+.collection-sheet-name {
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+
+.item-table-view,
+.item-table-view .column-header,
+.item-table-view .column-header-background,
+.item-table-view .column-header-background .filler,
+.item-table-view .corner {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.item-table-view {
+    -fx-padding: 0;
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+}
+
+.item-table-view .column-header {
+    -fx-border-color: transparent transparent -color-border-default transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-background-insets: 0;
+}
+.item-table-view .column-header .label {
+    -fx-text-fill: -color-fg-muted;
+    -fx-alignment: center-left;
+    -fx-padding: 4px 0 4px 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+.item-table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 8px 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+.item-table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 4px 0 4px 12px;
+    -fx-alignment: center-left;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+.item-table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-pref-height: 44px;
+    -fx-cursor: hand;
+}
+.item-table-view .table-row-cell:selected,
+.item-table-view .table-row-cell:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8px;
+    -fx-background-insets: 2px;
+}
+
+.item-table-view .virtual-flow .scroll-bar:vertical,
+.item-table-view .virtual-flow .scroll-bar:vertical .track,
+.item-table-view .virtual-flow .scroll-bar:vertical .track-background,
+.item-table-view .virtual-flow .scroll-bar:horizontal,
+.item-table-view .virtual-flow .scroll-bar:horizontal .track,
+.item-table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.item-table-view .virtual-flow .scroll-bar .increment-button,
+.item-table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}

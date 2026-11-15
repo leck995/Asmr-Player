@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="root" prefHeight="600.0" prefWidth="1200.0" styleClass="background" stylesheets="@../../css/skin/player-detail.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.player.PlayerDetailView">
+   <children>
+      <Pane fx:id="bgPane1" layoutX="10.0" layoutY="10.0" style="-fx-background-color: #24282e; -fx-background-radius: 10;" />
+      <Pane fx:id="bgPane" />
+      <AnchorPane>
+         <children>
+            <GridPane alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                   <VBox alignment="CENTER" spacing="10.0">
+                       <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <StackPane fx:id="albumPane">
+                                 <children>
+                                         <ImageView fx:id="album" fitHeight="350.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                 <Image url="@../../image/album.jpg" />
+                                             </image>
+                                         </ImageView>
+                                         <Button fx:id="changeCoverBtn" mnemonicParsing="false" styleClass="cover-switch-btn" text="切换封面" StackPane.alignment="BOTTOM_CENTER">
+                                            <StackPane.margin><Insets bottom="10.0" /></StackPane.margin>
+                                         </Button>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <AnchorPane fx:id="infoPane" prefHeight="60.0" prefWidth="350.0">
+                                 <children>
+                                       <Label fx:id="songName" styleClass="title-label" text="团子大家族" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+                                           <font>
+                                               <Font size="27.0" />
+                                           </font>
+                                       </Label>
+                                       <Label fx:id="singer" styleClass="artist-label" text="茶太" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="33.0">
+                                           <font>
+                                               <Font size="15.0" />
+                                           </font>
+                                       </Label>
+                                    <ToggleButton fx:id="lrcBtn" mnemonicParsing="false" styleClass="lrc-btn" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0">
+                                       <graphic>
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                       </graphic>
+                                    </ToggleButton>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                               <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                                   <children>
+                              <AnchorPane fx:id="progressPane" prefWidth="350.0">
+                                 <children>
+                                             <Label fx:id="currentTimeLabel" styleClass="time-label" text="00:00" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="5.0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXSlider fx:id="songSlider" layoutY="1.0" styleClass="detail-song-slider" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="7.0" />
+                                             <Label fx:id="totalTimeLabel" styleClass="time-label" text="00:00" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                                   </children>
+                               </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" spacing="10.0">
+                           <children>
+                              <ToggleButton fx:id="volumeBtn" layoutX="366.0" layoutY="46.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="function-btn" />
+                                    <String fx:value="volume-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </ToggleButton>
+                              <ToggleButton fx:id="loopBtn" mnemonicParsing="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="function-btn" />
+                                    <String fx:value="loop-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <HBox alignment="CENTER" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="preBtn" mnemonicParsing="false" styleClass="pre-btn">
+                                       <graphic>
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                       </graphic>
+                                    </Button>
+                                    <ToggleButton fx:id="playBtn" mnemonicParsing="false" styleClass="play-btn">
+                                       <graphic>
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                       </graphic>
+                                    </ToggleButton>
+                                    <Button fx:id="nextBtn" mnemonicParsing="false" styleClass="next-btn">
+                                       <graphic>
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ToggleButton fx:id="disorderBtn" mnemonicParsing="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="function-btn" />
+                                    <String fx:value="disorder-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <Button fx:id="subtitleSyncBtn" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="function-btn" />
+                                    <String fx:value="subtitle-sync-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <FontIcon iconLiteral="mdomz-tune" iconSize="18" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="showSongListViewBtn" layoutX="26.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="function-btn" />
+                                    <String fx:value="list-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                       </children>
+                   </VBox>
+                  <StackPane fx:id="lrcPane" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </StackPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

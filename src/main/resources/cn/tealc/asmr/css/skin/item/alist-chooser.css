@@ -1,0 +1,11 @@
+.background-pane{
+    -fx-background-insets: 0;
+    -fx-background-color: -color-bg-default;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+}
+
+.title{
+    -fx-font-size: 25;
+    -fx-text-fill: -color-fg-muted;
+}

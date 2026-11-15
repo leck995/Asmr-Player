@@ -1,0 +1,105 @@
+/*
+ * 图片查看器样式表
+ * 使用 AtlantaFX -color-* 语义变量，自动跟随主题
+ */
+
+/* ===== 工具栏 ===== */
+.image-viewer-toolbar {
+    -fx-spacing: 6px;
+    -fx-alignment: center-right;
+}
+
+.image-viewer-toolbar .button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 4px 8px;
+    -fx-content-display: graphic-only;
+}
+
+.image-viewer-toolbar .button:hover {
+    -fx-background-color: -color-bg-subtle;
+}
+
+.image-viewer-toolbar .button:pressed {
+    -fx-background-color: -color-base-1;
+}
+
+.image-viewer-scale-label {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+    -fx-font-family: monospace;
+    -fx-padding: 0 8px;
+    -fx-alignment: center;
+    -fx-min-width: 50px;
+    -fx-text-alignment: center;
+}
+
+/* ===== 内容区 ===== */
+.image-viewer-content {
+    -fx-background-color: -color-bg-subtle;
+}
+
+/* ===== ScrollPane ===== */
+.image-viewer-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.image-viewer-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.image-viewer-scroll .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.image-viewer-scroll .scroll-bar:vertical {
+    -fx-pref-width: 8px;
+}
+
+.image-viewer-scroll .scroll-bar:horizontal {
+    -fx-pref-height: 8px;
+}
+
+.image-viewer-scroll .scroll-bar .thumb {
+    -fx-background-color: -color-fg-subtle;
+    -fx-background-radius: 4px;
+}
+
+.image-viewer-scroll .scroll-bar .thumb:hover {
+    -fx-background-color: -color-fg-muted;
+}
+
+/* ===== ImageView ===== */
+.image-viewer-image {
+    -fx-background-color: transparent;
+    -fx-cursor: open-hand;
+}
+
+.image-viewer-image:pressed {
+    -fx-cursor: closed-hand;
+}
+
+/* ===== 左右切换按钮 ===== */
+.image-viewer-nav-btn {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-background-radius: 25px;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-opacity: 0.6;
+}
+
+.image-viewer-nav-btn:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-opacity: 1.0;
+}
+
+/* ===== 加载指示器 ===== */
+.image-viewer-loading {
+    -fx-progress-color: -color-accent-emphasis;
+}

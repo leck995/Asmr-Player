@@ -1,0 +1,55 @@
+/* ===== 添加 OpenList 媒体库弹窗样式 ===== */
+
+/* 左右卡片容器 */
+.add-media-card{
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-border-subtle;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 8, 0, 0, 1);
+}
+
+/* 卡片内 ListView / TreeView 透明无边框 */
+.add-media-card .list-view,
+.add-media-card .tree-view{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+}
+
+/* 账号列表 cell */
+.add-media-card .list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-padding: 4 8;
+    -fx-text-fill: -color-fg-default;
+    -fx-cursor: hand;
+}
+.add-media-card .list-view .list-cell:filled:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.add-media-card .list-view .list-cell:filled:selected{
+    -fx-background-color: -color-accent-subtle;
+}
+
+/* 目录树 cell */
+.add-media-card .tree-view .tree-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+    -fx-cursor: hand;
+}
+.add-media-card .tree-view .tree-cell:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.add-media-card .tree-view .tree-cell:selected{
+    -fx-background-color: -color-accent-subtle;
+}
+
+.add-media-card .tree-view .tree-cell .ikonli-font-icon {
+    -fx-icon-color: -color-fg-default;
+}

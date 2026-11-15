@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="145.0" prefWidth="400.0" styleClass="bg" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.dialog.ProgressMessageView">
+   <children>
+      <Label fx:id="progressText" layoutX="223.0" layoutY="108.0" text="80%" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="110.0" />
+      <Label fx:id="title" styleClass="title" text="添加中" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <ProgressBar fx:id="progress" layoutX="14.0" layoutY="101.0" prefWidth="200.0" progress="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="107.0" />
+      <Label fx:id="message" layoutX="10.0" layoutY="52.0" styleClass="message" text="共找到%d个媒体，请耐心等待完成" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0" />
+      <Button fx:id="okBtn" layoutX="276.0" layoutY="122.0" mnemonicParsing="false" styleClass="lc-label-btn" text="确定" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="103.0" />
+      <Button fx:id="cancelBtn" layoutX="334.0" layoutY="122.0" mnemonicParsing="false" text="取消" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="103.0">
+         <styleClass>
+            <String fx:value="lc-label-btn" />
+            <String fx:value="lc-btn-dark" />
+         </styleClass>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../../css/skin/BaseUI.css" />
+      <URL value="@../../css/skin/item/progress-message.css" />
+   </stylesheets>
+</AnchorPane>

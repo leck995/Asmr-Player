@@ -1,0 +1,485 @@
+.root-pane{
+    -fx-background-insets: 0;
+    -fx-background-color:  -color-bg-default;
+}
+.version-update-pane{
+    -fx-background-color: -color-bg-default;
+}
+.jfx-radio-button{
+    -fx-text-fill:-color-fg-muted;
+}
+
+
+/*================原生 HeaderBar（主窗口+内嵌标题栏共用）================*/
+.headbar{
+    -fx-background-color: -color-bg-default;
+    -fx-pref-height: 3.8em;
+    -fx-min-height: 3.3em;
+}
+/* 内嵌标题栏（播放页/galgame页）：背景透明，与内容区背景融为一体 */
+.headbar.embed-headbar{
+    -fx-background-color: transparent;
+}
+.headbar .leading{
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 10;
+    -fx-spacing: 8;
+}
+.headbar .header-nav{
+    -fx-spacing: 2;
+    -fx-alignment: center-left;
+    -fx-padding:0 0 0 20
+}
+.headbar .header-nav .header-nav-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 35;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-content-display: graphic-only;
+    -fx-padding: 0;
+    -fx-min-width: 35;
+    -fx-min-height: 35;
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+    -fx-cursor: hand;
+}
+.subtitle-sync-header-btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 5;
+}
+.subtitle-sync-header-btn .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 20px;
+}
+.subtitle-sync-header-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+}
+.headbar .header-nav .header-nav-btn:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.headbar .header-nav .header-nav-btn:disabled{
+    -fx-opacity: 0.35;
+}
+.headbar .header-nav .header-nav-btn .ikonli-font-icon{
+    -fx-icon-size: 18px;
+    -fx-icon-color: -color-fg-default;
+}
+.headbar .leading .title{
+    -fx-font-size: 20;
+    -fx-fill: -color-fg-default;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-weight: bold;
+}
+.headbar .leading .icon{
+    -fx-shape: "M682.666667 384V298.666667h-170.666667v234.666666c-17.92-13.226667-39.68-21.333333-64-21.333333A106.666667 106.666667 0 0 0 341.333333 618.666667a106.666667 106.666667 0 0 0 106.666667 106.666666 106.666667 106.666667 0 0 0 106.666667-106.666666V384h128m-170.666667-298.666667a426.666667 426.666667 0 0 1 426.666667 426.666667 426.666667 426.666667 0 0 1-426.666667 426.666667A426.666667 426.666667 0 0 1 85.333333 512 426.666667 426.666667 0 0 1 512 85.333333z";
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #fa476cff 0.0%, #405ffdff 100.0%);
+    -fx-pref-width: 25;
+    -fx-pref-height: 25;
+    -fx-max-width: 25;
+    -fx-max-height: 25;
+}
+.headbar .trailing{
+    -fx-spacing: 8;
+    -fx-alignment: center-right;
+    -fx-padding: 0 10 0 0;
+}
+.headbar .trailing .button,
+.headbar .trailing .toggle-button{
+    -fx-content-display: graphic-only;
+    -fx-graphic-text-gap: 0;
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 35;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.headbar .trailing .button:hover,
+.headbar .trailing .toggle-button:hover{
+    -fx-background-color: -color-bg-subtle;
+    -fx-opacity: 0.9;
+}
+.headbar .trailing .button .ikonli-font-icon,
+.headbar .trailing .toggle-button .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+    -fx-icon-size: 18px;
+}
+.headbar .trailing > .system-func{
+    -fx-spacing: 8;
+    -fx-alignment: center-right;
+}
+.headbar .trailing > .system-func > .close-btn:hover{
+    -fx-background-color: -color-danger-emphasis;
+}
+/*关闭按钮悬停时图标改为白色：亮色皮肤下避免红底黑图标对比不足*/
+.headbar .trailing > .system-func > .close-btn:hover .ikonli-font-icon{
+    -fx-icon-color: #ffffff;
+}
+.headbar .trailing > .system-func > .max-btn > .ikonli-font-icon{
+    -fx-icon-code: mdral-fullscreen;
+}
+.headbar .trailing > .system-func > .max-btn.full-exit > .ikonli-font-icon{
+    -fx-icon-code: mdral-fullscreen_exit;
+}
+
+/*搜索框*/
+.search-pane{
+    -fx-padding: 0 10 0 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 36px;
+    -fx-pref-height: 36;
+    -fx-min-height: 36;
+    -fx-max-height: 36;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 36;
+}
+.search-pane:hover{
+    -fx-border-color: -color-border-default;
+}
+.search-pane > .text-field{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: -color-fg-default;
+}
+.search-pane > .button{
+    -fx-min-width: 25;
+    -fx-min-height: 25;
+}
+
+
+/*======================左侧导航栏======================*/
+.main-nav{
+    -fx-pref-width: 200px;
+    -fx-padding: 5 0 0 5;
+    -fx-spacing: 2;
+}
+
+.main-nav-shortcuts-scroll{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+.main-nav-shortcuts-scroll > .viewport{
+    -fx-background-color: transparent;
+}
+
+.main-nav .scroll-pane .thumb{
+    visibility: false;
+}
+.main-nav .scroll-pane:hover .thumb{
+    visibility: true;
+}
+
+.main-nav .scroll-bar:horizontal .thumb{
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+}
+.main-nav .scroll-bar:vertical .thumb{
+    -fx-pref-width: 2px;
+    -fx-background-color:-color-border-default;
+    -fx-background-radius: 0em;
+}
+
+/*主功能按钮（全部/收藏/歌单/分类/随机）*/
+.main-nav .toggle-button,
+.main-nav .button{
+    -fx-background-color: transparent;
+    -fx-font-size: 16;
+    -fx-text-fill: -color-fg-muted;
+    -fx-graphic-text-gap: 10;
+    -fx-padding: 8 0 8 12;
+    -fx-background-radius: 8;
+}
+
+.main-nav .toggle-button:hover,
+.main-nav .button:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.main-nav .toggle-button:selected{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-accent-emphasis;
+}
+.main-nav .ikonli-font-icon{
+    -fx-icon-size: 18px;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .toggle-button:selected .ikonli-font-icon,
+.main-nav .button:selected .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+.main-nav .separator{
+    -fx-padding: 8 10 4 10;
+    -fx-opacity: 0.4;
+}
+
+/*快捷入口分组标题*/
+.main-nav .grid-left-parent-btn{
+    -fx-font-size: 12;
+    -fx-text-fill: -color-fg-subtle;
+    -fx-padding: 6 0 4 12;
+    -fx-graphic-text-gap: 8;
+}
+.main-nav .grid-left-parent-btn:hover{
+    -fx-background-color: transparent;
+}
+.main-nav .grid-left-parent-btn .ikonli-font-icon{
+    -fx-icon-size: 14px;
+}
+
+/*任意门子项（比主按钮小一号）*/
+.main-nav .grid-left-anywhere-folder-btn,
+.main-nav .grid-left-anywhere-online-btn,
+.main-nav .grid-left-anywhere-category-btn,
+.main-nav .grid-left-anywhere-va-btn,
+.main-nav .grid-left-anywhere-tag-btn,
+.main-nav .grid-left-anywhere-circle-btn{
+    -fx-font-size: 13;
+    -fx-graphic-text-gap: 10;
+    -fx-padding: 6 0 6 12;
+}
+
+/*导航按钮图标颜色（按功能区分）*/
+.main-nav .grid-left-all-btn .ikonli-font-icon{
+    -fx-icon-color: -color-danger-emphasis;
+}
+.main-nav .grid-left-category-btn .ikonli-font-icon{
+    -fx-icon-color: -color-success-emphasis;
+}
+.main-nav .grid-left-star-btn .ikonli-font-icon{
+    -fx-icon-color: -color-warning-emphasis;
+}
+.main-nav .grid-left-collections-btn .ikonli-font-icon{
+    -fx-icon-color: -color-chart-6;
+}
+.main-nav .grid-left-parent-btn .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-parent-btn:selected{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-accent-emphasis;
+}
+.main-nav .grid-left-parent-btn:selected .ikonli-font-icon{
+    -fx-rotate: 90;
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+/*任意门按钮图标（通过 CSS -fx-icon-code 指定）*/
+.main-nav .grid-left-anywhere-folder-btn .ikonli-font-icon{
+    -fx-icon-code: mdoal-folder;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-online-btn .ikonli-font-icon{
+    -fx-icon-code: mdoal-cloud;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-category-btn .ikonli-font-icon{
+    -fx-icon-code: mdomz-outlined_flag;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-va-btn .ikonli-font-icon{
+    -fx-icon-code: mdomz-person;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-tag-btn .ikonli-font-icon{
+    -fx-icon-code: mdoal-loyalty;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-circle-btn .ikonli-font-icon{
+    -fx-icon-code: mdoal-local_fire_department;
+    -fx-icon-color: -color-fg-muted;
+}
+.main-nav .grid-left-anywhere-folder-btn:selected .ikonli-font-icon,
+.main-nav .grid-left-anywhere-online-btn:selected .ikonli-font-icon,
+.main-nav .grid-left-anywhere-category-btn:selected .ikonli-font-icon,
+.main-nav .grid-left-anywhere-va-btn:selected .ikonli-font-icon,
+.main-nav .grid-left-anywhere-tag-btn:selected .ikonli-font-icon,
+.main-nav .grid-left-anywhere-circle-btn:selected .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+}
+
+
+/*===================================================线程进度显示弹出界面=================================================================*/
+.service-progress-pane{
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10;
+    -fx-pref-height: 145;
+    -fx-pref-width: 400;
+}
+.service-progress-pane .label{
+    -fx-text-fill: -color-fg-muted;
+}
+.service-progress-pane .title{
+    -fx-font-size: 24;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-weight: bold;
+}
+.service-progress-pane .progress-bar{
+    -fx-pref-width: 180;
+}
+.service-progress-pane .message{
+    -fx-font-size: 16;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.message.accent {
+    -color-message-bg: -color-accent-subtle;
+}
+.message.success {
+    -color-message-bg: -color-success-subtle;
+}
+.message.warning {
+    -color-message-bg: -color-warning-subtle;
+}
+.message.danger {
+    -color-message-bg: -color-danger-subtle;
+}
+.message.tile-base > .container > .header > .description Text {
+    -fx-fill: -color-fg-default;
+}
+.message.tile-base:has-title:has-description > .container > .header > .description Text {
+     -fx-fill: -color-fg-default;
+ }
+
+/*======================后台任务管理======================*/
+/* HeaderBar 任务按钮 */
+.task-center-btn {
+    -fx-content-display: graphic-only;
+    -fx-graphic-text-gap: 0;
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 35;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.task-center-btn:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-opacity: 0.9;
+}
+.task-center-btn .ikonli-font-icon {
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 18px;
+}
+/* 计数徽标 */
+.task-badge {
+    -fx-background-color: -color-danger-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+    -fx-background-radius: 10;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 5 1 5;
+    -fx-translate-x: 2;
+    -fx-translate-y: 4;
+    -fx-min-width: 16;
+    -fx-min-height: 16;
+    -fx-alignment: center;
+}
+/* 任务列表面板 */
+.task-list-pane {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 10px;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10px;
+}
+.task-list-view {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+.task-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 2 0 2 0;
+}
+.task-list-view .list-cell:filled:hover {
+    -fx-background-color: transparent;
+}
+/* 任务行 */
+.task-cell {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8;
+    -fx-padding: 10 8 6 8;
+}
+.task-cell .ikonli-font-icon {
+    -fx-icon-size: 22px;
+}
+.task-cell-icon {
+    -fx-icon-color: -color-accent-emphasis;
+}
+.task-cell-icon:running {
+    -fx-icon-color: -color-accent-emphasis;
+}
+.task-cell-icon:succeeded {
+    -fx-icon-color: -color-success-emphasis;
+}
+.task-cell-icon:failed {
+    -fx-icon-color: -color-danger-emphasis;
+}
+.task-cell-icon:cancelled {
+    -fx-icon-color: -color-fg-muted;
+}
+/* 顶部进度条：贴边缘，圆角与 cell 顶部融合 */
+.task-cell-progress {
+    -fx-pref-height: 3;
+    -fx-background-radius: 8 8 0 0;
+    -fx-background-insets: 0;
+    -fx-accent: -color-accent-emphasis;
+}
+.task-cell-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+.task-cell-msg {
+    -fx-font-size: 11px;
+    -fx-text-fill: -color-fg-muted;
+}
+.task-cell .progress-bar {
+    -fx-pref-height: 8;
+    -fx-background-radius: 4;
+    -fx-accent: -color-accent-emphasis;
+}
+.task-cell-indicator {
+    -fx-progress-color: -color-accent-emphasis;
+    -fx-scale-shape: true;
+}
+/* 操作按钮 */
+.task-action-btn {
+    -fx-content-display: graphic-only;
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-pref-width: 28;
+    -fx-pref-height: 28;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+.task-action-btn:hover {
+    -fx-background-color: -color-border-default;
+}
+.task-action-btn .ikonli-font-icon {
+    -fx-icon-size: 16px;
+    -fx-icon-color: -color-fg-muted;
+}
+/* 后台任务弹窗
+   选择器带 .app-dialog 前缀，确保覆盖 dialog-common.css 中同名区域规则 */
+.app-dialog.task-dialog {
+    -fx-pref-width: 560;
+    -fx-pref-height: 500;
+}
+/* 列表贴齐标题与按钮的左右留白，不额外增加内边距 */
+.app-dialog.task-dialog > .jfx-layout-body {
+    -fx-padding: 0 20px 0 20px;
+    -fx-background-color: transparent;
+}

@@ -1,0 +1,83 @@
+.page-header {
+    -fx-background-color: -color-bg-default;
+    -fx-padding: 2 4 8 4;
+    -fx-spacing: 6;
+}
+
+.page-header-separator {
+    -fx-min-height: 1;
+    -fx-pref-height: 1;
+    -fx-max-height: 1;
+    -fx-background-color: -color-border-default;
+}
+
+.page-header-row {
+    -fx-spacing: 18;
+    -fx-alignment: top-left;
+}
+
+.page-header-leading {
+    -fx-spacing: 4;
+    -fx-alignment: center-left;
+}
+
+.page-header-identity {
+    -fx-spacing: 6;
+    -fx-alignment: top-left;
+}
+
+.page-header-title-row {
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+}
+
+.page-header-icon-box .ikonli-font-icon {
+    -fx-icon-size: 25px;
+    -fx-icon-color: -color-fg-default;
+}
+
+.page-header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-fg-default;
+}
+
+.page-header-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.page-header-subtitle-row {
+    -fx-spacing: 6;
+    -fx-alignment: center-left;
+}
+
+.page-header-subtitle-extra {
+    -fx-spacing: 6;
+    -fx-alignment: center-left;
+}
+
+.page-header-actions {
+    -fx-spacing: 10;
+    -fx-alignment: center-right;
+}
+
+.page-header-extra {
+    -fx-spacing: 8;
+}
+
+.page-header.compact {
+    -fx-padding: 0 0 12 0;
+}
+
+.page-header.compact .page-header-title {
+    -fx-font-size: 16px;
+}
+
+.page-header.compact .page-header-icon-box .ikonli-font-icon {
+    -fx-icon-size: 18px;
+}
+
+.page-header.compact .page-header-subtitle {
+    -fx-font-size: 12px;
+}

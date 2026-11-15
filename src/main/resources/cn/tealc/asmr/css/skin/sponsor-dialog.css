@@ -1,0 +1,22 @@
+/*
+ * 赞赏弹窗样式。
+ *
+ * 与「设置 → 关于 → 赞赏」共用同一张收款二维码图片，
+ * 这里只负责正文排版与二维码的视觉处理，外壳仍由 dialog-common.css 统一提供。
+ */
+
+.sponsor-dialog .sponsor-description {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 3px;
+}
+
+/*二维码图片自带白色底，用轻微投影把它从弹窗背景中区分出来*/
+.sponsor-dialog .sponsor-qr {
+    -fx-effect: dropshadow(gaussian, -color-shadow-default, 14, 0.12, 0, 4);
+}
+
+.sponsor-dialog .sponsor-hint {
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 12px;
+}

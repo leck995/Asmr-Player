@@ -1,0 +1,222 @@
+/*================setting.css（PrimerDark / PrimerLight 通用，全部使用 atlantafx 变量）==========================*/
+
+/*======================容器与标题======================*/
+.setting-background-pane{
+    -fx-background-insets: 0;
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 12;
+    -fx-spacing: 8;
+}
+
+.setting-background-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.setting-group-title{
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-padding: 14px 0 4px 0;
+    -fx-text-fill: -color-fg-default;
+}
+
+/*======================设置项 Tile======================*/
+.setting-tile{
+    /*背景色与大图作品卡片保持一致*/
+    -fx-background-color: -color-bg-overlay;
+    -fx-background-radius: 10;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 10;
+}
+.setting-tile > .container{
+    -fx-padding: 0.85em 1em;
+    -fx-background-radius: 10;
+    -fx-alignment: center-left;
+    -fx-spacing: 1em;
+}
+.setting-tile .graphic{
+    -fx-padding: 0;
+}
+.setting-tile .header{
+    -fx-alignment: center-left;
+    -fx-spacing: 0.25em;
+}
+.setting-tile .title{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+.setting-tile .description{
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-fg-muted;
+}
+.setting-tile .action{
+    -fx-alignment: center-right;
+}
+/*======================ComboBox / Spinner 箭头区======================*/
+.setting-tab-pane .combo-box-base > .arrow-button,
+.setting-tab-pane .spinner > .increment-arrow-button,
+.setting-tab-pane .spinner > .decrement-arrow-button {
+    -fx-background-color: transparent;
+}
+.setting-tile .ikonli-font-icon{
+    -fx-icon-size: 20px;
+    -fx-icon-color: -color-fg-muted;
+}
+/* Tile 内 action 容器（横排多项控件时使用） */
+.setting-tile-action-box{
+    -fx-alignment: center-right;
+    -fx-spacing: 8;
+}
+
+/*======================Slider（原生 Slider + ProgressSliderSkin）======================*/
+.setting-slider {
+    -color-slider-thumb: -color-accent-emphasis;
+    -color-slider-thumb-border: -color-accent-emphasis;
+    -color-slider-track: -color-neutral-muted;
+    -color-slider-track-progress: -color-accent-emphasis;
+    -color-slider-tick: -color-fg-muted;
+    -fx-pref-width: 180px;
+}
+
+
+
+/*======================TabPane======================*/
+.setting-tab-pane {
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+}
+.setting-tab-pane .tab-header-area{
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+.setting-tab-pane .tab-header-area .headers-region{
+    -fx-background-color: -color-bg-default;
+}
+.setting-tab-pane .tab-header-area .tab-header-background{
+    -fx-background-color: -color-bg-default;
+}
+.setting-tab-pane .control-buttons-tab{
+    -fx-max-width: 0;
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.setting-tab-pane .tab-down-button{
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.setting-tab-pane .tab-down-button .arrow {
+    -fx-shape: "";
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.setting-tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-pref-height: 38;
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+}
+.setting-tab-pane .tab:selected {
+    -fx-background-color: -color-accent-subtle;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 8px 8px 0 0;
+}
+.setting-tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-pref-height: 38;
+    -fx-padding: 0 12 0 12;
+    -fx-text-fill: -color-fg-default;
+}
+
+.setting-tab-pane > .tab-content-area {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-border-default transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 4px 0 0 0;
+}
+
+/*======================RadioButton======================*/
+.radio-button{
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-default;
+}
+.radio-button .radio{
+    -fx-background-color: -color-bg-inset, -color-fg-muted;
+    -fx-background-insets: 0, 1px;
+    -fx-background-radius: 1em;
+}
+.radio-button:selected .radio{
+    -fx-background-color: -color-accent-emphasis, -color-accent-emphasis;
+}
+.radio-button:selected .dot{
+    -fx-background-color: -color-fg-emphasis;
+}
+
+/*======================ChoiceBox / ComboBox======================*/
+.choice-box {
+    -fx-background-color: -color-bg-inset;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-padding: 0;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.choice-box:focused {
+    -fx-color: -color-bg-subtle;
+    -fx-background-insets: -1.4, 0, 1, 2;
+    -fx-background-radius: 6.4, 5, 4, 3;
+}
+.choice-box:hover {
+    -fx-color: -color-bg-subtle;
+}
+.choice-box:showing {
+    -fx-color: -color-bg-subtle;
+}
+.choice-box > .label {
+    -fx-padding: 0.166667em 0.333333em 0.25em 0.5em;
+    -fx-text-fill: -color-fg-default;
+}
+.choice-box > .open-button {
+    -fx-background-color: null;
+    -fx-padding: 0.083333em 0.666667em 0 0;
+}
+.choice-box > .open-button > .arrow {
+    -fx-background-color: -color-fg-default;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em;
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.choice-box .context-menu {
+    -fx-background-radius: 6, 5, 4;
+    -fx-pref-width: 150;
+    -fx-background-color: -color-bg-overlay;
+}
+
+/*======================快捷键 Grid======================*/
+.setting-shortcut-grid{
+    -fx-padding: 10 20 10 20;
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8;
+    -fx-hgap: 30;
+}
+.setting-shortcut-grid .label{
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 15px;
+}
+.setting-shortcut-header{
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 14px;
+}
+.setting-shortcut-key-header{
+    -fx-padding: 0 0 0 10px;
+}
+
+/*======================按钮内 FontIcon 颜色======================*/
+.button.accent .ikonli-font-icon,
+.button.danger .ikonli-font-icon,
+.button.success .ikonli-font-icon{
+    -fx-icon-color: -color-fg-emphasis;
+}

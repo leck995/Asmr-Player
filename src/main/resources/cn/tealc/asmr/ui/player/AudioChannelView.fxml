@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.player.AudioChannelView">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="声道">
+               <content>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="声道" textAlignment="RIGHT" />
+                               <ChoiceBox fx:id="channelComboBox" prefWidth="150.0">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:value="默认" />
+                                           <String fx:value="立体声" />
+                                           <String fx:value="反向立体声" />
+                                           <String fx:value="左声道" />
+                                           <String fx:value="右声道" />
+                                           <String fx:value="杜比环绕声" />
+                                           <String fx:value="耳机增强" />
+                                           <String fx:value="单声道" />
+                                       </FXCollections>
+                                   </items>
+                               </ChoiceBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="选择输出设备" textAlignment="RIGHT" />
+                              <ChoiceBox fx:id="outputDeviceComboBox" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="92.0" layoutY="206.0" style="-fx-text-fill: -color-fg-muted;" text="对于单声道的媒体，切换到对应单声道，即可享受双声道的快感" />
+                        <Label style="-fx-text-fill: -color-fg-muted;" text="声道会在切换播放媒体时自动重置为默认；输出设备会在重启时重置为默认" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab text="均衡器">
+               <content>
+                  <VBox alignment="CENTER" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <Label text="预设" />
+                              <ChoiceBox fx:id="audioEffectChoiceBox" prefWidth="150.0" />
+                           </children></HBox>
+                        <VBox fx:id="sliderGroup" alignment="TOP_CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider01" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="60Hz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider02" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="170Hz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="40.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider03" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="310Hz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="70.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider04" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="00Hz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider05" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="1KHz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="130.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider06" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="3KHz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="130.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider07" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="6KHz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="190.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider08" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="12KHz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="220.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider09" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="14KHz" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="10.0">
+                                       <children>
+                                          <JFXSlider id="effectSlider" fx:id="effectSlider10" majorTickUnit="5.0" max="20.0" min="-20.0" minorTickCount="5" orientation="VERTICAL" />
+                                          <Label text="16KHz" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label style="-fx-text-fill: -color-fg-muted;" text="预设在重启时重置为默认" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

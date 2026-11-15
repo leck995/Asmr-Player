@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import cn.tealc.asmr.ui.component.EmptyState?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="root" minWidth="0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.anywheredoor.AnywhereDoorView">
+   <padding><Insets top="12" right="12" bottom="12" left="12" /></padding>
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10">
+         <padding><Insets bottom="14" /></padding>
+         <Label text="快捷入口" styleClass="storage-source-heading" />
+         <Label fx:id="count" styleClass="storage-source-secondary" />
+         <Region HBox.hgrow="ALWAYS" />
+         <Button text="创建文件夹入口" onAction="#createFolder" styleClass="accent">
+            <graphic><FontIcon iconLiteral="mdoal-add" /></graphic>
+         </Button>
+      </HBox>
+   </top>
+   <center>
+      <StackPane>
+         <ScrollPane fx:id="scroll" fitToWidth="true" hbarPolicy="NEVER" styleClass="storage-source-scroll">
+            <content>
+               <VBox spacing="8" minWidth="0">
+                  <Label fx:id="message" wrapText="true" styleClass="storage-source-form-message" />
+                  <FlowPane fx:id="cards" hgap="10" vgap="10" styleClass="storage-source-cards" minWidth="0" />
+               </VBox>
+            </content>
+         </ScrollPane>
+         <EmptyState fx:id="empty" />
+      </StackPane>
+   </center>
+</BorderPane>

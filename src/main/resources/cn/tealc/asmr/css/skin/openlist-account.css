@@ -1,0 +1,62 @@
+/*======================OpenList 账号管理 CSS（PrimerDark）============================*/
+
+.account-card{
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-color: -color-border-subtle;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 12 15;
+    -fx-effect: dropshadow(three-pass-box, -color-shadow-default, 8, 0, 0, 1);
+}
+
+.account-card-title{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+.account-card-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 18px;
+}
+
+/* 账号列表 */
+.account-list-view{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-spacing: 5px;
+}
+.account-list-view .list-cell{
+    -fx-text-fill: -color-fg-default;
+    -fx-padding: 4 8;
+    -fx-background-radius: 6;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.account-list-view .list-cell:filled:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.account-list-view .list-cell:filled:selected{
+    -fx-background-color: -color-accent-subtle;
+}
+
+/* 表单字段 */
+.account-field-label{
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-muted;
+}
+.account-card .text-field,
+.account-card .password-field{
+    -fx-background-color: -color-input-surface;
+    -fx-background-radius: 6;
+    -fx-text-fill: -color-fg-default;
+    -fx-prompt-text-fill: -color-fg-subtle;
+}
+
+/* 按钮区 */
+.account-button-pane{
+    -fx-spacing: 8;
+    -fx-alignment: center-left;
+}

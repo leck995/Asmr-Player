@@ -1,0 +1,3 @@
+# Keep Unix shells runnable from a Windows checkout, and batch files CRLF.
+*.sh text eol=lf
+*.bat text eol=crlf

@@ -1,0 +1,42 @@
+<?import atlantafx.base.controls.Tab?>
+<?import atlantafx.base.controls.TabLine?>
+<?import cn.tealc.asmr.ui.component.PageHeader?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="root" style="-fx-background-radius: 10;" styleClass="background-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.library.MediaLibraryView">
+   <children>
+      <AnchorPane maxHeight="Infinity" maxWidth="Infinity">
+         <children>
+            <BorderPane styleClass="media-library-layout" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="16.0">
+               <top>
+                  <VBox styleClass="media-library-header">
+                     <children>
+                        <PageHeader fx:id="pageHeader" styleClass="media-library-page-header" />
+                        <TabLine fx:id="tabPane" styleClass="media-library-tabs">
+                           <tabs>
+                              <Tab fx:id="localLibraryTab" text="媒体库">
+                                 <graphic><FontIcon iconLiteral="mdoal-folder_open" /></graphic>
+                              </Tab>
+                              <Tab fx:id="openListTab" text="存储源">
+                                 <graphic><FontIcon iconLiteral="mdomz-storage" /></graphic>
+                              </Tab>
+                              <Tab fx:id="anywhereDoorTab" text="快捷入口">
+                                 <graphic><FontIcon iconLiteral="mdoal-arrow_forward" /></graphic>
+                              </Tab>
+                           </tabs>
+                        </TabLine>
+                     </children>
+                  </VBox>
+               </top>
+               <center>
+                  <StackPane fx:id="contentPane" styleClass="media-library-content" />
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

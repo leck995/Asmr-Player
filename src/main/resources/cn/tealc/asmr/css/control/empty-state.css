@@ -1,0 +1,43 @@
+.empty-state {
+    -fx-padding: 32px;
+    -fx-spacing: 8px;
+    -fx-alignment: center;
+}
+
+.empty-state-graphic .ikonli-font-icon {
+    -fx-icon-size: 48px;
+    -fx-icon-color: -color-fg-subtle;
+}
+
+.empty-state-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -color-fg-default;
+}
+
+.empty-state-description {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.empty-state-action {
+    -fx-padding: 6px 0 0 0;
+    -fx-spacing: 8px;
+}
+
+.empty-state.compact {
+    -fx-padding: 16px;
+    -fx-spacing: 6px;
+}
+
+.empty-state.compact .empty-state-graphic .ikonli-font-icon {
+    -fx-icon-size: 30px;
+}
+
+.empty-state.compact .empty-state-title {
+    -fx-font-size: 13px;
+}
+
+.empty-state.compact .empty-state-description {
+    -fx-font-size: 12px;
+}

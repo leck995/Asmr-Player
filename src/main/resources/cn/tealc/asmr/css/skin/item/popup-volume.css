@@ -1,0 +1,86 @@
+/*音量弹窗：紧凑竖向面板*/
+.popup-volume-sound-popup{
+    -fx-background-color: -color-border-default, -color-bg-default;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 14, 13;
+    -fx-padding: 10 8 10 8;
+}
+
+/*静音按钮：圆形点击区，图标跟随主题前景色*/
+.popup-volume-mute-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 15;
+    -fx-padding: 6;
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+    -fx-pref-width: 30;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+}
+.popup-volume-mute-btn:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.popup-volume-mute-btn Region{
+    -fx-pref-width: 18;
+    -fx-pref-height: 18;
+    -fx-shape: "M599.104 243.434667V789.546667c0 43.626667-53.866667 64.789333-84.053333 33.024l-140.309334-128.085334H203.392a64 64 0 0 1-64-64V416.981333a64 64 0 0 1 60.224-63.893333l4.309333-0.106667 172.970667 2.88 138.176-145.450666c30.165333-31.786667 84.053333-10.602667 84.053333 33.024z m127.68 12.309333c92.544 47.082667 158.229333 139.392 167.957333 247.829333v56.021334c-9.450667 105.472-71.850667 195.690667-160.426666 243.882666L704.789333 746.666667A245.269333 245.269333 0 0 0 832 531.584a245.333333 245.333333 0 0 0-134.698667-219.029333l29.482667-56.810667z m-191.68 26.496l-131.157333 138.090667-200.554667-3.349334v213.482667h196.16l135.552 123.733333V282.24z m137.770667 77.418667a191.466667 191.466667 0 0 1 94.442666 165.418666 191.466667 191.466667 0 0 1-92.416 164.202667l-29.653333-56.96a127.488 127.488 0 0 0 58.069333-107.242667 127.488 127.488 0 0 0-60.010666-108.501333l29.568-56.917333z";
+    -fx-background-color: -color-fg-muted;
+}
+.popup-volume-mute-btn:selected Region{
+    -fx-background-color: -color-accent-emphasis;
+    -fx-shape: "M599.104 476.053333v313.472c0 43.626667-53.866667 64.789333-84.053333 33.024l-137.194667-125.269333 45.290667-45.290667 111.957333 102.186667V540.074667l64-64z m183.68-183.701333a308.885333 308.885333 0 0 1 111.957333 211.2v56.042667c-9.450667 105.472-71.850667 195.690667-160.426666 243.882666l-29.546667-56.789333A245.269333 245.269333 0 0 0 832 531.584a244.906667 244.906667 0 0 0-94.72-193.685333l45.525333-45.546667z m-94.933333-55.893333l45.269333 45.248-482.730667 482.709333-45.248-45.226667 482.709334-482.730666z m10.090666 140.757333a191.466667 191.466667 0 0 1 69.376 147.84 191.466667 191.466667 0 0 1-92.416 164.224l-29.653333-56.96a127.488 127.488 0 0 0 58.069333-107.242667c0-41.962667-20.053333-79.146667-50.944-102.293333l45.568-45.568z m-98.837333-133.76v21.418667l-64 64V282.24l-131.157333 138.090667-200.554667-3.349334v213.482667l30.122667-0.021333-57.749334 57.770666a64 64 0 0 1-36.373333-57.749333V416.981333a64 64 0 0 1 60.224-63.893333l4.309333-0.106667 172.970667 2.88 138.176-145.450666c30.165333-31.786667 84.053333-10.602667 84.053333 33.024z";
+}
+
+/*静音按钮与滑条之间的细分隔线*/
+.popup-volume-divider{
+    -fx-background-color: -color-border-muted;
+    -fx-background-radius: 1;
+    -fx-min-height: 1;
+    -fx-pref-height: 1;
+    -fx-max-height: 1;
+}
+
+/*------------音量滑条-------------*/
+.popup-volume-slider {
+    -jfx-default-thumb: -color-accent-emphasis;
+    -jfx-default-track: -color-border-default;
+}
+/*未到达轨迹*/
+.popup-volume-slider .track,
+.popup-volume-slider:vertical .track {
+    -fx-background-color: -jfx-default-track;
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+    -fx-pref-width: 4px;
+}
+/*移动的点*/
+.popup-volume-slider .thumb,
+.popup-volume-slider:focused .thumb {
+    -fx-background-color: -jfx-default-thumb;
+    -fx-background-radius: 7;
+    -fx-background-insets: 0;
+    -fx-pref-width: 14;
+    -fx-pref-height: 14;
+}
+/*已抵达轨迹*/
+.popup-volume-slider .colored-track {
+    -fx-background-color: -jfx-default-thumb;
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+}
+/*隐藏 JFoenix 拖动时弹出的数值气泡，改用底部常驻百分比*/
+.popup-volume-slider .animated-thumb {
+    -fx-opacity: 0;
+}
+/*最小值时移动点变灰*/
+.popup-volume-slider:min .thumb,
+.popup-volume-slider:min:focused .thumb {
+    -fx-background-color: -jfx-default-track;
+}
+
+/*底部音量百分比*/
+.popup-volume-value {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}

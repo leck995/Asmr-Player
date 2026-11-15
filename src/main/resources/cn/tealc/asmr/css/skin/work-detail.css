@@ -1,0 +1,515 @@
+/*======================网格：详情弹窗相关CSS============================*/
+
+.detail-dialog{
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 20;
+    -fx-padding: 20;
+    -fx-pref-width: 1100;
+    -fx-pref-height: 680;
+}
+
+.detail-dialog .scroll-pane,
+.detail-dialog .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.detail-dialog .scroll-pane .thumb{
+    -fx-background-color: -color-fg-subtle;
+    visibility: false;
+}
+.detail-dialog .scroll-pane:hover .thumb{
+    visibility: true;
+}
+
+.detail-dialog .detail-metadata-section{
+    -fx-padding: 0;
+}
+/*分组标题：说明性文字，字号小于胶囊内容，不抢视觉重心*/
+.detail-dialog .detail-section-title{
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+/*沿用卡片分组小标题的胶囊形状，颜色随各自内容色系*/
+.detail-dialog .detail-metadata-section > .detail-section-title{
+    -fx-padding: 1 8 1 8;
+    -fx-background-radius: 6;
+}
+.detail-dialog .detail-metadata-section > .detail-section-tags{
+    -fx-background-color: -color-card-section-tags-bg;
+    -fx-text-fill: -color-card-section-tags-fg;
+}
+.detail-dialog .detail-metadata-section > .detail-section-vas{
+    -fx-background-color: -color-card-section-vas-bg;
+    -fx-text-fill: -color-card-section-vas-fg;
+}
+.detail-dialog .detail-metadata-section > .detail-section-circle{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.detail-dialog .detail-dialog-title{
+    -fx-pref-width: 920;
+    -fx-padding: 5 5 10 5;
+}
+.detail-dialog .detail-dialog-title .detail-dialog-title-text{
+    -fx-fill: -color-fg-default;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+.detail-dialog .detail-ai-title-translate-button{
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 6px;
+    -fx-min-width: 22px;
+    -fx-min-height: 22px;
+    -fx-pref-width: 22px;
+    -fx-pref-height: 22px;
+    -fx-cursor: hand;
+}
+.detail-dialog .detail-ai-title-translate-button .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 16px;
+}
+
+
+/*========播放全部 / 打开文件夹 / 收藏========*/
+.detail-dialog .play-all-btn{
+    -fx-background-color: -color-accent-emphasis;
+    -fx-text-fill: -color-fg-emphasis;
+    -fx-alignment: center;
+}
+.detail-dialog .play-all-btn .label{
+    -fx-padding: 0;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.detail-dialog .play-all-btn:hover{
+    -fx-opacity: 0.9;
+}
+.detail-dialog .play-all-btn:pressed{
+    -fx-opacity: 0.8;
+}
+.detail-dialog .play-all-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2m-motion-play-outline;
+    -fx-icon-color: -color-fg-emphasis;
+    -fx-icon-size: 16px;
+}
+
+.detail-dialog .open-folder-btn,
+.detail-dialog .star-btn,
+.detail-dialog .album-btn{
+    -fx-pref-width: 35;
+    -fx-pref-height: 35;
+    -fx-max-width: 35;
+    -fx-max-height: 35;
+    -fx-min-width: 35;
+    -fx-min-height: 35;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 35;
+    -fx-background-insets: 0;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+.detail-dialog .open-folder-btn:hover,
+.detail-dialog .star-btn:hover,
+.detail-dialog .album-btn:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+
+.detail-dialog .open-folder-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2f-folder-outline;
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 16px;
+}
+.detail-dialog .open-folder-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+}
+
+.detail-dialog .star-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart-outline;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 16px;
+}
+.detail-dialog .star-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+.detail-dialog .star-btn:selected .ikonli-font-icon{
+    -fx-icon-code: mdi2h-heart;
+    -fx-icon-color: -color-danger-emphasis;
+}
+
+/*加入作品集：与打开文件夹、收藏同款描边图标与配色，仅图标语义不同*/
+.detail-dialog .album-btn .ikonli-font-icon{
+    -fx-icon-code: mdi2b-bookmark-plus-outline;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 16px;
+}
+.detail-dialog .album-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+
+.detail-dialog .right{
+    -fx-padding: 0 0 0 15;
+    -fx-pref-width: 650;
+}
+
+.detail-dialog .center{
+    -fx-background-color: -color-bg-subtle;
+}
+.detail-dialog .separator:vertical{
+
+    -fx-min-width: 500;
+    -fx-background-color: green;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.detail-dialog .separator:vertical .line{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-size: 0;
+    -fx-padding: 0;
+    -fx-shape: "";
+}
+
+/*========封面叠层：作品编号 / 日期压在封面底边========*/
+.detail-dialog .detail-cover-pane{
+    -fx-padding: 0;
+}
+/*浮层用半透明深色胶囊，任何封面下都可读，与卡片封面浮层一致*/
+.detail-dialog .detail-meta-chip{
+    -fx-background-color: -color-card-scrim;
+    -fx-background-radius: 6;
+    -fx-padding: 2 8 2 8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-card-on-scrim;
+    -fx-graphic-text-gap: 4;
+}
+.detail-dialog .detail-work-id{
+    -fx-cursor: hand;
+}
+.detail-dialog .detail-work-id:hover{
+    -fx-background-color: -color-card-scrim-hover;
+}
+.detail-dialog .detail-work-id .web.ikonli-font-icon{
+    -fx-icon-code: mdi2c-cloud-outline;
+    -fx-icon-size: 13px;
+    -fx-icon-color: -color-card-on-scrim;
+}
+.detail-dialog .detail-work-id .local.ikonli-font-icon{
+    -fx-icon-code: mdi2f-folder-outline;
+    -fx-icon-size: 13px;
+    -fx-icon-color: -color-card-on-scrim;
+}
+.detail-dialog .detail-work-id:hover .web.ikonli-font-icon,
+.detail-dialog .detail-work-id:hover .local.ikonli-font-icon{
+    -fx-icon-color: -color-card-on-scrim;
+}
+
+/*========评分（在播放全部左侧，高度与 32px 的按钮对齐）========*/
+.detail-dialog .detail-rating{
+    -fx-pref-height: 32;
+    -fx-min-height: 32;
+    -fx-max-height: 32;
+    -fx-padding: 0 8 0 6;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 16;
+    -fx-graphic-text-gap: 5;
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-cursor: hand;
+}
+.detail-dialog .detail-rating:hover{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-default;
+}
+.detail-dialog .detail-rating .ikonli-font-icon{
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 16px;
+}
+.detail-dialog .detail-rating:rated{
+    -fx-text-fill: -color-fg-default;
+}
+.detail-dialog .detail-rating:rated .ikonli-font-icon{
+    -fx-icon-color: -color-warning-2;
+}
+
+/*========字幕 / 全年龄标记（压在封面右上角，与编号同款浮层）========*/
+.detail-dialog .detail-tag-pane{
+    -fx-alignment: center-right;
+}
+/*与编号/日期共用浮层底，深色遮罩上仍按语义着色：字幕偏紫、全年龄偏绿*/
+.detail-dialog .detail-tag-label{
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8 2 8;
+    -fx-background-color: -color-card-scrim;
+    -fx-background-radius: 6;
+}
+.detail-dialog .detail-subtitle{
+    -fx-text-fill: -color-card-subtitle-on-scrim;
+}
+.detail-dialog .detail-all-ages{
+    -fx-text-fill: -color-card-nsfw-on-scrim;
+}
+
+/*========社团（与 BigWorkCell cell-circle 一致）========*/
+.detail-dialog .circle-label{
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-fg-subtle;
+}
+.detail-dialog .circle-label:hover{
+    -fx-text-fill: -color-fg-muted;
+}
+.detail-dialog .circle-label .ikonli-font-icon{
+    -fx-icon-code: mdoal-local_fire_department;
+    -fx-icon-color: -color-fg-subtle;
+    -fx-icon-size: 14px;
+}
+.detail-dialog .circle-label:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+}
+
+/*========分类 / 声优 / 标签（配色与 BigWorkCell 保持一致）========*/
+/*分类用详情页专属变量：弹窗底色偏亮，靠淡填充+描边勾勒轮廓，不牵动作品卡片*/
+.detail-dialog .category-label{
+    -fx-background-color: -color-detail-category-bg;
+    -fx-border-color: -color-detail-category-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 13;
+    -fx-background-insets: 0;
+    -fx-padding: 3 11 3 11;
+    -fx-background-radius: 13;
+    -fx-text-fill: -color-detail-category-fg;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.detail-dialog .category-label:hover{
+    -fx-opacity: 0.88;
+}
+
+.detail-dialog .custom-tag{
+    -fx-background-color: -color-card-tag-bg;
+    -fx-padding: 3 11 3 11;
+    -fx-background-radius: 13;
+    -fx-text-fill: -color-card-tag-fg;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.detail-dialog .custom-tag:hover{
+    -fx-opacity: 0.88;
+}
+
+.detail-dialog .actor-label{
+    -fx-background-color: -color-card-vas-bg;
+    -fx-padding: 3 11 3 11;
+    -fx-background-radius: 13;
+    -fx-text-fill: -color-card-vas-fg;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.detail-dialog .actor-label:hover{
+    -fx-opacity: 0.88;
+}
+
+.detail-dialog .tag-label{
+    -fx-background-color: -color-accent-5;
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 4;
+    -fx-text-fill: -color-fg-emphasis;
+}
+.detail-dialog .tag-label:hover{
+    -fx-opacity: 0.8;
+}
+
+
+/*=======PathPane=========*/
+.path-view-pane{
+
+}
+.path-view-pane > .button{
+    -fx-background-color: -color-bg-default;
+    -fx-background-insets: 0;
+    -fx-padding: 5;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 12;
+    -fx-pref-height: 30;
+}
+.path-view-pane > .button:hover{
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-default;
+}
+.path-view-pane > .button .ikonli-font-icon{
+    -fx-icon-code: mdi2c-chevron-right;
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 16px;
+}
+.path-view-pane > .button:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+}
+
+.detail-dialog .detail-file-header{
+    -fx-padding: 2 4 8 4;
+}
+.detail-dialog .detail-file-list-title{
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.detail-dialog .detail-file-count{
+    -fx-text-fill: -color-fg-subtle;
+    -fx-font-size: 12px;
+}
+.detail-dialog .detail-file-refresh{
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 2 6;
+    -fx-cursor: hand;
+}
+.detail-dialog .detail-file-refresh:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.detail-dialog .detail-file-refresh .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 16px;
+}
+.detail-dialog .detail-file-refresh:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+}
+
+/* ===============歌曲表格================= */
+.folder-table-view,
+.folder-table-view .column-header,
+.folder-table-view .column-header-background,
+.folder-table-view .column-header-background .filler,
+.folder-table-view .corner {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.folder-table-view{
+    -fx-padding: 0 0 0 0;
+}
+/*表头左对齐*/
+.folder-table-view .column-header{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+.folder-table-view .column-header .label{
+    -fx-text-fill: -color-fg-muted;
+    -fx-alignment: center-left;
+    -fx-padding: 2 0 2 10px;
+}
+/*表头背景*/
+.folder-table-view .column-header-background{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+/*单元格*/
+.folder-table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 2 0 2 10px;
+    -fx-alignment: center-left;
+    -fx-text-fill: -color-fg-default;
+    -fx-font-size: 13px;
+}
+.folder-table-view .table-row-cell{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0.0em;
+    -fx-pref-height: 50px;
+    -fx-alignment: center;
+}
+.folder-table-view .table-row-cell:selected {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 2px;
+}
+.folder-table-view .table-row-cell:hover{
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 2px;
+}
+
+.folder-table-view .virtual-flow .scroll-bar:vertical,
+.folder-table-view .virtual-flow .scroll-bar:vertical .track,
+.folder-table-view .virtual-flow .scroll-bar:vertical .track-background,
+.folder-table-view .virtual-flow .scroll-bar:horizontal,
+.folder-table-view .virtual-flow .scroll-bar:horizontal .track,
+.folder-table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.folder-table-view .virtual-flow .scroll-bar .increment-button,
+.folder-table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.folder-table-view .cell-label:hover{
+    -fx-text-fill: -color-accent-emphasis;
+}
+.folder-table-view .num-column{
+    -fx-alignment: center-right;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.table-filter-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+}
+.table-filter-btn:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.table-filter-btn:selected{
+    -fx-background-color: -color-accent-emphasis;
+}
+.table-filter-btn .ikonli-font-icon{
+    -fx-icon-color: -color-fg-muted;
+    -fx-icon-size: 18px;
+}
+.table-filter-btn:hover .ikonli-font-icon{
+    -fx-icon-color: -color-fg-default;
+}
+.table-filter-btn:selected .ikonli-font-icon{
+    -fx-icon-color: -color-fg-emphasis;
+}
+
+.table-file-translate-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+}
+.table-file-translate-btn:hover{
+    -fx-background-color: -color-bg-subtle;
+}
+.table-file-translate-btn .ikonli-font-icon{
+    -fx-icon-color: -color-accent-emphasis;
+    -fx-icon-size: 18px;
+}
+
+/* FolderTableView 加载动画 */
+.folder-table-loading-pane{
+    -fx-background-color: -color-bg-default;
+}
+.folder-table-loading{
+    -fx-progress-color: -color-accent-emphasis;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+}
+/*=================================================*/

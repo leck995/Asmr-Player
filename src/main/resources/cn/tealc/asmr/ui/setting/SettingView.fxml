@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import cn.tealc.asmr.ui.component.PageHeader?>
+<?import atlantafx.base.controls.Tile?>
+<?import atlantafx.base.controls.ToggleSwitch?>
+<?import javafx.scene.control.RadioButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="950.0" styleClass="setting-background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.tealc.asmr.ui.setting.SettingView">
+   <children>
+      <VBox spacing="8.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="8.0">
+         <children>
+            <PageHeader fx:id="pageHeader" />
+            <TabPane fx:id="tabPane" styleClass="setting-tab-pane" VBox.vgrow="ALWAYS">
+         <tabs>
+            <!-- ==================== 基本 ==================== -->
+            <Tab closable="false" text="基本">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <children>
+                                    <Label styleClass="setting-group-title" text="启动设置" />
+
+                                    <Tile description="启动时需要输入密码" styleClass="setting-tile" title="启动密码">
+                                       <graphic><FontIcon iconLiteral="mdoal-lock" /></graphic>
+                                       <action><ToggleSwitch fx:id="openPassword" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="passwordTile" description="最大支持16位密码" styleClass="setting-tile" title="设置密码">
+                                       <graphic><FontIcon iconLiteral="mdomz-vpn_key" /></graphic>
+                                       <action><PasswordField fx:id="passwordField" promptText="最大支持16位密码" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="其他设置" />
+
+                                    <Tile description="记录上次播放位置" styleClass="setting-tile" title="记忆播放历史">
+                                       <graphic><FontIcon iconLiteral="mdoal-history" /></graphic>
+                                       <action><ToggleSwitch fx:id="openPlayingHistory" /></action>
+                                    </Tile>
+
+                                    <Tile description="优先使用音声文件内置的歌曲信息" styleClass="setting-tile" title="优先使用音声内置歌曲信息">
+                                       <graphic><FontIcon iconLiteral="mdoal-info" /></graphic>
+                                       <action><ToggleSwitch fx:id="openMediaInnerInfo" /></action>
+                                    </Tile>
+
+                                    <Tile description="启动时自动检查新版本" styleClass="setting-tile" title="检测更新">
+                                       <graphic><FontIcon iconLiteral="mdomz-update" /></graphic>
+                                       <action><ToggleSwitch fx:id="openAutoCheckVersion" /></action>
+                                    </Tile>
+
+                                    <Tile description="启用字体平滑渲染" styleClass="setting-tile" title="平滑字体">
+                                       <graphic><FontIcon iconLiteral="mdomz-text_fields" /></graphic>
+                                       <action><ToggleSwitch fx:id="openFontSmooth" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="字幕" />
+
+                                    <Tile description="播放、桌面歌词与字幕查看窗口会同步使用该显示方式" styleClass="setting-tile" title="字幕文字转换">
+                                       <graphic><FontIcon iconLiteral="mdoal-language" /></graphic>
+                                       <action><ComboBox fx:id="subtitleScriptModeComboBox" prefWidth="150.0" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="第三方播放器" />
+
+                                    <Tile description="开启后，双击视频文件将使用外部播放器播放；音频仍由内置播放器播放" styleClass="setting-tile" title="启用第三方播放器">
+                                       <graphic><FontIcon iconLiteral="mdomz-movie" /></graphic>
+                                       <action><ToggleSwitch fx:id="openExternalPlayer" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="externalPlayerPathTile" description="选择用于播放视频的播放器程序" styleClass="setting-tile" title="播放器路径">
+                                       <graphic><FontIcon iconLiteral="mdomz-open_in_new" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="setting-tile-action-box">
+                                             <TextField fx:id="externalPlayerPathTextField" editable="false" prefWidth="200.0" promptText="未选择" />
+                                             <Button fx:id="externalPlayerSelectBtn" mnemonicParsing="false" onAction="#setMediaPlayer" styleClass="accent" text="选择" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile fx:id="externalPlayerArgsTile" description="留空则按播放器类型自动拼接；可用 {url} 指定地址位置" styleClass="setting-tile" title="启动参数">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="setting-tile-action-box">
+                                             <TextField fx:id="externalPlayerArgsTextField" prefWidth="200.0" promptText="留空自动识别" />
+                                             <Button fx:id="externalPlayerResetArgsBtn" mnemonicParsing="false" onAction="#resetExternalPlayerArgs" text="恢复默认识别" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="缓存" />
+
+                                    <Tile description="缓存远程资源到本地" styleClass="setting-tile" title="开启远程资源缓存">
+                                       <graphic><FontIcon iconLiteral="mdoal-cloud" /></graphic>
+                                       <action><ToggleSwitch fx:id="openCache" /></action>
+                                    </Tile>
+
+                                    <Tile description="设置缓存上限（MB）" styleClass="setting-tile" title="缓存上限">
+                                       <graphic><FontIcon iconLiteral="mdomz-storage" /></graphic>
+                                       <action><TextField fx:id="cacheMaxSizeTextField" maxWidth="100.0" prefWidth="100.0" promptText="500" /></action>
+                                    </Tile>
+
+                                    <Tile description="当前缓存占用空间" styleClass="setting-tile" title="当前缓存大小">
+                                       <graphic><FontIcon iconLiteral="mdoal-info" /></graphic>
+                                       <action><Label fx:id="cacheInfoLabel" text="0 B" /></action>
+                                    </Tile>
+
+                                    <Tile description="清理所有已缓存资源" styleClass="setting-tile" title="清理缓存">
+                                       <graphic><FontIcon iconLiteral="mdoal-auto_delete" /></graphic>
+                                       <action>
+                                          <Button fx:id="clearCacheBtn" mnemonicParsing="false" styleClass="danger" text="清理">
+                                          </Button>
+                                       </action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="数据" />
+
+                                    <Tile fx:id="dataDirTile" styleClass="setting-tile" title="数据目录">
+                                       <graphic><FontIcon iconLiteral="mdoal-folder_open" /></graphic>
+                                       <action>
+                                          <Button mnemonicParsing="false" onAction="#openDataDir" styleClass="accent" text="打开" />
+                                       </action>
+                                    </Tile>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 界面（主界面+播放界面+GalGame） ==================== -->
+            <Tab closable="false" text="界面">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <children>
+                                    <!-- ===== 主界面设置 ===== -->
+                                    <Label styleClass="setting-group-title" text="主界面" />
+
+                                    <Tile description="设置每页显示的作品数量" styleClass="setting-tile" title="网格每页数量">
+                                       <graphic><FontIcon iconLiteral="mdoal-grid_on" /></graphic>
+                                       <action><Spinner fx:id="gridListCountSpinner" prefWidth="100.0" /></action>
+                                    </Tile>
+
+                                    <Tile description="选择作品显示方式" styleClass="setting-tile" title="作品显示">
+                                       <graphic><FontIcon iconLiteral="mdomz-photo" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="setting-tile-action-box">
+                                             <RadioButton fx:id="openGridItemThumb" text="简略">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="gridItemShowGroup" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton fx:id="openGridItemDetail" selected="true" text="详情" toggleGroup="$gridItemShowGroup" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="每行显示的卡片数量，2~8 列" styleClass="setting-tile" title="每行数量">
+                                       <graphic><FontIcon iconLiteral="mdoal-dashboard" /></graphic>
+                                       <action><Spinner fx:id="gridColumnsSpinner" prefWidth="100.0" /></action>
+                                    </Tile>
+
+                                    <!-- ===== 播放界面设置 ===== -->
+                                    <Label styleClass="setting-group-title" text="播放界面" />
+
+                                    <Tile description="0 为关闭，数值越大圆角越明显" styleClass="setting-tile" title="封面圆角">
+                                       <graphic><FontIcon iconLiteral="mdomz-rounded_corner" /></graphic>
+                                       <action>
+                                          <Spinner fx:id="detailAlbumRadiusSpinner" prefWidth="100.0" />
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="0 为关闭，数值越大阴影越明显" styleClass="setting-tile" title="封面阴影">
+                                       <graphic><FontIcon iconLiteral="mdoal-blur_on" /></graphic>
+                                       <action>
+                                          <Spinner fx:id="detailAlbumEffectSpinner" prefWidth="100.0" />
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="选择歌词对齐方式" styleClass="setting-tile" title="歌词对齐方式">
+                                       <graphic><FontIcon iconLiteral="mdoal-format_align_left" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="setting-tile-action-box">
+                                             <RadioButton fx:id="detailLrcAlignmentLeftRadio" text="居左">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="closeBtnFunctionGroup1" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton fx:id="detailLrcAlignmentCenterRadio" text="居中" toggleGroup="$closeBtnFunctionGroup1" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <!-- ===== GalGame模式 ===== -->
+                                    <Label styleClass="setting-group-title" text="GalGame模式" />
+
+                                    <Tile description="启用 GalGame 模式播放界面" styleClass="setting-tile" title="使用GalGame模式">
+                                       <graphic><FontIcon iconLiteral="mdomz-videogame_asset" /></graphic>
+                                       <action><ToggleSwitch fx:id="openGalgame" /></action>
+                                    </Tile>
+
+                                    <Tile description="选择 Galgame 皮肤" styleClass="setting-tile" title="选择Galgame皮肤">
+                                       <graphic><FontIcon iconLiteral="mdomz-style" /></graphic>
+                                       <action><ComboBox fx:id="galgameSkinComboBox" prefHeight="30.0" prefWidth="150.0" /></action>
+                                    </Tile>
+
+                                    <Tile description="无图片时加载默认背景" styleClass="setting-tile" title="自定义图片">
+                                       <graphic><FontIcon iconLiteral="mdoal-image" /></graphic>
+                                       <action><ToggleSwitch fx:id="openGalgameBg" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="galgameBgImageTile" description="选择自定义背景图片" styleClass="setting-tile" title="设置背景图片">
+                                       <graphic><FontIcon iconLiteral="mdomz-photo" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="setting-tile-action-box">
+                                             <TextField fx:id="imageTextField" disable="true" editable="false" prefWidth="120.0" />
+                                             <Button fx:id="importImageBtn" mnemonicParsing="false" onAction="#importImage" styleClass="accent" text="选择">
+                                             </Button>
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="设为0时加载原图大小" styleClass="setting-tile" title="背景图片大小">
+                                       <graphic><FontIcon iconLiteral="mdoal-aspect_ratio" /></graphic>
+                                       <action>
+                                          <HBox spacing="5.0" styleClass="setting-tile-action-box">
+                                             <TextField fx:id="galgameBgSizeWidthTextField" maxWidth="80.0" prefWidth="80.0" promptText="宽" />
+                                             <TextField fx:id="galgameBgSizeHeightTextField" maxWidth="80.0" prefWidth="80.0" promptText="高" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="启用 Galgame 动画效果" styleClass="setting-tile" title="动画效果">
+                                       <graphic><FontIcon iconLiteral="mdomz-play_arrow" /></graphic>
+                                       <action><ToggleSwitch fx:id="openGalgameAnimation" /></action>
+                                    </Tile>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 桌面歌词 ==================== -->
+            <Tab closable="false" text="桌面歌词">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <children>
+                                    <Tile description="显示或隐藏桌面歌词窗口" styleClass="setting-tile" title="显示桌面歌词">
+                                       <graphic><FontIcon iconLiteral="mdomz-subtitles" /></graphic>
+                                       <action>
+                                          <Button fx:id="showLrcWindowBtn" mnemonicParsing="false" text="显示">
+                                          </Button>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="设置桌面歌词字号" styleClass="setting-tile" title="字号大小">
+                                       <graphic><FontIcon iconLiteral="mdomz-text_fields" /></graphic>
+                                       <action><Slider fx:id="lrcFontSizeSlider" prefWidth="180.0" showTickLabels="true" styleClass="setting-slider" /></action>
+                                    </Tile>
+
+                                    <Tile description="设置桌面歌词字体颜色" styleClass="setting-tile" title="字体颜色">
+                                       <graphic><FontIcon iconLiteral="mdomz-palette" /></graphic>
+                                       <action><ColorPicker fx:id="lrcFontColorPicker" /></action>
+                                    </Tile>
+
+                                    <Tile description="粗体显示桌面歌词" styleClass="setting-tile" title="粗体">
+                                       <graphic><FontIcon iconLiteral="mdoal-format_bold" /></graphic>
+                                       <action><ToggleSwitch fx:id="openLrcBold" selected="true" /></action>
+                                    </Tile>
+
+                                    <Tile description="启用歌词字体阴影" styleClass="setting-tile" title="字体阴影">
+                                       <graphic><FontIcon iconLiteral="mdoal-blur_on" /></graphic>
+                                       <action><ToggleSwitch fx:id="openLrcBorder" selected="true" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="lrcBorderTile" description="设置阴影颜色" styleClass="setting-tile" title="阴影颜色">
+                                       <graphic><FontIcon iconLiteral="mdomz-palette" /></graphic>
+                                       <action><ColorPicker fx:id="lrcBorderColorPicker" /></action>
+                                    </Tile>
+
+                                    <Tile description="启用歌词字体描边" styleClass="setting-tile" title="描边">
+                                       <graphic><FontIcon iconLiteral="mdoal-border_color" /></graphic>
+                                       <action><ToggleSwitch fx:id="openLrcStroke" selected="true" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="lrcStrokeTile" description="设置描边颜色" styleClass="setting-tile" title="描边颜色">
+                                       <graphic><FontIcon iconLiteral="mdomz-palette" /></graphic>
+                                       <action><ColorPicker fx:id="lrcStrokeColorPicker" /></action>
+                                    </Tile>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 插件与同步 ==================== -->
+            <Tab closable="false" text="插件与同步">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label styleClass="setting-group-title" text="同步" />
+
+                                    <Tile description="务必优先使用日本节点" styleClass="setting-tile" title="同步网址">
+                                       <graphic><FontIcon iconLiteral="mdomz-sync" /></graphic>
+                                       <action>
+                                          <HBox spacing="5.0">
+                                             <TextField fx:id="sourcesUrlTextField" promptText="https://xxx.dxxxxx.xxx" prefWidth="140.0" />
+                                             <Button mnemonicParsing="false" onAction="#checkUrl" styleClass="accent" text="检测">
+                                                <graphic><FontIcon iconLiteral="mdomz-refresh" /></graphic>
+                                             </Button>
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="同步作品时优先使用中文标题" styleClass="setting-tile" title="同步作品优先使用中文">
+                                       <graphic><FontIcon iconLiteral="mdoal-language" /></graphic>
+                                       <action><ToggleSwitch fx:id="openUserChineseTitle" /></action>
+                                    </Tile>
+
+                                    <Tile description="同步时重新下载封面图片" styleClass="setting-tile" title="覆盖模式（重新下载封面图片）">
+                                       <graphic><FontIcon iconLiteral="mdomz-restore" /></graphic>
+                                       <action><ToggleSwitch fx:id="openSyncImageReDown" /></action>
+                                    </Tile>
+
+                                    <Tile description="选择封面保存位置" styleClass="setting-tile" title="保存封面方式">
+                                       <graphic><FontIcon iconLiteral="mdomz-save" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="setting-tile-action-box">
+                                             <RadioButton fx:id="saveCoverTypeRadio1" selected="true" text="程序目录">
+                                                <toggleGroup>
+                                                   <ToggleGroup fx:id="showingTypeGroup1" />
+                                                </toggleGroup>
+                                             </RadioButton>
+                                             <RadioButton fx:id="saveCoverTypeRadio2" text="音声目录" toggleGroup="$showingTypeGroup1" />
+                                             <Button mnemonicParsing="false" onAction="#deleteCover" styleClass="danger" text="删除">
+                                             </Button>
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+
+                                    <Tile description="批量同步时跳过已同步的音声" styleClass="setting-tile" title="跳过已同步音声">
+                                       <graphic><FontIcon iconLiteral="mdomz-skip_next" /></graphic>
+                                       <action><ToggleSwitch fx:id="openSyncSkipAlready" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="代理" />
+
+                                    <Tile description="通过代理进行网络同步" styleClass="setting-tile" title="使用代理">
+                                       <graphic><FontIcon iconLiteral="mdomz-vpn_key" /></graphic>
+                                       <action><ToggleSwitch fx:id="openProxy" /></action>
+                                    </Tile>
+
+                                    <Tile fx:id="proxyTile" description="设置代理地址和端口" styleClass="setting-tile" title="代理设置">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings_ethernet" /></graphic>
+                                       <action>
+                                          <HBox spacing="5.0" styleClass="setting-tile-action-box">
+                                             <TextField fx:id="proxyHostTextField" promptText="地址" prefWidth="100.0" />
+                                             <TextField fx:id="proxyPortTextField" maxWidth="60.0" prefWidth="60.0" promptText="端口" />
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== AI 翻译 ==================== -->
+            <Tab closable="false" text="AI 翻译">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label styleClass="setting-group-title" text="兼容接口" />
+                                    <Tile description="支持任意 OpenAI Chat Completions 兼容服务；可填服务根地址、/v1 或完整接口地址" styleClass="setting-tile" title="接口地址">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings_ethernet" /></graphic>
+                                       <action><TextField fx:id="aiTranslationEndpointTextField" prefWidth="360.0" promptText="https://example.com 或 https://example.com/v1" /></action>
+                                    </Tile>
+                                    <Tile description="填写服务提供方可用的模型名称，例如 deepseek-chat 或 gpt-4.1-mini" styleClass="setting-tile" title="模型">
+                                       <graphic><FontIcon iconLiteral="mdoal-language" /></graphic>
+                                       <action><TextField fx:id="aiTranslationModelTextField" prefWidth="250.0" promptText="模型名称" /></action>
+                                    </Tile>
+                                    <Tile description="保存后用于调用 AI 服务；留空保存表示保持当前 Key 不变" styleClass="setting-tile" title="API Key">
+                                       <graphic><FontIcon iconLiteral="mdomz-vpn_key" /></graphic>
+                                       <action>
+                                          <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                             <children>
+                                                <PasswordField fx:id="aiTranslationApiKeyPasswordField" prefWidth="320.0" promptText="输入 API Key" />
+                                                <Button mnemonicParsing="false" onAction="#clearAiTranslationApiKey" text="清除" />
+                                             </children>
+                                          </HBox>
+                                       </action>
+                                    </Tile>
+                                    <Tile description="每个请求中的翻译项数，范围 1 到 50" styleClass="setting-tile" title="批处理数量">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings_ethernet" /></graphic>
+                                       <action><TextField fx:id="aiTranslationBatchSizeTextField" maxWidth="80.0" prefWidth="80.0" promptText="10" /></action>
+                                    </Tile>
+                                    <Tile description="同时发送的请求数，范围 1 到 8；较高值可能触发供应商限流" styleClass="setting-tile" title="并发请求数">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings_ethernet" /></graphic>
+                                       <action><TextField fx:id="aiTranslationConcurrencyTextField" maxWidth="80.0" prefWidth="80.0" promptText="2" /></action>
+                                    </Tile>
+                                    <Tile description="单次请求最长等待时间，范围 5 到 300 秒" styleClass="setting-tile" title="请求超时（秒）">
+                                       <graphic><FontIcon iconLiteral="mdomz-settings_ethernet" /></graphic>
+                                       <action><TextField fx:id="aiTranslationTimeoutTextField" maxWidth="80.0" prefWidth="80.0" promptText="60" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="提示词" />
+                                    <Tile description="预设用于快速切换翻译策略；选择后仍可在下方编辑完整提示词" styleClass="setting-tile" title="翻译预设">
+                                       <graphic><FontIcon iconLiteral="mdoal-language" /></graphic>
+                                       <action><ComboBox fx:id="aiTranslationPromptPresetComboBox" prefWidth="180.0" /></action>
+                                    </Tile>
+                                    <Tile description="这是发送给 AI 的系统提示词。建议保留编号、专有名词和 JSON 输出规则" styleClass="setting-tile" title="自定义提示词">
+                                       <graphic><FontIcon iconLiteral="mdoal-language" /></graphic>
+                                    </Tile>
+                                    <TextArea fx:id="aiTranslationPromptArea" prefHeight="220.0" promptText="输入翻译提示词" wrapText="true" />
+                                    <Label text="API Key 会随设置保存到本地 settings.json。该文件以明文存储，请勿提交、发送或共享。" wrapText="true" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 黑名单 ==================== -->
+            <Tab closable="false" text="字幕黑名单">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="setting-background-pane">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Tile description="字幕文本黑名单：每行一条，与某条字幕的整行文字完全一致时，该字幕不会显示" styleClass="setting-tile" title="字幕文本黑名单">
+                                 <graphic><FontIcon iconLiteral="mdoal-block" /></graphic>
+                              </Tile>
+                              <TextArea fx:id="textBlacklistArea" prefHeight="400.0" prefWidth="200.0" promptText="每行输入一条要屏蔽的字幕文本，需与字幕整行内容完全一致" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 快捷键 ==================== -->
+            <Tab closable="false" text="快捷键">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="12.0" styleClass="setting-background-pane">
+                                 <children>
+                                    <Label styleClass="setting-group-title" text="基本快捷键（暂不支持修改）" />
+                                    <GridPane hgap="20.0" vgap="8.0" styleClass="setting-shortcut-grid">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                          <ColumnConstraints hgrow="NEVER" prefWidth="200.0" />
+                                       </columnConstraints>
+                                       <Label text="功能说明" styleClass="setting-shortcut-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                       <Label text="快捷键" styleClass="setting-shortcut-header setting-shortcut-key-header" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                       <Label text="播放/暂停" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+P" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                       <Label text="上一曲" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+Left" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                       <Label text="下一曲" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+Right" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                       <Label text="音量+" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+Up" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                       <Label text="音量-" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+Down" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                       <Label text="紧急回避" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Esc" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                                       <Label text="快进" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+D" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                                       <Label text="后退" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="Ctrl+A" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    </GridPane>
+
+                                    <Label styleClass="setting-group-title" text="列表翻页" />
+                                    <GridPane hgap="20.0" vgap="8.0" styleClass="setting-shortcut-grid">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                          <ColumnConstraints hgrow="NEVER" prefWidth="200.0" />
+                                       </columnConstraints>
+                                       <Label text="功能说明" styleClass="setting-shortcut-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                       <Label text="快捷键" styleClass="setting-shortcut-header setting-shortcut-key-header" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                       <Label text="上一页" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="鼠标侧键（后退）" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                       <Label text="下一页" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="鼠标侧键（前进）" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </GridPane>
+
+                                    <Tile description="开启后两个侧键对调：后退键翻下一页，前进键翻上一页。适用于侧键方向与预期相反的鼠标驱动" styleClass="setting-tile" title="反转翻页键">
+                                       <graphic><FontIcon iconLiteral="mdomz-swap_horiz" /></graphic>
+                                       <action><ToggleSwitch fx:id="reverseSideButtonPaging" /></action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="GalGame模式" />
+                                    <GridPane hgap="20.0" vgap="8.0" styleClass="setting-shortcut-grid">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" />
+                                          <ColumnConstraints hgrow="NEVER" prefWidth="200.0" />
+                                       </columnConstraints>
+                                       <Label text="功能说明" styleClass="setting-shortcut-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                       <Label text="快捷键" styleClass="setting-shortcut-header setting-shortcut-key-header" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                       <Label text="打开文本字幕" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                       <TextField disable="true" editable="false" prefHeight="30.0" text="鼠标滚轮上滑" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 关于 ==================== -->
+            <Tab closable="false" text="关于">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <children>
+                                    <!-- ===== 关于 ===== -->
+                                    <Label styleClass="setting-group-title" text="关于" />
+                                    <Tile fx:id="aboutTile" styleClass="setting-tile" title="未来道具10号-AsmrPlayer">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image><Image url="@../../image/favicon.png" /></image>
+                                          </ImageView>
+                                       </graphic>
+                                       <action>
+                                          <Hyperlink fx:id="githubLink" text="Github" />
+                                       </action>
+                                    </Tile>
+
+                                    <!-- ===== 开源项目 ===== -->
+                                    <Label styleClass="setting-group-title" text="开源项目" />
+                                    <Tile styleClass="setting-tile" title="开源许可">
+                                       <graphic><FontIcon iconLiteral="mdoal-gavel" /></graphic>
+                                       <action>
+                                          <Button fx:id="showLicenseBtn" mnemonicParsing="false" onAction="#showLicense" styleClass="accent" text="查看">
+                                          </Button>
+                                       </action>
+                                    </Tile>
+
+                                    <Label styleClass="setting-group-title" text="感谢" />
+                                    <Tile styleClass="setting-tile" title="部分UI设计借鉴Kikoeru">
+                                       <graphic><FontIcon iconLiteral="mdoal-favorite" /></graphic>
+                                       <action><Label text="SVG图标来自于Iconfont" /></action>
+                                    </Tile>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+
+            <!-- ==================== 开发中 ==================== -->
+            <Tab closable="false" disable="true" text="开发中">
+               <content>
+                  <AnchorPane styleClass="setting-background-pane">
+                     <children>
+                        <ScrollPane fitToWidth="true" styleClass="setting-background-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox spacing="8.0" styleClass="setting-background-pane">
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../css/skin/BaseUI.css" />
+      <URL value="@../../css/skin/setting.css" />
+   </stylesheets>
+</AnchorPane>

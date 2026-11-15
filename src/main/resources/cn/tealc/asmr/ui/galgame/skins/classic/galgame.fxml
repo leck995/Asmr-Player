@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="750.0" prefWidth="1100.0" stylesheets="@galgame.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox fx:id="messagePane" alignment="CENTER" prefHeight="234.0" prefWidth="1500.0" spacing="30.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="textPane" maxHeight="234.0" maxWidth="1280.0" minHeight="117.0" minWidth="640.0" prefHeight="187.0" prefWidth="1024.0" styleClass="text-pane">
+                     <children>
+                        <StackPane layoutY="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                           <children>
+                              <Label fx:id="text" styleClass="galgame-text" text="Label" textAlignment="CENTER" wrapText="true" />
+                           </children>
+                        </StackPane>
+                        <ImageView fx:id="dialogImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                           <image>
+                              <Image url="@snowflake.png" />
+                           </image>
+                        </ImageView>
+                        <JFXSlider fx:id="songSlider" styleClass="galgame-slider" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="0.0" />
+                        <HBox fx:id="timePane" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="60.0">
+                           <children>
+                              <Label fx:id="currentTimeLabel" styleClass="galgame-time" text="01:11" textAlignment="CENTER" wrapText="true" />
+                              <Label fx:id="timeSeparator" styleClass="galgame-time" text="/" textAlignment="CENTER" wrapText="true" />
+                              <Label fx:id="totalTimeLabel" styleClass="galgame-time" text="05:55" textAlignment="CENTER" wrapText="true" />
+                           </children>
+                        </HBox>
+                        <AnchorPane fx:id="namePane" maxHeight="50.0" maxWidth="400.0" minHeight="50.0" minWidth="400.0" styleClass="name-pane" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
+                           <children>
+                              <Label fx:id="nameLabel" prefWidth="350.0" styleClass="galgame-time" text="柚木" textAlignment="CENTER" textFill="#fcfcfc" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@message-1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <HBox fx:id="controlPane" alignment="CENTER" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="13.0">
+                           <children>
+                              <ToggleButton fx:id="loopBtn" layoutX="152.0" layoutY="10.0" mnemonicParsing="false" visible="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-loop-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <Button fx:id="audioEffectBtn" layoutX="55.0" layoutY="13.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-audio-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="saveBtn" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-save-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="loadBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-load-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="preBtn" layoutX="50.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-pre-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <ToggleButton fx:id="playBtn" mnemonicParsing="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-play-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <Button fx:id="nextBtn" layoutX="90.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-next-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <ToggleButton fx:id="imageBtn" layoutX="160.0" layoutY="10.0" mnemonicParsing="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-image-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <ToggleButton fx:id="muteBtn" layoutX="76.0" layoutY="10.0" mnemonicParsing="false">
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-mute-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <ToggleButton fx:id="lrcBtn" layoutX="164.0" layoutY="10.0" mnemonicParsing="false" text="词">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-lrc-btn" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <Button fx:id="changeModelBtn" layoutX="210.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-change-model-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="listBtn" layoutX="130.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-list-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="backBtn" layoutX="505.0" layoutY="13.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-back-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="closeBtn" layoutX="190.0" layoutY="10.0" mnemonicParsing="false">
+                                 <styleClass>
+                                    <String fx:value="galgame-btn" />
+                                    <String fx:value="galgame-close-btn" />
+                                 </styleClass>
+                                 <graphic>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox fx:id="titlePane" prefHeight="100.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

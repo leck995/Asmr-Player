@@ -1,0 +1,130 @@
+/*================教程弹窗================*/
+.guide-dialog-body {
+    -fx-spacing: 14px;
+}
+
+/*================左侧问题列表================*/
+.guide-list-scroll {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 8px;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.guide-list-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.guide-list {
+    -fx-spacing: 2px;
+    -fx-padding: 8px;
+}
+
+.guide-list-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6px;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 8px 10px;
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+    -fx-cursor: hand;
+}
+
+.guide-list-item:hover {
+    -fx-background-color: -color-neutral-muted;
+}
+
+.guide-list-item:selected {
+    -fx-background-color: -color-bg-default;
+    -fx-text-fill: -color-fg-default;
+}
+
+.guide-list-item:selected:hover {
+    -fx-background-color: -color-bg-default;
+}
+
+/*================右侧正文================*/
+.guide-detail-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.guide-detail-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.guide-detail-host {
+    -fx-background-color: transparent;
+}
+
+.guide-detail {
+    -fx-spacing: 10px;
+    -fx-padding: 2px 8px 8px 2px;
+}
+
+.guide-detail-section {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+.guide-detail-question {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+
+.guide-detail-answers {
+    -fx-spacing: 6px;
+}
+
+.guide-detail-answer {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+}
+
+.guide-detail-steps {
+    -fx-spacing: 6px;
+    -fx-padding: 2px 0 0 0;
+}
+
+.guide-step-index {
+    -fx-min-width: 20px;
+    -fx-pref-width: 20px;
+    -fx-min-height: 20px;
+    -fx-pref-height: 20px;
+    -fx-background-color: -color-neutral-subtle;
+    -fx-background-radius: 10px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.guide-step-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-fg-default;
+}
+
+.guide-detail-figure {
+    -fx-spacing: 4px;
+    -fx-padding: 2px 0 0 0;
+}
+
+.guide-detail-image-frame {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 6px;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-padding: 1px;
+}
+
+.guide-detail-caption {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-fg-muted;
+}
