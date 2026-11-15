@@ -73,7 +73,7 @@ jlink 产物只是模块化运行时镜像，不会自动携带仓库里的 `vlc
 一键打包（Windows）：
 
 ```cmd
-package.bat            :: jlink 镜像 + app-image + msi + exe（默认）
+package.bat            :: jlink 镜像 + app-image + portable zip + msi + exe（默认）
 package.bat image      :: 只出 jlink 镜像 + app-image，不制作安装包
 package.bat --skip-image exe   :: 复用现有 app-image，只重烧安装包
 package.bat -h         :: 全部参数
@@ -87,6 +87,7 @@ package.bat -h         :: 全部参数
 | --- | --- |
 | jlink 运行时镜像 | `target\app` |
 | 免安装 app-image | `target\image\AsmrPlayer\AsmrPlayer.exe` |
+| portable zip | `target\jpackage\AsmrPlayer-<版本>-windows-x64-portable.zip` |
 | MSI 安装包 | `target\jpackage\AsmrPlayer-<版本>.msi` |
 | Burn 安装包 | `target\jpackage\AsmrPlayer-<版本>.exe` |
 

@@ -11,6 +11,7 @@ rem     [2/5] VLC staging          -> target\vlc-app-content\vlc
 rem     [3/5] jpackage app-image   -> target\image\AsmrPlayer           (portable)
 rem     [4/5] MSI installer        -> target\jpackage\AsmrPlayer-<version>.msi
 rem     [5/5] burn installer       -> target\jpackage\AsmrPlayer-<version>.exe
+rem     [zip] portable archive     -> target\jpackage\AsmrPlayer-<version>-windows-x64-portable.zip
 rem
 rem  Both installers are burned from the app-image of step 3 with
 rem  --app-image, so msi and exe carry byte-identical content and re-burning
@@ -83,11 +84,13 @@ set "BUILD_IMAGE=%DO_IMAGE%"
 set "BUILD_ZIP="
 set "BUILD_MSI="
 set "BUILD_EXE="
-rem The default target is the full release set: jlink image + app-image + msi + exe.
+rem The default target is the full release set: jlink image + app-image +
+rem portable zip + msi + exe.
 if /i "%PKG_TYPE%"=="portable" set "BUILD_ZIP=1"
 if /i "%PKG_TYPE%"=="msi" set "BUILD_MSI=1"
 if /i "%PKG_TYPE%"=="exe" set "BUILD_EXE=1"
 if /i "%PKG_TYPE%"=="all" (
+    set "BUILD_ZIP=1"
     set "BUILD_MSI=1"
     set "BUILD_EXE=1"
 )
@@ -294,7 +297,7 @@ echo  %APP_NAME% %APP_VERSION% packaging
 echo.
 echo  Usage:  package.bat [all^|image^|portable^|msi^|exe] [options]
 echo.
-echo    all           jlink image + app-image + msi + exe                 (default)
+echo    all           jlink image + app-image + portable zip + msi + exe   (default)
 echo    image         jlink image + app-image only, no installers
 echo    portable      jlink image + app-image + portable zip, no installers
 echo    zip           same as portable
