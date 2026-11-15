@@ -189,7 +189,9 @@ vlc/                       各平台内置 VLC 运行库
 ## 为爱发电项目，永久免费
 倘若喜欢本程序，欢迎请开发者补充一瓶营养快线，加上BUFF,XXXX。
 
-您可以按以下格式留言：[名称]:[想说的话]
+您可以按以下格式留言：
+
+AsmrPlayer:[名称]:[想说的话]
 
 ![support.png](src/main/resources/cn/tealc/asmr/image/others/support.png)
 
